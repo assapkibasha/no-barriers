@@ -1,6 +1,8 @@
 'use client'
 
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
+import { useState } from 'react'
+import { ThemeToggle } from '../../src/components/ThemeToggle'
 import LearnSidebar from '../../src/components/learn/LearnSidebar'
 import LearnRightPanel from '../../src/components/learn/LearnRightPanel'
 import { useProgress, getLevel, BADGES } from '../../src/store/progress-context'
@@ -9,6 +11,13 @@ import { units } from '../../src/data/units'
 
 export default function ProfilePage() {
   const { progress, loading } = useProgress()
+  const [loggingOut, setLoggingOut] = useState(false)
+
+  const handleLogout = async () => {
+    setLoggingOut(true)
+    await fetch('/api/auth/logout', { method: 'POST' })
+    window.location.href = '/login'
+  }
 
   if (loading) return (
     <div className="flex min-h-screen items-center justify-center">
@@ -30,7 +39,7 @@ export default function ProfilePage() {
     <div className="flex min-h-screen">
       <LearnSidebar />
 
-      <main className="ml-64 flex flex-1 flex-col items-center px-6 py-8">
+      <main className="mb-24 flex flex-1 flex-col items-center px-4 py-8 md:mb-0 md:ml-64 sm:px-6">
         <div className="w-full max-w-2xl space-y-6">
           <h1 className="text-2xl font-extrabold text-gray-800 dark:text-gray-100">My Profile</h1>
 
@@ -96,10 +105,25 @@ export default function ProfilePage() {
               </BarChart>
             </ResponsiveContainer>
           </div>
+          {/* Mobile Settings */}
+          <div className="mt-8 flex flex-col gap-4 md:hidden">
+            <h2 className="text-lg font-extrabold text-gray-800 dark:text-gray-100">App Settings</h2>
+            <div className="flex items-center justify-between rounded-2xl border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+              <span className="font-bold text-gray-700 dark:text-gray-300">Theme</span>
+              <ThemeToggle />
+            </div>
+            <button
+              onClick={handleLogout}
+              disabled={loggingOut}
+              className="flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-red-100 bg-red-50 p-4 font-extrabold uppercase tracking-widest text-red-600 transition hover:bg-red-100 dark:border-red-900/50 dark:bg-red-900/20 dark:text-red-400 dark:hover:bg-red-900/40 disabled:opacity-50"
+            >
+              🚪 {loggingOut ? 'Logging out...' : 'Log Out'}
+            </button>
+          </div>
         </div>
       </main>
 
-      <div className="sticky top-0 mr-4 h-screen w-80 flex-shrink-0 overflow-y-auto py-8 pr-2">
+      <div className="sticky top-0 mr-4 hidden h-screen w-80 flex-shrink-0 overflow-y-auto py-8 pr-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] lg:block">
         <LearnRightPanel />
       </div>
     </div>

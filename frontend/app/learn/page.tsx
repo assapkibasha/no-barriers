@@ -56,7 +56,7 @@ export default function LearnPage() {
       <LearnSidebar />
 
       {/* Center — skill path */}
-      <main className="ml-64 flex flex-1 justify-center px-6 py-8">
+      <main className="mb-24 flex flex-1 justify-center px-4 py-8 md:mb-0 md:ml-64 sm:px-6">
         <div className="w-full max-w-lg relative">
           
           {/* SINGLE DYNAMIC STICKY HEADER */}
@@ -171,7 +171,7 @@ export default function LearnPage() {
       </main>
 
       {/* Right panel */}
-      <div className="sticky top-0 mr-4 h-screen w-80 flex-shrink-0 overflow-y-auto scrollbar-hide py-8 pr-2">
+      <div className="sticky top-0 mr-4 hidden h-screen w-80 flex-shrink-0 overflow-y-auto py-8 pr-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] lg:block">
         <LearnRightPanel />
       </div>
     </div>

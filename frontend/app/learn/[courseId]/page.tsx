@@ -120,7 +120,7 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
       </main>
 
       {/* Right panel */}
-      <div className="sticky top-0 mr-4 h-screen w-80 flex-shrink-0 overflow-y-auto scrollbar-hide py-8 pr-2">
+      <div className="sticky top-0 mr-4 hidden h-screen w-80 flex-shrink-0 overflow-y-auto py-8 pr-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] lg:block">
         <LearnRightPanel />
       </div>
     </div>
