@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useState, Suspense } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
-export default function RegisterPage() {
+function RegisterForm() {
   const router = useRouter()
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
@@ -193,5 +193,13 @@ export default function RegisterPage() {
 
       </div>
     </main>
+  )
+}
+
+export default function RegisterPage() {
+  return (
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center p-8 text-gray-400">Loading...</div>}>
+      <RegisterForm />
+    </Suspense>
   )
 }
