@@ -51,7 +51,7 @@ function Hearts({ count, max }: { count: number; max: number }) {
 function ProgressBar({ current, total }: { current: number; total: number }) {
   const pct = Math.round((current / total) * 100)
   return (
-    <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200">
+    <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-gray-800">
       <div className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600 transition-all duration-500" style={{ width: `${pct}%` }} />
     </div>
   )
@@ -143,11 +143,11 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
   // ── ❤️ No Hearts Screen ──────────────────────────────────────────────────────
   if (noHearts) {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-red-50 to-pink-50 px-4">
-        <div className="w-full max-w-sm rounded-3xl bg-white p-8 text-center shadow-2xl border border-red-100">
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-950 dark:to-gray-900 px-4">
+        <div className="w-full max-w-sm rounded-3xl bg-white dark:bg-gray-800 p-8 text-center shadow-2xl border border-red-100 dark:border-red-900/40">
           <div className="text-7xl mb-2">💔</div>
-          <h1 className="text-3xl font-extrabold text-gray-800">Out of Hearts!</h1>
-          <p className="mt-3 text-gray-500">
+          <h1 className="text-3xl font-extrabold text-gray-800 dark:text-gray-100">Out of Hearts!</h1>
+          <p className="mt-3 text-gray-500 dark:text-gray-400">
             You've used all your hearts. Hearts refill every day — come back tomorrow, or review your weak signs to practice without a penalty.
           </p>
 
@@ -160,19 +160,19 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
           <div className="mt-8 space-y-3">
             <Link
               href="/review"
-              className="block w-full rounded-2xl bg-purple-600 py-3.5 text-sm font-extrabold uppercase tracking-wide text-white hover:bg-purple-700 transition"
+              className="block w-full rounded-2xl bg-purple-600 dark:bg-purple-500 py-3.5 text-sm font-extrabold uppercase tracking-wide text-white hover:bg-purple-700 transition"
             >
               🔁 Practice Weak Signs
             </Link>
             <Link
               href="/learn"
-              className="block w-full rounded-2xl border-2 border-gray-200 py-3.5 text-sm font-extrabold uppercase tracking-wide text-gray-600 hover:bg-gray-50 transition"
+              className="block w-full rounded-2xl border-2 border-gray-200 dark:border-gray-700 py-3.5 text-sm font-extrabold uppercase tracking-wide text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition"
             >
               ← Back to Dashboard
             </Link>
           </div>
 
-          <p className="mt-5 text-xs text-gray-400">
+          <p className="mt-5 text-xs text-gray-400 dark:text-gray-500">
             ⏰ Hearts refill at midnight every day
           </p>
         </div>
@@ -185,23 +185,23 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
     const perfect = mistakes === 0
     const accuracy = Math.round(((exercises.length - mistakes) / exercises.length) * 100)
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#e8f7f5] to-[#f0faf8] px-4">
-        <div className="w-full max-w-sm rounded-3xl bg-white p-8 text-center shadow-2xl border border-gray-100">
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#e8f7f5] to-[#f0faf8] dark:from-teal-950 dark:to-gray-900 px-4">
+        <div className="w-full max-w-sm rounded-3xl bg-white dark:bg-gray-800 p-8 text-center shadow-2xl border border-gray-100 dark:border-gray-700">
           <div className="text-7xl">{perfect ? '🏆' : '🎉'}</div>
-          <h1 className="mt-4 text-3xl font-extrabold text-gray-800">
+          <h1 className="mt-4 text-3xl font-extrabold text-gray-800 dark:text-gray-100">
             {perfect ? 'Perfect!' : 'Well done!'}
           </h1>
-          <p className="mt-1 text-sm text-gray-400">{lesson.title}</p>
+          <p className="mt-1 text-sm text-gray-400 dark:text-gray-500">{lesson.title}</p>
 
           <div className="mt-6 grid grid-cols-3 gap-3">
             {[
-              { label: 'XP Earned', value: `+${xpEarned}`, color: 'text-yellow-500', bg: 'bg-yellow-50', border: 'border-yellow-200' },
-              { label: 'Accuracy', value: `${accuracy}%`, color: 'text-teal-600', bg: 'bg-teal-50', border: 'border-teal-200' },
-              { label: 'Correct', value: `${exercises.length - mistakes}/${exercises.length}`, color: 'text-blue-600', bg: 'bg-blue-50', border: 'border-blue-200' },
+              { label: 'XP Earned', value: `+${xpEarned}`, color: 'text-yellow-500 dark:text-yellow-400', bg: 'bg-yellow-50 dark:bg-yellow-900/20', border: 'border-yellow-200 dark:border-yellow-800' },
+              { label: 'Accuracy', value: `${accuracy}%`, color: 'text-teal-600 dark:text-teal-400', bg: 'bg-teal-50 dark:bg-teal-900/20', border: 'border-teal-200 dark:border-teal-800' },
+              { label: 'Correct', value: `${exercises.length - mistakes}/${exercises.length}`, color: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
             ].map((s) => (
               <div key={s.label} className={`rounded-2xl ${s.bg} border ${s.border} p-3`}>
                 <div className={`text-xl font-extrabold ${s.color}`}>{s.value}</div>
-                <div className="text-[10px] font-semibold text-gray-400 mt-0.5">{s.label}</div>
+                <div className="text-[10px] font-semibold text-gray-400 dark:text-gray-500 mt-0.5">{s.label}</div>
               </div>
             ))}
           </div>
@@ -221,11 +221,11 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
 
   // ── Lesson player UI ──────────────────────────────────────────────────────
   return (
-    <main className="flex min-h-screen flex-col bg-[#f5f5f5]">
+    <main className="flex min-h-screen flex-col bg-[#f5f5f5] dark:bg-gray-950">
       {/* Header */}
-      <div className="sticky top-0 z-30 border-b border-gray-200 bg-white/90 backdrop-blur px-4 py-3">
+      <div className="sticky top-0 z-30 border-b border-gray-200 dark:border-gray-800 bg-white/90 dark:bg-gray-900/90 backdrop-blur px-4 py-3">
         <div className="mx-auto flex max-w-xl items-center gap-4">
-          <Link href="/learn" className="text-gray-400 hover:text-gray-600 text-xl font-bold">✕</Link>
+          <Link href="/learn" className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 text-xl font-bold">✕</Link>
           <div className="flex-1">
             <ProgressBar current={current} total={exercises.length} />
           </div>
@@ -235,7 +235,7 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
 
       <div className="mx-auto flex w-full max-w-xl flex-1 flex-col items-center px-4 py-8">
         {/* Prompt */}
-        <p className="mb-6 text-center text-lg font-extrabold text-gray-700">
+        <p className="mb-6 text-center text-lg font-extrabold text-gray-700 dark:text-gray-200">
           {exercise.type === 'image-to-word' && 'What does this sign mean?'}
           {exercise.type === 'word-to-image' && `Which image shows "${exercise.sign.word}"?`}
           {exercise.type === 'typing' && 'Type the word for this sign:'}
@@ -243,7 +243,7 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
 
         {/* Image (shown for image-to-word and typing, the QUESTION image) */}
         {(exercise.type === 'image-to-word' || exercise.type === 'typing') && (
-          <div className="mb-6 flex items-center justify-center rounded-3xl bg-white p-6 shadow-md border border-gray-100 w-full">
+          <div className="mb-6 flex items-center justify-center rounded-3xl bg-white dark:bg-gray-800 p-6 shadow-md border border-gray-100 dark:border-gray-700 w-full">
             <img src={exercise.sign.imagePath} alt="Sign" className="max-h-48 w-auto object-contain" />
           </div>
         )}
@@ -258,7 +258,7 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
               onKeyDown={(e) => { if (e.key === 'Enter' && !answered) handleAnswer(null, typed) }}
               disabled={answered}
               placeholder="Type the sign word…"
-              className="w-full rounded-2xl border-2 border-gray-200 bg-white px-5 py-3.5 text-center text-lg font-bold outline-none focus:border-teal-500 transition"
+              className="w-full rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-5 py-3.5 text-center text-lg font-bold text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:border-teal-500 transition"
               autoFocus
             />
             {!answered && (
@@ -278,11 +278,11 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
             {exercise.choices.map((choice) => {
               const isSelected = selected === choice.id
               const isCorrectChoice = choice.id === exercise.sign.id
-              let borderClass = 'border-gray-200 bg-white hover:border-teal-400 hover:bg-teal-50'
+              let borderClass = 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/30'
               if (answered) {
-                if (isCorrectChoice) borderClass = 'border-teal-500 bg-teal-50'
-                else if (isSelected) borderClass = 'border-red-400 bg-red-50'
-                else borderClass = 'border-gray-200 bg-white opacity-50'
+                if (isCorrectChoice) borderClass = 'border-teal-500 bg-teal-50 dark:bg-teal-900/30'
+                else if (isSelected) borderClass = 'border-red-400 bg-red-50 dark:bg-red-900/30'
+                else borderClass = 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 opacity-50'
               }
 
               return (
@@ -295,7 +295,7 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
                   {exercise.type === 'word-to-image' ? (
                     <img src={choice.imagePath} alt={choice.word} className="h-24 w-auto object-contain" />
                   ) : (
-                    <span className="text-base font-extrabold text-gray-800">{choice.word}</span>
+                    <span className="text-base font-extrabold text-gray-800 dark:text-gray-200">{choice.word}</span>
                   )}
                 </button>
               )
@@ -305,13 +305,13 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
 
         {/* Feedback bar */}
         {answered && (
-          <div className={`mt-6 w-full rounded-2xl px-5 py-4 flex items-center justify-between ${correct ? 'bg-teal-50 border-2 border-teal-400' : 'bg-red-50 border-2 border-red-300'}`}>
+          <div className={`mt-6 w-full rounded-2xl px-5 py-4 flex items-center justify-between ${correct ? 'bg-teal-50 dark:bg-teal-900/30 border-2 border-teal-400 dark:border-teal-700' : 'bg-red-50 dark:bg-red-900/30 border-2 border-red-300 dark:border-red-800'}`}>
             <div>
-              <p className={`font-extrabold text-lg ${correct ? 'text-teal-700' : 'text-red-600'}`}>
+              <p className={`font-extrabold text-lg ${correct ? 'text-teal-700 dark:text-teal-400' : 'text-red-600 dark:text-red-400'}`}>
                 {correct ? '✅ Correct!' : '❌ Wrong!'}
               </p>
               {!correct && (
-                <p className="text-sm text-gray-500 mt-0.5">
+                <p className="text-sm text-gray-500 dark:text-gray-300 mt-0.5">
                   Answer: <strong>{exercise.sign.word}</strong>
                 </p>
               )}

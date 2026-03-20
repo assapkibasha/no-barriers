@@ -30,7 +30,7 @@ export default function LoginPage() {
       const data = await res.json()
       if (!res.ok) { setError(data.error ?? 'Login failed.'); return }
       const from = searchParams.get('from') ?? '/learn'
-      router.push(from)
+      window.location.href = from
     } catch {
       setError('Network error. Please try again.')
     } finally {

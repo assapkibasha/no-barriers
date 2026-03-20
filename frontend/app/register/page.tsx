@@ -29,7 +29,7 @@ export default function RegisterPage() {
       })
       const data = await res.json()
       if (!res.ok) { setError(data.error ?? 'Registration failed.'); return }
-      router.push('/learn')
+      window.location.href = '/learn'
     } catch {
       setError('Network error. Please try again.')
     } finally {

@@ -33,11 +33,11 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
   }
 
   return (
-    <div className="flex min-h-screen bg-[#f5f5f5]">
+    <div className="flex min-h-screen">
       <LearnSidebar />
 
       {/* Center */}
-      <main className="ml-52 flex flex-1 justify-center px-6 py-8">
+      <main className="ml-64 flex flex-1 justify-center px-6 py-8">
         <div className="w-full max-w-lg">
           {/* Course banner */}
           <div className={`sticky top-4 z-20 mb-6 flex items-center justify-between rounded-2xl bg-gradient-to-r ${course.color} px-6 py-4 text-white shadow-md backdrop-blur-md`}>
@@ -68,7 +68,7 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
                 <div key={unit.id} className="flex w-full flex-col items-center">
                   {/* Connector */}
                   {idx > 0 && (
-                    <div className={`h-8 w-1 rounded-full transition-colors ${allDone ? 'bg-teal-400' : 'bg-gray-300'} ${offsetClass}`} />
+                    <div className={`h-8 w-1 rounded-full transition-colors ${allDone ? 'bg-teal-400' : 'bg-gray-300 dark:bg-gray-700'} ${offsetClass}`} />
                   )}
 
                   {/* Node + label */}
@@ -99,7 +99,7 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
                       {allDone ? '⭐' : unlocked ? unit.emoji : '🔒'}
                     </Link>
 
-                    <p className={`mt-1.5 text-xs font-bold ${unlocked ? 'text-gray-700' : 'text-gray-400'}`}>
+                    <p className={`mt-1.5 text-xs font-bold ${unlocked ? 'text-gray-700 dark:text-gray-200' : 'text-gray-400 dark:text-gray-600'}`}>
                       {unit.title}
                     </p>
 
@@ -107,7 +107,7 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
                     {unlocked && (
                       <div className="mt-1 flex gap-1">
                         {Array.from({ length: Math.min(total, 5) }).map((_, i) => (
-                          <div key={i} className={`h-1.5 w-1.5 rounded-full ${i < done ? 'bg-teal-500' : 'bg-gray-300'}`} />
+                          <div key={i} className={`h-1.5 w-1.5 rounded-full ${i < done ? 'bg-teal-500' : 'bg-gray-300 dark:bg-gray-700'}`} />
                         ))}
                       </div>
                     )}
@@ -120,7 +120,7 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
       </main>
 
       {/* Right panel */}
-      <div className="sticky top-0 mr-4 h-screen w-80 flex-shrink-0 overflow-y-auto py-8 pr-2">
+      <div className="sticky top-0 mr-4 h-screen w-80 flex-shrink-0 overflow-y-auto scrollbar-hide py-8 pr-2">
         <LearnRightPanel />
       </div>
     </div>
