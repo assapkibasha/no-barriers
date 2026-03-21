@@ -18,16 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        <div id="app-wrapper">
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <ProgressProvider>
-              <ErrorBoundary>
-                {children}
-              </ErrorBoundary>
-            </ProgressProvider>
-          </ThemeProvider>
-        </div>
+      <body className="antialiased" suppressHydrationWarning>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <ProgressProvider>
+            <ErrorBoundary>
+              {children}
+            </ErrorBoundary>
+          </ProgressProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
