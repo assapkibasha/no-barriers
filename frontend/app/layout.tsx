@@ -17,13 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <ProgressProvider>
-            <div id="app-wrapper">
+        <div id="app-wrapper">
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <ProgressProvider>
               {children}
-            </div>
-          </ProgressProvider>
-        </ThemeProvider>
+            </ProgressProvider>
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   )
