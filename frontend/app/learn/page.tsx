@@ -65,14 +65,14 @@ export default function LearnPage() {
               const activeC = courses.find((c) => c.id === activeCourseId) || courses[0]
               const idx = courses.findIndex(c => c.id === activeCourseId)
               return (
-                <div className={`flex items-center justify-between rounded-2xl bg-gradient-to-r ${activeC.color} px-6 py-5 text-white shadow-lg backdrop-blur-md transition-all duration-300`}>
-                  <div>
-                    <h2 className="text-2xl font-black">{activeC.title}</h2>
-                    <p className="text-sm font-medium opacity-90">{activeC.description}</p>
+                <div className={`flex items-center justify-between min-h-[120px] rounded-2xl bg-gradient-to-r ${activeC.color} px-6 py-5 text-white shadow-lg backdrop-blur-md transition-all duration-300`}>
+                  <div className="flex-1 pr-4">
+                    <h2 className="text-2xl font-black line-clamp-1">{activeC.title}</h2>
+                    <p className="text-sm font-medium opacity-90 line-clamp-2">{activeC.description}</p>
                   </div>
                   <Link
                     href={`/learn/${activeC.id}`}
-                    className="flex items-center gap-1.5 rounded-xl border-2 border-white/40 bg-white/20 px-4 py-2 text-xs font-extrabold uppercase tracking-wide backdrop-blur hover:bg-white/30 transition"
+                    className="flex items-center gap-1.5 rounded-xl border-2 border-white/40 bg-white/20 px-4 py-2 text-xs font-extrabold uppercase tracking-wide backdrop-blur hover:bg-white/30 transition shrink-0"
                   >
                     📋 Units
                   </Link>

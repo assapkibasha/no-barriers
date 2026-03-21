@@ -31,13 +31,13 @@ export default function LearnRightPanel() {
       {/* Stats bar */}
       <div className="flex items-center justify-around px-2 py-2 mb-2">
         <div className="flex items-center gap-2 font-bold text-orange-500">
-          🔥 <span className="text-gray-700 dark:text-gray-300">{streak}</span>
+          <span>🔥</span> <span className="text-gray-700 dark:text-gray-300">{streak}</span>
         </div>
         <div className="flex items-center gap-2 font-bold text-teal-500">
-          💎 <span className="text-gray-700 dark:text-gray-300">{xp}</span>
+          <span>💎</span> <span className="text-gray-700 dark:text-gray-300">{xp}</span>
         </div>
         <div className="flex items-center gap-2 font-bold text-red-500">
-          ❤️ <span className="text-gray-700 dark:text-gray-300">{hearts}</span>
+          <span>❤️</span> <span className="text-gray-700 dark:text-gray-300">{hearts}</span>
         </div>
       </div>
 

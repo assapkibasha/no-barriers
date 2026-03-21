@@ -68,7 +68,7 @@ export default function LearnSidebar() {
         className="hidden w-full items-center gap-4 rounded-2xl border-2 border-transparent px-4 py-3 text-sm font-extrabold uppercase tracking-widest text-gray-400 transition-all hover:bg-red-50 hover:text-red-500 disabled:opacity-50 dark:text-gray-500 dark:hover:bg-red-900/30 dark:hover:text-red-400 md:flex"
       >
         <span className="text-2xl grayscale opacity-70">🚪</span>
-        {loggingOut ? 'LOGGING OUT…' : 'LOG OUT'}
+        <span>{loggingOut ? 'LOGGING OUT…' : 'LOG OUT'}</span>
       </button>
     </aside>
   )
