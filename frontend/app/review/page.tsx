@@ -58,7 +58,6 @@ function ReviewPageContent() {
   }, [])
 
   useEffect(() => {
-    if (!mounted) return
     const reviewIds = (progress.weakSigns ?? []).slice(0, 8)
     if (reviewIds.length === 0) { setDone(true); return }
     const reviewSigns = reviewIds.map((id) => signs.find((s) => s.id === id)!).filter(Boolean)
