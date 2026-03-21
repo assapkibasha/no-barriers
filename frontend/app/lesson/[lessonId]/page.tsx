@@ -87,14 +87,6 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
     setExercises(buildExercises(lesson.signIds, unitSigns))
   }, [lesson, mounted])
 
-  if (!mounted) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-teal-500 border-t-transparent" />
-      </div>
-    )
-  }
-
   const exercise = exercises[current]
 
   const handleAnswer = useCallback(
@@ -146,6 +138,14 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
       setCorrect(false)
     }
   }, [current, exercises.length, mistakes, lesson, completeLesson])
+
+  if (!mounted) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-teal-500 border-t-transparent" />
+      </div>
+    )
+  }
 
   if (!lesson) {
     return (
