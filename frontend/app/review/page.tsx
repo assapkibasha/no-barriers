@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import confetti from 'canvas-confetti'
 import { signs, type Sign } from '../../src/data/signs'
 import { useProgress } from '../../src/store/progress-context'
