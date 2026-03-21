@@ -18,7 +18,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <ProgressProvider>{children}</ProgressProvider>
+          <ProgressProvider>
+            <div id="app-wrapper">
+              {children}
+            </div>
+          </ProgressProvider>
         </ThemeProvider>
       </body>
     </html>

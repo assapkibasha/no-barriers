@@ -10,6 +10,7 @@ const navItems = [
   { href: '/learn',    label: 'LEARN',    icon: '📖' },
   { href: '/profile',  label: 'PROFILE',  icon: '👤' },
   { href: '/review',   label: 'PRACTICE', icon: '🔁' },
+  { href: '/guide',    label: 'GUIDE',    icon: 'ℹ️' },
 ]
 
 export default function LearnSidebar() {
