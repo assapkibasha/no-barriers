@@ -19,7 +19,28 @@ function shuffle<T>(arr: T[]): T[] {
   return [...arr].sort(() => Math.random() - 0.5)
 }
 
+import { ErrorBoundary } from '../../src/components/ErrorBoundary'
+
 export default function ReviewPage() {
+  return (
+    <ErrorBoundary fallback={
+      <div className="flex min-h-screen flex-col items-center justify-center bg-[#f0faf8] dark:bg-gray-950 p-4">
+        <div className="text-center bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl max-w-sm w-full border border-gray-100 dark:border-gray-700">
+          <div className="text-5xl mb-4">⚠️</div>
+          <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200">Unable to load review</h1>
+          <p className="text-gray-500 dark:text-gray-400 mt-2 mb-6">Something went wrong while preparing your review session.</p>
+          <Link href="/learn" className="block w-full rounded-2xl bg-teal-600 px-6 py-3.5 text-sm font-extrabold uppercase text-white hover:bg-teal-700 transition">
+            Back to Dashboard
+          </Link>
+        </div>
+      </div>
+    }>
+      <ReviewPageContent />
+    </ErrorBoundary>
+  )
+}
+
+function ReviewPageContent() {
   const router = useRouter()
   const { progress, clearWeak } = useProgress()
   const [exercises, setExercises] = useState<ReviewExercise[]>([])
@@ -29,8 +50,14 @@ export default function ReviewPage() {
   const [correct, setCorrect] = useState(false)
   const [done, setDone] = useState(false)
   const [cleared, setCleared] = useState(0)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
     const reviewIds = (progress.weakSigns ?? []).slice(0, 8)
     if (reviewIds.length === 0) { setDone(true); return }
     const reviewSigns = reviewIds.map((id) => signs.find((s) => s.id === id)!).filter(Boolean)
@@ -68,6 +95,14 @@ export default function ReviewPage() {
       setSelected(null)
       setCorrect(false)
     }
+  }
+
+  if (!mounted) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#f0faf8] dark:bg-gray-950">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-purple-500 border-t-transparent" />
+      </div>
+    )
   }
 
   if (done) {

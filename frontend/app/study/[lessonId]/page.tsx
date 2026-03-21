@@ -6,18 +6,35 @@ import Link from 'next/link'
 import { getLessonById } from '../../../src/data/lessons'
 import { signs, type Sign } from '../../../src/data/signs'
 
-export default function StudyPage({ params }: { params: { lessonId: string } }) {
+import { ErrorBoundary } from '../../../src/components/ErrorBoundary'
+import { Suspense } from 'react'
+
+function StudyPageContent({ params }: { params: { lessonId: string } }) {
   const router = useRouter()
   const lesson = getLessonById(params.lessonId)
   const [lessonSigns, setLessonSigns] = useState<Sign[]>([])
   const [current, setCurrent] = useState(0)
   const [revealed, setRevealed] = useState(false)
 
+  const [mounted, setMounted] = useState(false)
+
   useEffect(() => {
-    if (!lesson) return
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!lesson || !mounted) return
     const ls = lesson.signIds.map((id) => signs.find((s) => s.id === id)!).filter(Boolean)
     setLessonSigns(ls)
-  }, [lesson])
+  }, [lesson, mounted])
+
+  if (!mounted) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-teal-500 border-t-transparent" />
+      </div>
+    )
+  }
 
   if (!lesson) {
     return (
@@ -137,5 +154,30 @@ export default function StudyPage({ params }: { params: { lessonId: string } }) 
 
       </div>
     </main>
+  )
+}
+
+export default function StudyPage({ params }: { params: { lessonId: string } }) {
+  return (
+    <ErrorBoundary fallback={
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#e8f7f5] via-[#f0faf8]  to-[#eef4ff] p-4">
+        <div className="text-center bg-white p-8 rounded-3xl shadow-xl max-w-sm w-full border border-gray-100">
+          <div className="text-5xl mb-4">⚠️</div>
+          <h1 className="text-xl font-bold text-gray-800">Unable to load study mode</h1>
+          <p className="text-gray-500 mt-2 mb-6">Something went wrong while preparing your study sheet.</p>
+          <Link href="/learn" className="block w-full rounded-2xl bg-teal-600 px-6 py-3.5 text-sm font-extrabold uppercase text-white hover:bg-teal-700 transition">
+            Back to Dashboard
+          </Link>
+        </div>
+      </div>
+    }>
+      <Suspense fallback={
+        <div className="flex min-h-screen items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-teal-500 border-t-transparent" />
+        </div>
+      }>
+        <StudyPageContent params={params} />
+      </Suspense>
+    </ErrorBoundary>
   )
 }

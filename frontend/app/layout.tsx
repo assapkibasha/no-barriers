@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: 'NoBarriers language learning platform',
 }
 
+import { ErrorBoundary } from '../src/components/ErrorBoundary'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,7 +22,9 @@ export default function RootLayout({
         <div id="app-wrapper">
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <ProgressProvider>
-              {children}
+              <ErrorBoundary>
+                {children}
+              </ErrorBoundary>
             </ProgressProvider>
           </ThemeProvider>
         </div>

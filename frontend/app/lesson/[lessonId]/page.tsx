@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, Suspense } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import confetti from 'canvas-confetti'
@@ -57,8 +57,10 @@ function ProgressBar({ current, total }: { current: number; total: number }) {
   )
 }
 
+import { ErrorBoundary } from '../../../src/components/ErrorBoundary'
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
-export default function LessonPage({ params }: { params: { lessonId: string } }) {
+function LessonPageContent({ params }: { params: { lessonId: string } }) {
   const router = useRouter()
   const lesson = getLessonById(params.lessonId)
   const { progress, loseHeart, completeLesson, recordWeak } = useProgress()
@@ -73,12 +75,25 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
   const [done, setDone] = useState(false)
   const [xpEarned, setXpEarned] = useState(0)
   const [noHearts, setNoHearts] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    if (!lesson) return
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!lesson || !mounted) return
     const unitSigns = signs.filter((s) => s.unitId === lesson.unitId)
     setExercises(buildExercises(lesson.signIds, unitSigns))
-  }, [lesson])
+  }, [lesson, mounted])
+
+  if (!mounted) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-teal-500 border-t-transparent" />
+      </div>
+    )
+  }
 
   const exercise = exercises[current]
 
@@ -326,5 +341,30 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
         )}
       </div>
     </main>
+  )
+}
+
+export default function LessonPage({ params }: { params: { lessonId: string } }) {
+  return (
+    <ErrorBoundary fallback={
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 dark:bg-gray-950 p-4">
+        <div className="text-center bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl max-w-sm w-full border border-gray-100 dark:border-gray-700">
+          <div className="text-5xl mb-4">⚠️</div>
+          <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200">Unable to load lesson</h1>
+          <p className="text-gray-500 dark:text-gray-400 mt-2 mb-6">Something went wrong while preparing your exercises.</p>
+          <Link href="/learn" className="block w-full rounded-2xl bg-teal-600 px-6 py-3.5 text-sm font-extrabold uppercase text-white hover:bg-teal-700 transition">
+            Back to Dashboard
+          </Link>
+        </div>
+      </div>
+    }>
+      <Suspense fallback={
+        <div className="flex min-h-screen items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-teal-500 border-t-transparent" />
+        </div>
+      }>
+        <LessonPageContent params={params} />
+      </Suspense>
+    </ErrorBoundary>
   )
 }
