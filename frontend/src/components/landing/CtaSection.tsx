@@ -1,8 +1,10 @@
-import Link from 'next/link'
-import { getTranslations } from 'next-intl/server'
+'use client'
 
-export default async function CtaSection() {
-  const t = await getTranslations('landing.cta')
+import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+
+export default function CtaSection() {
+  const t = useTranslations('landing.cta')
   return (
     <section className="bg-yellow-700 py-20">
       <div className="max-w-4xl mx-auto px-4 text-center space-y-8">

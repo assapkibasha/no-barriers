@@ -1,8 +1,10 @@
-import { Globe, BookOpen, Trophy, Brain, Sparkles, Users } from 'lucide-react'
-import { getTranslations } from 'next-intl/server'
+'use client'
 
-export default async function FeaturesSection() {
-  const t = await getTranslations('landing.features')
+import { Globe, BookOpen, Trophy, Brain, Sparkles, Users } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+
+export default function FeaturesSection() {
+  const t = useTranslations('landing.features')
   return (
     <section id="features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-32">
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">

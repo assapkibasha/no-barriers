@@ -1,8 +1,10 @@
-import { stats } from './data'
-import { getTranslations } from 'next-intl/server'
+'use client'
 
-export default async function AboutSection() {
-  const t = await getTranslations('landing.about')
+import { stats } from './data'
+import { useTranslations } from 'next-intl'
+
+export default function AboutSection() {
+  const t = useTranslations('landing.about')
   const statKeys = ['statLanguages', 'statLearners', 'statLessons', 'statAppRating']
   return (
     <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
