@@ -55,7 +55,7 @@ export function LocaleSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-1 w-44 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl dark:border-gray-700 dark:bg-gray-900">
+        <div className="absolute right-0 bottom-full z-50 mb-1 w-44 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl dark:border-gray-700 dark:bg-gray-900">
           {locales.map(({ code, label, flag }) => (
             <button
               key={code}
