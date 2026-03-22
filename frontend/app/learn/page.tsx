@@ -8,8 +8,10 @@ import { courses } from '../../src/data/courses'
 import { units } from '../../src/data/units'
 import { getLessonsByUnit } from '../../src/data/lessons'
 import { useProgress } from '../../src/store/progress-context'
+import { useTranslations } from 'next-intl'
 
 export default function LearnPage() {
+  const t = useTranslations('pages.learn')
   const { progress } = useProgress()
   const [activeCourseId, setActiveCourseId] = useState(courses[0].id)
 
@@ -58,7 +60,7 @@ export default function LearnPage() {
       {/* Center — skill path */}
       <main className="mb-24 flex flex-1 justify-center px-4 py-8 md:mb-0 md:ml-64 sm:px-6">
         <div className="w-full max-w-lg relative">
-          
+
           {/* SINGLE DYNAMIC STICKY HEADER */}
           <div className="sticky top-6 z-30 mb-8 w-full">
             {(() => {
@@ -74,7 +76,7 @@ export default function LearnPage() {
                     href={`/learn/${activeC.id}`}
                     className="flex items-center gap-1.5 rounded-xl border-2 border-white/40 bg-white/20 px-4 py-2 text-xs font-extrabold uppercase tracking-wide backdrop-blur hover:bg-white/30 transition shrink-0"
                   >
-                    📋 Units
+                    {t('unitsButton')}
                   </Link>
                 </div>
               )
@@ -127,7 +129,7 @@ export default function LearnPage() {
                             return !p.lessons.every((l) => completed.includes(l.id))
                           }) && (
                             <div className="mb-1 rounded-full bg-teal-500 px-3 py-0.5 text-xs font-extrabold uppercase text-white shadow">
-                              START
+                              {t('startBadge')}
                             </div>
                           )}
 

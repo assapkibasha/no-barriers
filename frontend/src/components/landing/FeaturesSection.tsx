@@ -1,24 +1,26 @@
 import { Globe, BookOpen, Trophy, Brain, Sparkles, Users } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 
-export default function FeaturesSection() {
+export default async function FeaturesSection() {
+  const t = await getTranslations('landing.features')
   return (
     <section id="features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-32">
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div className="flex-1 space-y-6">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-yellow-500 leading-tight">
-            free. fun.<br />effective.
+            {t('f1Title')}
           </h2>
           <p className="text-lg text-gray-500 max-w-md">
-            Learning with NoBarriers is fun, and it really works! With our short, interactive lessons, earn points, level up, and develop real-world language skills.
+            {t('f1Body')}
           </p>
           <div className="flex gap-4">
             <div className="flex items-center gap-2 bg-yellow-50 px-4 py-2 rounded-xl">
               <Sparkles className="text-yellow-500" size={20} />
-              <span className="text-sm font-semibold text-yellow-700">Interactive</span>
+              <span className="text-sm font-semibold text-yellow-700">{t('f1Badge1')}</span>
             </div>
             <div className="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-xl">
               <Trophy className="text-blue-500" size={20} />
-              <span className="text-sm font-semibold text-blue-700">Gamified</span>
+              <span className="text-sm font-semibold text-blue-700">{t('f1Badge2')}</span>
             </div>
           </div>
         </div>
@@ -40,19 +42,19 @@ export default function FeaturesSection() {
       <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
         <div className="flex-1 space-y-6">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-yellow-500 leading-tight">
-            a verified<br />method
+            {t('f2Title')}
           </h2>
           <p className="text-lg text-gray-500 max-w-md">
-            We use research-based teaching methods combined with engaging content to create courses that effectively teach you sign language faster and easily!
+            {t('f2Body')}
           </p>
           <div className="flex gap-4">
             <div className="flex items-center gap-2 bg-purple-50 px-4 py-2 rounded-xl">
               <Brain className="text-purple-500" size={20} />
-              <span className="text-sm font-semibold text-purple-700">Research-based</span>
+              <span className="text-sm font-semibold text-purple-700">{t('f2Badge1')}</span>
             </div>
             <div className="flex items-center gap-2 bg-orange-50 px-4 py-2 rounded-xl">
               <BookOpen className="text-orange-500" size={20} />
-              <span className="text-sm font-semibold text-orange-700">Comprehensive</span>
+              <span className="text-sm font-semibold text-orange-700">{t('f2Badge2')}</span>
             </div>
           </div>
         </div>
@@ -74,19 +76,19 @@ export default function FeaturesSection() {
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div className="flex-1 space-y-6">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-yellow-500 leading-tight">
-            stay<br />motivated
+            {t('f3Title')}
           </h2>
           <p className="text-lg text-gray-500 max-w-md">
-            We make it easy to build a learning habit with game-like features, fun challenges, and reminders. Earn rewards, track your streak, and keep leveling up!
+            {t('f3Body')}
           </p>
           <div className="flex gap-4">
             <div className="flex items-center gap-2 bg-yellow-50 px-4 py-2 rounded-xl">
               <Trophy className="text-yellow-500" size={20} />
-              <span className="text-sm font-semibold text-yellow-700">Streaks</span>
+              <span className="text-sm font-semibold text-yellow-700">{t('f3Badge1')}</span>
             </div>
             <div className="flex items-center gap-2 bg-red-50 px-4 py-2 rounded-xl">
               <Users className="text-red-500" size={20} />
-              <span className="text-sm font-semibold text-red-700">Leaderboards</span>
+              <span className="text-sm font-semibold text-red-700">{t('f3Badge2')}</span>
             </div>
           </div>
         </div>
@@ -108,19 +110,19 @@ export default function FeaturesSection() {
       <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
         <div className="flex-1 space-y-6">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-yellow-500 leading-tight">
-            personalized<br />learning
+            {t('f4Title')}
           </h2>
           <p className="text-lg text-gray-500 max-w-md">
-            Designed to adapt to your level and help you learn at your own pace, our lessons combine the best of AI and language science to create a unique experience just for you.
+            {t('f4Body')}
           </p>
           <div className="flex gap-4">
             <div className="flex items-center gap-2 bg-cyan-50 px-4 py-2 rounded-xl">
               <Brain className="text-cyan-500" size={20} />
-              <span className="text-sm font-semibold text-cyan-700">AI-Powered</span>
+              <span className="text-sm font-semibold text-cyan-700">{t('f4Badge1')}</span>
             </div>
             <div className="flex items-center gap-2 bg-yellow-50 px-4 py-2 rounded-xl">
               <Globe className="text-yellow-500" size={20} />
-              <span className="text-sm font-semibold text-yellow-700">Adaptive</span>
+              <span className="text-sm font-semibold text-yellow-700">{t('f4Badge2')}</span>
             </div>
           </div>
         </div>

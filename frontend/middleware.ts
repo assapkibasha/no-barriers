@@ -9,24 +9,36 @@ export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl
 
   const isProtected = PROTECTED.some((p) => pathname.startsWith(p))
-  if (!isProtected) return NextResponse.next()
 
-  const token = req.cookies.get('nb_token')?.value
+  let response: NextResponse
 
-  if (!token) {
-    const loginUrl = new URL('/login', req.url)
-    loginUrl.searchParams.set('from', pathname)
-    return NextResponse.redirect(loginUrl)
+  if (!isProtected) {
+    response = NextResponse.next()
+  } else {
+    const token = req.cookies.get('nb_token')?.value
+
+    if (!token) {
+      const loginUrl = new URL('/login', req.url)
+      loginUrl.searchParams.set('from', pathname)
+      response = NextResponse.redirect(loginUrl)
+    } else {
+      try {
+        await jwtVerify(token, SECRET)
+        response = NextResponse.next()
+      } catch {
+        const loginUrl = new URL('/login', req.url)
+        loginUrl.searchParams.set('from', pathname)
+        response = NextResponse.redirect(loginUrl)
+      }
+    }
   }
 
-  try {
-    await jwtVerify(token, SECRET)
-    return NextResponse.next()
-  } catch {
-    const loginUrl = new URL('/login', req.url)
-    loginUrl.searchParams.set('from', pathname)
-    return NextResponse.redirect(loginUrl)
+  // Set default locale cookie on first visit
+  if (!req.cookies.get('NEXT_LOCALE')) {
+    response.cookies.set('NEXT_LOCALE', 'en', { path: '/', maxAge: 31536000, sameSite: 'lax' })
   }
+
+  return response
 }
 
 export const config = {

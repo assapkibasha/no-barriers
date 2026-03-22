@@ -7,6 +7,7 @@ import confetti from 'canvas-confetti'
 import { getLessonById } from '../../../src/data/lessons'
 import { signs, type Sign } from '../../../src/data/signs'
 import { useProgress } from '../../../src/store/progress-context'
+import { useTranslations } from 'next-intl'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type ExerciseType = 'image-to-word' | 'word-to-image' | 'typing'
@@ -61,6 +62,7 @@ import { ErrorBoundary } from '../../../src/components/ErrorBoundary'
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 function LessonPageContent({ params }: { params: { lessonId: string } }) {
+  const t = useTranslations('pages.lesson')
   const router = useRouter()
   const lesson = getLessonById(params.lessonId)
   const { progress, loseHeart, completeLesson, recordWeak } = useProgress()
@@ -150,7 +152,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
   if (!lesson) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <p className="text-gray-500">Lesson not found.</p>
+        <p className="text-gray-500">{t('lessonNotFound')}</p>
       </div>
     )
   }
@@ -161,9 +163,9 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
       <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-950 dark:to-gray-900 px-4">
         <div className="w-full max-w-sm rounded-3xl bg-white dark:bg-gray-800 p-8 text-center shadow-2xl border border-red-100 dark:border-red-900/40">
           <div className="text-7xl mb-2">💔</div>
-          <h1 className="text-3xl font-extrabold text-gray-800 dark:text-gray-100">Out of Hearts!</h1>
+          <h1 className="text-3xl font-extrabold text-gray-800 dark:text-gray-100">{t('outOfHearts')}</h1>
           <p className="mt-3 text-gray-500 dark:text-gray-400">
-            You've used all your hearts. Hearts refill every day — come back tomorrow, or review your weak signs to practice without a penalty.
+            {t('outOfHeartsBody')}
           </p>
 
           <div className="mt-6 flex gap-2">
@@ -177,18 +179,18 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
               href="/review"
               className="block w-full rounded-2xl bg-purple-600 dark:bg-purple-500 py-3.5 text-sm font-extrabold uppercase tracking-wide text-white hover:bg-purple-700 transition"
             >
-              🔁 Practice Weak Signs
+              {t('practiceWeakSigns')}
             </Link>
             <Link
               href="/learn"
               className="block w-full rounded-2xl border-2 border-gray-200 dark:border-gray-700 py-3.5 text-sm font-extrabold uppercase tracking-wide text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition"
             >
-              ← Back to Dashboard
+              {t('backToDashboard')}
             </Link>
           </div>
 
           <p className="mt-5 text-xs text-gray-400 dark:text-gray-500">
-            ⏰ Hearts refill at midnight every day
+            {t('heartsRefill')}
           </p>
         </div>
       </div>
@@ -204,15 +206,15 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
         <div className="w-full max-w-sm rounded-3xl bg-white dark:bg-gray-800 p-8 text-center shadow-2xl border border-gray-100 dark:border-gray-700">
           <div className="text-7xl">{perfect ? '🏆' : '🎉'}</div>
           <h1 className="mt-4 text-3xl font-extrabold text-gray-800 dark:text-gray-100">
-            {perfect ? 'Perfect!' : 'Well done!'}
+            {perfect ? t('perfect') : t('wellDone')}
           </h1>
           <p className="mt-1 text-sm text-gray-400 dark:text-gray-500">{lesson.title}</p>
 
           <div className="mt-6 grid grid-cols-3 gap-3">
             {[
-              { label: 'XP Earned', value: `+${xpEarned}`, color: 'text-yellow-500 dark:text-yellow-400', bg: 'bg-yellow-50 dark:bg-yellow-900/20', border: 'border-yellow-200 dark:border-yellow-800' },
-              { label: 'Accuracy', value: `${accuracy}%`, color: 'text-teal-600 dark:text-teal-400', bg: 'bg-teal-50 dark:bg-teal-900/20', border: 'border-teal-200 dark:border-teal-800' },
-              { label: 'Correct', value: `${exercises.length - mistakes}/${exercises.length}`, color: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
+              { label: t('xpEarned'), value: `+${xpEarned}`, color: 'text-yellow-500 dark:text-yellow-400', bg: 'bg-yellow-50 dark:bg-yellow-900/20', border: 'border-yellow-200 dark:border-yellow-800' },
+              { label: t('accuracy'), value: `${accuracy}%`, color: 'text-teal-600 dark:text-teal-400', bg: 'bg-teal-50 dark:bg-teal-900/20', border: 'border-teal-200 dark:border-teal-800' },
+              { label: t('correct2'), value: `${exercises.length - mistakes}/${exercises.length}`, color: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
             ].map((s) => (
               <div key={s.label} className={`rounded-2xl ${s.bg} border ${s.border} p-3`}>
                 <div className={`text-xl font-extrabold ${s.color}`}>{s.value}</div>
@@ -225,7 +227,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
             onClick={() => router.push('/learn')}
             className="mt-8 w-full rounded-2xl bg-gradient-to-r from-teal-500 to-teal-600 py-3.5 text-sm font-extrabold uppercase tracking-wide text-white hover:brightness-110 transition shadow-md"
           >
-            Continue →
+            {t('continueBtn')}
           </button>
         </div>
       </div>
@@ -251,9 +253,9 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
       <div className="mx-auto flex w-full max-w-xl flex-1 flex-col items-center px-4 py-8">
         {/* Prompt */}
         <p className="mb-6 text-center text-lg font-extrabold text-gray-700 dark:text-gray-200">
-          {exercise.type === 'image-to-word' && 'What does this sign mean?'}
-          {exercise.type === 'word-to-image' && `Which image shows "${exercise.sign.word}"?`}
-          {exercise.type === 'typing' && 'Type the word for this sign:'}
+          {exercise.type === 'image-to-word' && t('imageToWord')}
+          {exercise.type === 'word-to-image' && t('wordToImage', { word: exercise.sign.word })}
+          {exercise.type === 'typing' && t('typing')}
         </p>
 
         {/* Image (shown for image-to-word and typing, the QUESTION image) */}
@@ -272,7 +274,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
               onChange={(e) => setTyped(e.target.value)}
               onKeyDown={(e) => { if (e.key === 'Enter' && !answered) handleAnswer(null, typed) }}
               disabled={answered}
-              placeholder="Type the sign word…"
+              placeholder={t('typeHere')}
               className="w-full rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-5 py-3.5 text-center text-lg font-bold text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:border-teal-500 transition"
               autoFocus
             />
@@ -281,7 +283,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
                 onClick={() => handleAnswer(null, typed)}
                 className="mt-3 w-full rounded-2xl bg-teal-600 py-3 text-sm font-extrabold uppercase text-white hover:bg-teal-700 transition"
               >
-                Check
+                {t('check')}
               </button>
             )}
           </div>
@@ -323,11 +325,11 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
           <div className={`mt-6 w-full rounded-2xl px-5 py-4 flex items-center justify-between ${correct ? 'bg-teal-50 dark:bg-teal-900/30 border-2 border-teal-400 dark:border-teal-700' : 'bg-red-50 dark:bg-red-900/30 border-2 border-red-300 dark:border-red-800'}`}>
             <div>
               <p className={`font-extrabold text-lg ${correct ? 'text-teal-700 dark:text-teal-400' : 'text-red-600 dark:text-red-400'}`}>
-                {correct ? '✅ Correct!' : '❌ Wrong!'}
+                {correct ? t('correct') : t('wrong')}
               </p>
               {!correct && (
                 <p className="text-sm text-gray-500 dark:text-gray-300 mt-0.5">
-                  Answer: <strong>{exercise.sign.word}</strong>
+                  {t('answer')}: <strong>{exercise.sign.word}</strong>
                 </p>
               )}
             </div>
@@ -335,7 +337,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
               onClick={handleNext}
               className={`rounded-2xl px-6 py-2.5 text-sm font-extrabold uppercase text-white transition ${correct ? 'bg-teal-600 hover:bg-teal-700' : 'bg-red-500 hover:bg-red-600'}`}
             >
-              {current + 1 >= exercises.length ? 'Finish' : 'Next →'}
+              {current + 1 >= exercises.length ? t('finish') : t('nextArrow')}
             </button>
           </div>
         )}
@@ -345,15 +347,16 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
 }
 
 export default function LessonPage({ params }: { params: { lessonId: string } }) {
+  const t = useTranslations('pages.lesson')
   return (
     <ErrorBoundary fallback={
       <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 dark:bg-gray-950 p-4">
         <div className="text-center bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl max-w-sm w-full border border-gray-100 dark:border-gray-700">
           <div className="text-5xl mb-4">⚠️</div>
-          <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200">Unable to load lesson</h1>
-          <p className="text-gray-500 dark:text-gray-400 mt-2 mb-6">Something went wrong while preparing your exercises.</p>
+          <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200">{t('errorTitle')}</h1>
+          <p className="text-gray-500 dark:text-gray-400 mt-2 mb-6">{t('errorBody')}</p>
           <Link href="/learn" className="block w-full rounded-2xl bg-teal-600 px-6 py-3.5 text-sm font-extrabold uppercase text-white hover:bg-teal-700 transition">
-            Back to Dashboard
+            {t('backToDashboard')}
           </Link>
         </div>
       </div>

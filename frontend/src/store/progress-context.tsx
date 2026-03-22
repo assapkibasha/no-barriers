@@ -188,12 +188,12 @@ export function useProgress() {
 }
 
 // ─── Pure helpers (no side effects) ───────────────────────────────────────────
-export function getLevel(xp: number): { label: string; next: number } {
-  if (xp < 100)  return { label: 'Beginner',     next: 100 }
-  if (xp < 300)  return { label: 'Elementary',   next: 300 }
-  if (xp < 700)  return { label: 'Intermediate', next: 700 }
-  if (xp < 1500) return { label: 'Advanced',     next: 1500 }
-  return { label: 'Master', next: 1500 }
+export function getLevel(xp: number): { labelKey: string; next: number } {
+  if (xp < 100)  return { labelKey: 'Beginner',     next: 100 }
+  if (xp < 300)  return { labelKey: 'Elementary',   next: 300 }
+  if (xp < 700)  return { labelKey: 'Intermediate', next: 700 }
+  if (xp < 1500) return { labelKey: 'Advanced',     next: 1500 }
+  return { labelKey: 'Master', next: 1500 }
 }
 
 export const BADGES = [

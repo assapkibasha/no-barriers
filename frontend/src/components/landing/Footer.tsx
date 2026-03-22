@@ -1,4 +1,7 @@
-export default function Footer() {
+import { getTranslations } from 'next-intl/server'
+
+export default async function Footer() {
+  const t = await getTranslations('landing.footer')
   return (
     <footer className="bg-gray-900 text-gray-400 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,41 +18,41 @@ export default function Footer() {
               />
               <span className="text-xl font-extrabold text-yellow-400">NoBarriers</span>
             </div>
-            <p className="text-sm">Breaking down language barriers, one lesson at a time.</p>
+            <p className="text-sm">{t('tagline')}</p>
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Product</h3>
+            <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">{t('productHeader')}</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Courses</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Pricing</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">For Schools</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">For Business</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('courses')}</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('pricing')}</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('forSchools')}</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('forBusiness')}</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Company</h3>
+            <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">{t('companyHeader')}</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Press</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('aboutUs')}</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('careers')}</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('blog')}</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('press')}</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Support</h3>
+            <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">{t('supportHeader')}</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Help Center</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Contact Us</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('helpCenter')}</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('contactUs')}</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('privacyPolicy')}</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('termsOfService')}</a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
           <p>
-            &copy; <span suppressHydrationWarning>{new Date().getFullYear()}</span> NoBarriers. All rights reserved.
+            {t('copyright', { year: new Date().getFullYear() })}
           </p>
         </div>
       </div>

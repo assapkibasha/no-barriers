@@ -3,8 +3,10 @@
 import { useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 function LoginForm() {
+  const t = useTranslations('pages.login')
   const router = useRouter()
   const searchParams = useSearchParams()
   const [showPassword, setShowPassword] = useState(false)
@@ -32,7 +34,7 @@ function LoginForm() {
       const from = searchParams.get('from') ?? '/learn'
       window.location.href = from
     } catch {
-      setError('Network error. Please try again.')
+      setError(t('networkError'))
     } finally {
       setLoading(false)
     }
@@ -55,14 +57,14 @@ function LoginForm() {
             <span className="text-xl font-extrabold tracking-tight text-teal-700">NoBarriers</span>
           </div>
 
-          <h1 className="text-3xl font-extrabold text-gray-800">Welcome back</h1>
-          <p className="mt-1.5 text-sm text-gray-500">Enter your credentials to continue learning.</p>
+          <h1 className="text-3xl font-extrabold text-gray-800">{t('welcomeBack')}</h1>
+          <p className="mt-1.5 text-sm text-gray-500">{t('subtitle')}</p>
 
           <form onSubmit={handleSubmit} className="mt-8 space-y-5">
             {/* Email */}
             <div>
               <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-gray-700">
-                Email
+                {t('email')}
               </label>
               <input
                 id="email"
@@ -79,7 +81,7 @@ function LoginForm() {
             {/* Password */}
             <div>
               <label htmlFor="password" className="mb-1.5 block text-sm font-semibold text-gray-700">
-                Password
+                {t('password')}
               </label>
               <div className="relative">
                 <input
@@ -117,10 +119,10 @@ function LoginForm() {
                   onChange={handleChange}
                   className="h-4 w-4 rounded border-gray-300 accent-teal-600"
                 />
-                Remember me
+                {t('rememberMe')}
               </label>
               <Link href="/forgot-password" className="text-sm font-semibold text-teal-600 hover:underline">
-                Forgot password?
+                {t('forgotPassword')}
               </Link>
             </div>
 
@@ -133,14 +135,14 @@ function LoginForm() {
               disabled={loading}
               className="w-full rounded-2xl bg-teal-600 py-3.5 text-sm font-extrabold uppercase tracking-wide text-white transition-all hover:bg-teal-700 active:scale-[0.98] disabled:opacity-60"
             >
-              {loading ? 'Logging in…' : 'Log In'}
+              {loading ? t('loggingIn') : t('logIn')}
             </button>
           </form>
 
           <p className="mt-8 text-center text-sm text-gray-500">
-            Don&apos;t have an account?{' '}
+            {t('noAccount')}{' '}
             <Link href="/register" className="font-bold text-teal-600 hover:underline">
-              Register here
+              {t('registerHere')}
             </Link>
           </p>
         </div>
@@ -154,10 +156,12 @@ function LoginForm() {
             onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0.3' }}
           />
           <h2 className="mt-8 text-center text-2xl font-extrabold text-gray-800">
-            Learn Sign Language<br />at your own pace
+            {t('panelHeadline').split('\n').map((line, i) => (
+              <span key={i}>{line}{i === 0 && <br />}</span>
+            ))}
           </h2>
           <p className="mt-3 max-w-xs text-center text-sm text-gray-500">
-            Join thousands of learners building real communication skills with NoBarriers.
+            {t('panelSubtitle')}
           </p>
         </div>
 

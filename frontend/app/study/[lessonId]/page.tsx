@@ -8,8 +8,10 @@ import { signs, type Sign } from '../../../src/data/signs'
 
 import { ErrorBoundary } from '../../../src/components/ErrorBoundary'
 import { Suspense } from 'react'
+import { useTranslations } from 'next-intl'
 
 function StudyPageContent({ params }: { params: { lessonId: string } }) {
+  const t = useTranslations('pages.study')
   const router = useRouter()
   const lesson = getLessonById(params.lessonId)
   const [lessonSigns, setLessonSigns] = useState<Sign[]>([])
@@ -39,7 +41,7 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
   if (!lesson) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <p className="text-gray-500">Lesson not found.</p>
+        <p className="text-gray-500">{t('lessonNotFound')}</p>
       </div>
     )
   }
@@ -89,9 +91,9 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
         {/* Mode badge */}
         <div className="mb-6 flex items-center gap-2">
           <span className="rounded-full bg-teal-100 px-4 py-1.5 text-sm font-extrabold text-teal-700">
-            📖 Study Mode
+            {t('studyMode')}
           </span>
-          <span className="text-sm text-gray-400 font-medium">· Learn the signs</span>
+          <span className="text-sm text-gray-400 font-medium">{t('learnTheSigns')}</span>
         </div>
 
         {/* Flashcard */}
@@ -111,13 +113,13 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
           {/* Word reveal */}
           <div className={`border-t border-gray-100 px-8 py-6 text-center transition-all duration-300 ${revealed ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
             <p className="text-3xl font-extrabold text-gray-800">{sign.word}</p>
-            <p className="mt-1 text-sm text-gray-400">Sign language</p>
+            <p className="mt-1 text-sm text-gray-400">{t('signLanguage')}</p>
           </div>
 
           {/* Tap to reveal hint */}
           {!revealed && (
             <div className="border-t border-gray-100 px-8 py-6 text-center">
-              <p className="text-sm font-semibold text-gray-400">Tap the card to reveal the word</p>
+              <p className="text-sm font-semibold text-gray-400">{t('tapToReveal')}</p>
             </div>
           )}
         </div>
@@ -129,7 +131,7 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
             disabled={current === 0}
             className="flex-1 rounded-2xl border-2 border-gray-200 py-3.5 font-extrabold text-gray-500 transition hover:border-gray-300 hover:bg-gray-50 disabled:opacity-30"
           >
-            ← Prev
+            {t('prev')}
           </button>
 
           <button
@@ -140,7 +142,7 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
                 : 'bg-gradient-to-r from-teal-500 to-teal-600'
             }`}
           >
-            {isLast ? '🎯 Start Quiz →' : 'Next →'}
+            {isLast ? t('startQuiz') : t('next')}
           </button>
         </div>
 
@@ -149,7 +151,7 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
           onClick={() => router.push(`/lesson/${lesson.id}`)}
           className="mt-5 text-sm text-gray-400 underline underline-offset-2 hover:text-gray-600"
         >
-          Skip study and go to quiz
+          {t('skipToQuiz')}
         </button>
 
       </div>
@@ -158,15 +160,16 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
 }
 
 export default function StudyPage({ params }: { params: { lessonId: string } }) {
+  const t = useTranslations('pages.study')
   return (
     <ErrorBoundary fallback={
       <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#e8f7f5] via-[#f0faf8]  to-[#eef4ff] p-4">
         <div className="text-center bg-white p-8 rounded-3xl shadow-xl max-w-sm w-full border border-gray-100">
           <div className="text-5xl mb-4">⚠️</div>
-          <h1 className="text-xl font-bold text-gray-800">Unable to load study mode</h1>
-          <p className="text-gray-500 mt-2 mb-6">Something went wrong while preparing your study sheet.</p>
+          <h1 className="text-xl font-bold text-gray-800">{t('errorTitle')}</h1>
+          <p className="text-gray-500 mt-2 mb-6">{t('errorBody')}</p>
           <Link href="/learn" className="block w-full rounded-2xl bg-teal-600 px-6 py-3.5 text-sm font-extrabold uppercase text-white hover:bg-teal-700 transition">
-            Back to Dashboard
+            {t('backToDashboard')}
           </Link>
         </div>
       </div>

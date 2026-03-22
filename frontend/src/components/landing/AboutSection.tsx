@@ -1,6 +1,9 @@
 import { stats } from './data'
+import { getTranslations } from 'next-intl/server'
 
-export default function AboutSection() {
+export default async function AboutSection() {
+  const t = await getTranslations('landing.about')
+  const statKeys = ['statLanguages', 'statLearners', 'statLessons', 'statAppRating']
   return (
     <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="text-center space-y-6 max-w-3xl mx-auto">
@@ -15,18 +18,18 @@ export default function AboutSection() {
           />
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800">
-          About <span className="text-yellow-500">NoBarriers</span>
+          {t('title')} <span className="text-yellow-500">{t('brand')}</span>
         </h2>
         <p className="text-lg text-gray-500">
-          NoBarriers is on a mission to make language learning accessible to everyone, everywhere. We believe that language should never be a barrier to opportunity, connection, or understanding. Our platform uses cutting-edge technology and proven teaching methods to help you achieve fluency faster.
+          {t('description')}
         </p>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-        {stats.map((stat) => (
-          <div key={stat.label} className="text-center space-y-2">
+        {stats.map((stat, i) => (
+          <div key={i} className="text-center space-y-2">
             <div className="text-4xl sm:text-5xl font-extrabold text-yellow-500">{stat.number}</div>
-            <div className="text-gray-500 font-semibold uppercase tracking-wider text-sm">{stat.label}</div>
+            <div className="text-gray-500 font-semibold uppercase tracking-wider text-sm">{t(statKeys[i])}</div>
           </div>
         ))}
       </div>

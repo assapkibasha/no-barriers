@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import { LocaleSwitcher } from '../LocaleSwitcher'
 
 type HeaderVariant = 'yellow' | 'teal'
 
@@ -12,6 +14,7 @@ interface HeaderProps {
 
 export default function Header({ variant = 'yellow' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const t = useTranslations('landing.header')
 
   const isTeal = variant === 'teal'
 
@@ -64,25 +67,26 @@ export default function Header({ variant = 'yellow' }: HeaderProps) {
 
         <nav className="hidden items-center gap-5 md:flex">
           <Link href="/#features" className={`text-lg font-medium transition-colors ${navLink}`}>
-            Features
+            {t('features')}
           </Link>
           <Link href="/#languages" className={`text-lg font-medium transition-colors ${navLink}`}>
-            Languages
+            {t('languages')}
           </Link>
           <Link href="/#about" className={`text-lg font-medium transition-colors ${navLink}`}>
-            About
+            {t('about')}
           </Link>
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
+          <LocaleSwitcher />
           <Link href={isTeal ? '/login' : '/login'} className={`rounded-xl px-4 py-2 font-semibold transition-colors ${loginBtn}`}>
-            LOG IN
+            {t('logIn')}
           </Link>
           <Link
             href={isTeal ? '/register' : '/get-started'}
             className={`rounded-2xl border px-5 py-2 font-semibold transition-all ${ctaBtn}`}
           >
-            {isTeal ? 'REGISTER' : 'GET STARTED'}
+            {isTeal ? t('register') : t('getStarted')}
           </Link>
         </div>
 
@@ -97,21 +101,21 @@ export default function Header({ variant = 'yellow' }: HeaderProps) {
       {mobileMenuOpen && (
         <div className={`mx-auto mt-2 w-full max-w-7xl rounded-2xl border px-4 py-4 shadow-[0_20px_45px_rgba(3,34,24,0.45)] md:hidden ${mobilePanel}`}>
           <Link href="/#features" className={`block py-2 font-medium transition-colors ${navLink}`}>
-            Features
+            {t('features')}
           </Link>
           <Link href="/#languages" className={`block py-2 font-medium transition-colors ${navLink}`}>
-            Languages
+            {t('languages')}
           </Link>
           <Link href="/#about" className={`block py-2 font-medium transition-colors ${navLink}`}>
-            About
+            {t('about')}
           </Link>
           <div className="mt-3 space-y-2">
-            <button className={`w-full rounded-xl border py-2.5 font-semibold ${mobileLoginBtn}`}>LOG IN</button>
+            <button className={`w-full rounded-xl border py-2.5 font-semibold ${mobileLoginBtn}`}>{t('logIn')}</button>
             <Link
               href="/get-started"
               className={`block w-full rounded-2xl border py-2.5 text-center font-semibold ${mobileCtaBtn}`}
             >
-              GET STARTED
+              {t('getStarted')}
             </Link>
           </div>
         </div>

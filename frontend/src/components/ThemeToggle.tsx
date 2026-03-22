@@ -2,10 +2,12 @@
 
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const t = useTranslations('theme')
 
   useEffect(() => {
     setMounted(true)
@@ -15,7 +17,7 @@ export function ThemeToggle() {
     return (
       <button className="flex w-full items-center gap-4 rounded-2xl border-2 border-transparent px-4 py-3 text-sm font-extrabold tracking-widest uppercase text-gray-500 transition-all opacity-50">
         <span className="text-2xl drop-shadow-sm">🌙</span>
-        <span>THEME</span>
+        <span>{t('theme')}</span>
       </button>
     )
   }
@@ -28,7 +30,7 @@ export function ThemeToggle() {
       className="flex w-full items-center gap-4 rounded-2xl border-2 border-transparent px-4 py-3 text-sm font-extrabold tracking-widest uppercase text-gray-500 dark:text-gray-400 transition-all hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-200"
     >
       <span className="text-2xl drop-shadow-sm">{isDark ? '☀️' : '🌙'}</span>
-      <span>{isDark ? 'LIGHT MODE' : 'DARK MODE'}</span>
+      <span>{isDark ? t('lightMode') : t('darkMode')}</span>
     </button>
   )
 }

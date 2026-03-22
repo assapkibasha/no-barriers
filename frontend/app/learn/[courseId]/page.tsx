@@ -7,12 +7,14 @@ import { courses } from '../../../src/data/courses'
 import { units } from '../../../src/data/units'
 import { getLessonsByUnit } from '../../../src/data/lessons'
 import { useProgress } from '../../../src/store/progress-context'
+import { useTranslations } from 'next-intl'
 
 export default function CourseSkillTree({ params }: { params: { courseId: string } }) {
+  const t = useTranslations('pages.learn')
   const { progress } = useProgress()
 
   const course = courses.find((c) => c.id === params.courseId)
-  if (!course) return <div className="p-10 text-center text-gray-500">Course not found.</div>
+  if (!course) return <div className="p-10 text-center text-gray-500">{t('courseNotFound')}</div>
 
   const courseUnits = units
     .filter((u) => u.courseId === params.courseId)
@@ -43,7 +45,7 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
           <div className={`sticky top-4 z-20 mb-6 flex items-center justify-between rounded-2xl bg-gradient-to-r ${course.color} px-6 py-4 text-white shadow-md backdrop-blur-md`}>
             <div>
               <Link href="/learn" className="text-xs font-bold uppercase tracking-widest opacity-70 hover:opacity-100">
-                ← All Courses
+                {t('allCourses')}
               </Link>
               <h1 className="mt-0.5 text-2xl font-extrabold">{course.title}</h1>
               <p className="text-sm opacity-80">{course.description}</p>
@@ -76,12 +78,12 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
                     {/* START badge */}
                     {unlocked && !allDone && done === 0 && (
                       <div className="mb-1 rounded-full bg-teal-500 px-3 py-0.5 text-xs font-extrabold uppercase text-white shadow animate-bounce">
-                        START
+                        {t('startBadge')}
                       </div>
                     )}
                     {unlocked && done > 0 && !allDone && (
                       <div className="mb-1 rounded-full bg-yellow-400 px-3 py-0.5 text-xs font-extrabold uppercase text-yellow-900 shadow">
-                        CONTINUE
+                        {t('continueBadge')}
                       </div>
                     )}
 

@@ -3,20 +3,23 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 import { ThemeToggle } from '../ThemeToggle'
-
-const navItems = [
-  { href: '/learn',    label: 'LEARN',    icon: '📖' },
-  { href: '/profile',  label: 'PROFILE',  icon: '👤' },
-  { href: '/review',   label: 'PRACTICE', icon: '🔁' },
-  { href: '/guide',    label: 'GUIDE',    icon: 'ℹ️' },
-]
+import { LocaleSwitcher } from '../LocaleSwitcher'
 
 export default function LearnSidebar() {
   const path = usePathname()
   const router = useRouter()
   const [loggingOut, setLoggingOut] = useState(false)
+  const t = useTranslations('learn.sidebar')
+
+  const navItems = [
+    { href: '/learn',    labelKey: 'learn',    icon: '📖' },
+    { href: '/profile',  labelKey: 'profile',  icon: '👤' },
+    { href: '/review',   labelKey: 'practice', icon: '🔁' },
+    { href: '/guide',    labelKey: 'guide',    icon: 'ℹ️' },
+  ]
 
   const handleLogout = async () => {
     setLoggingOut(true)
@@ -47,7 +50,7 @@ export default function LearnSidebar() {
               }`}
             >
               <span className="text-2xl drop-shadow-sm">{item.icon}</span>
-              <span className="hidden md:inline">{item.label}</span>
+              <span className="hidden md:inline">{t(item.labelKey)}</span>
             </Link>
           )
         })}
@@ -55,6 +58,11 @@ export default function LearnSidebar() {
 
       {/* Spacer */}
       <div className="hidden flex-1 md:block" />
+
+      {/* Locale Switcher - Hidden on mobile */}
+      <div className="hidden md:block mb-2">
+        <LocaleSwitcher />
+      </div>
 
       {/* Theme Toggle - Hidden on mobile */}
       <div className="hidden md:block">
@@ -68,7 +76,7 @@ export default function LearnSidebar() {
         className="hidden w-full items-center gap-4 rounded-2xl border-2 border-transparent px-4 py-3 text-sm font-extrabold uppercase tracking-widest text-gray-400 transition-all hover:bg-red-50 hover:text-red-500 disabled:opacity-50 dark:text-gray-500 dark:hover:bg-red-900/30 dark:hover:text-red-400 md:flex"
       >
         <span className="text-2xl grayscale opacity-70">🚪</span>
-        <span>{loggingOut ? 'LOGGING OUT…' : 'LOG OUT'}</span>
+        <span>{loggingOut ? t('loggingOut') : t('logOut')}</span>
       </button>
     </aside>
   )

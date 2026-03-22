@@ -3,8 +3,10 @@
 import { useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 function RegisterForm() {
+  const t = useTranslations('pages.register')
   const router = useRouter()
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
@@ -19,7 +21,7 @@ function RegisterForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
-    if (form.password !== form.confirm) { setError('Passwords do not match.'); return }
+    if (form.password !== form.confirm) { setError(t('passwordsNoMatch')); return }
     setLoading(true)
     try {
       const res = await fetch('/api/auth/register', {
@@ -31,7 +33,7 @@ function RegisterForm() {
       if (!res.ok) { setError(data.error ?? 'Registration failed.'); return }
       window.location.href = '/learn'
     } catch {
-      setError('Network error. Please try again.')
+      setError(t('networkError'))
     } finally {
       setLoading(false)
     }
@@ -54,14 +56,14 @@ function RegisterForm() {
             <span className="text-xl font-extrabold tracking-tight text-teal-700">NoBarriers</span>
           </div>
 
-          <h1 className="text-3xl font-extrabold text-gray-800">Create your account</h1>
-          <p className="mt-1.5 text-sm text-gray-500">Start your sign language journey today.</p>
+          <h1 className="text-3xl font-extrabold text-gray-800">{t('createAccount')}</h1>
+          <p className="mt-1.5 text-sm text-gray-500">{t('subtitle')}</p>
 
           <form onSubmit={handleSubmit} className="mt-7 space-y-4">
             {/* Name */}
             <div>
               <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-gray-700">
-                Full name
+                {t('fullName')}
               </label>
               <input
                 id="name"
@@ -78,7 +80,7 @@ function RegisterForm() {
             {/* Email */}
             <div>
               <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-gray-700">
-                Email address
+                {t('emailAddress')}
               </label>
               <input
                 id="email"
@@ -95,7 +97,7 @@ function RegisterForm() {
             {/* Password */}
             <div>
               <label htmlFor="password" className="mb-1.5 block text-sm font-semibold text-gray-700">
-                Password
+                {t('password')}
               </label>
               <div className="relative">
                 <input
@@ -126,7 +128,7 @@ function RegisterForm() {
             {/* Confirm Password */}
             <div>
               <label htmlFor="confirm" className="mb-1.5 block text-sm font-semibold text-gray-700">
-                Confirm password
+                {t('confirmPassword')}
               </label>
               <div className="relative">
                 <input
@@ -163,14 +165,14 @@ function RegisterForm() {
               disabled={loading}
               className="mt-2 w-full rounded-2xl bg-teal-600 py-3.5 text-sm font-extrabold uppercase tracking-wide text-white transition-all hover:bg-teal-700 active:scale-[0.98] disabled:opacity-60"
             >
-              {loading ? 'Creating account…' : 'Create Account'}
+              {loading ? t('creatingAccount') : t('createAccountBtn')}
             </button>
           </form>
 
           <p className="mt-7 text-center text-sm text-gray-500">
-            Already have an account?{' '}
+            {t('alreadyHaveAccount')}{' '}
             <Link href="/login" className="font-bold text-teal-600 hover:underline">
-              Log in here
+              {t('logInHere')}
             </Link>
           </p>
         </div>
@@ -184,10 +186,12 @@ function RegisterForm() {
             onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0.3' }}
           />
           <h2 className="mt-8 text-center text-2xl font-extrabold text-gray-800">
-            Learn Sign Language<br />at your own pace
+            {t('panelHeadline').split('\n').map((line, i) => (
+              <span key={i}>{line}{i === 0 && <br />}</span>
+            ))}
           </h2>
           <p className="mt-3 max-w-xs text-center text-sm text-gray-500">
-            Join thousands of learners building real communication skills with NoBarriers.
+            {t('panelSubtitle')}
           </p>
         </div>
 
