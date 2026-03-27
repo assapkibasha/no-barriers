@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Phone, Menu, X } from 'lucide-react'
+import { Phone, Mail, Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { LocaleSwitcher } from '../LocaleSwitcher'
@@ -93,9 +93,15 @@ export default function Header({ variant = 'yellow' }: HeaderProps) {
           </nav>
 
           <div className="hidden items-center gap-2 md:flex">
-            <div className={`flex items-center gap-2 mr-2 ${loginBtn}`}>
-              <Phone size={16} />
-              <a href="tel:0794008384" className="font-semibold text-sm hover:underline">0794 008 384</a>
+            <div className={`flex items-center gap-4 mr-2 ${loginBtn}`}>
+              <div className="flex items-center gap-2">
+                <Phone size={16} />
+                <a href="tel:0794008384" className="font-semibold text-sm hover:underline">0794 008 384</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail size={16} />
+                <a href="mailto:notabarrier@yahoo.com" className="font-semibold text-sm hover:underline">notabarrier@yahoo.com</a>
+              </div>
             </div>
             <LocaleSwitcher />
             <Link href="/login" className={`rounded-xl px-4 py-2 font-semibold transition-colors ${loginBtn}`}>
@@ -180,9 +186,15 @@ export default function Header({ variant = 'yellow' }: HeaderProps) {
 
         {/* Bottom section: language switcher + auth buttons */}
         <div className="px-4 py-5 border-t border-white/10 space-y-3">
-          <div className="flex items-center justify-center gap-2 pb-2">
-            <Phone size={16} className="text-white/70" />
-            <a href="tel:0794008384" className="text-white font-medium hover:underline">0794 008 384</a>
+          <div className="flex flex-col items-center justify-center gap-2 pb-2">
+            <div className="flex items-center gap-2">
+              <Phone size={16} className="text-white/70" />
+              <a href="tel:0794008384" className="text-white font-medium hover:underline">0794 008 384</a>
+            </div>
+            <div className="flex items-center gap-2">
+              <Mail size={16} className="text-white/70" />
+              <a href="mailto:notabarrier@yahoo.com" className="text-white font-medium hover:underline">notabarrier@yahoo.com</a>
+            </div>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold uppercase tracking-widest text-white/40">Language</span>
