@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { Phone } from 'lucide-react'
 
 export default function Footer() {
   const t = useTranslations('landing.footer')
@@ -21,6 +22,12 @@ export default function Footer() {
               <span className="text-xl font-extrabold text-yellow-400">NoBarriers</span>
             </div>
             <p className="text-sm">{t('tagline')}</p>
+            <div className="pt-2 flex items-center gap-2 text-sm">
+              <Phone size={16} className="text-yellow-400" />
+              <a href="tel:0794008384" className="hover:text-yellow-400 transition-colors">
+                0794 008 384
+              </a>
+            </div>
           </div>
 
           <div>
