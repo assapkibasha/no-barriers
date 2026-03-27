@@ -1,6 +1,7 @@
 export interface Sign {
   id: string
-  word: string       // display label (clean)
+  word: string       // English label (fallback for typing exercises)
+  wordKey: string    // i18n lookup key for useTranslations('signs')
   unitId: string
   imagePath: string  // relative to /public e.g. /signs/colors/red - umutuku.png
 }
@@ -21,9 +22,11 @@ function toLabel(filename: string): string {
 
 function sign(unitId: string, folder: string, filename: string): Sign {
   const word = toLabel(filename)
+  const id = `${unitId}-${filename.replace(/\s+/g, '_').toLowerCase()}`
   return {
-    id: `${unitId}-${filename.replace(/\s+/g, '_').toLowerCase()}`,
+    id,
     word,
+    wordKey: id.replace(/\.png$/i, '').replace(/\.jpg$/i, ''),
     unitId,
     imagePath: `/signs/${folder}/${filename}`,
   }

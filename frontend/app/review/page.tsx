@@ -45,6 +45,7 @@ export default function ReviewPage() {
 
 function ReviewPageContent() {
   const t = useTranslations('pages.review')
+  const tSigns = useTranslations('signs')
   const router = useRouter()
   const { progress, clearWeak } = useProgress()
   const [exercises, setExercises] = useState<ReviewExercise[]>([])
@@ -157,7 +158,7 @@ function ReviewPageContent() {
         </div>
 
         <p className="mb-6 mt-2 text-center text-lg font-extrabold text-gray-700 dark:text-gray-200">
-          {exercise.type === 'image-to-word' ? t('imageToWord') : t('wordToImage', { word: exercise.sign.word })}
+          {exercise.type === 'image-to-word' ? t('imageToWord') : t('wordToImage', { word: tSigns(exercise.sign.wordKey) })}
         </p>
 
         {exercise.type === 'image-to-word' && (
@@ -172,7 +173,7 @@ function ReviewPageContent() {
                 else if (c.id === exercise.sign.id) cls += 'border-teal-500 bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400'
                 else if (c.id === selected) cls += 'border-red-400 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400'
                 else cls += 'border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 opacity-50'
-                return <button key={c.id} className={cls} onClick={() => handleAnswer(c.id)} disabled={answered}>{c.word}</button>
+                return <button key={c.id} className={cls} onClick={() => handleAnswer(c.id)} disabled={answered}>{tSigns(c.wordKey)}</button>
               })}
             </div>
           </>
@@ -189,7 +190,7 @@ function ReviewPageContent() {
               return (
                 <button key={c.id} className={cls} onClick={() => handleAnswer(c.id)} disabled={answered}>
                   <img src={c.imagePath} alt={c.word} className="h-36 w-full object-contain bg-white dark:bg-gray-200 p-2" />
-                  <p className="py-2 text-center text-xs font-semibold text-gray-600 dark:text-gray-300">{c.word}</p>
+                  <p className="py-2 text-center text-xs font-semibold text-gray-600 dark:text-gray-300">{tSigns(c.wordKey)}</p>
                 </button>
               )
             })}
@@ -199,7 +200,7 @@ function ReviewPageContent() {
         {answered && (
           <div className={`mt-6 rounded-2xl p-4 text-center ${correct ? 'bg-teal-50 dark:bg-teal-900/30 border border-teal-200 dark:border-teal-800' : 'bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800'}`}>
             <p className={`text-lg font-extrabold ${correct ? 'text-teal-700 dark:text-teal-400' : 'text-red-700 dark:text-red-400'}`}>
-              {correct ? t('correct') : t('wrongAnswer', { word: exercise.sign.word })}
+              {correct ? t('correct') : t('wrongAnswer', { word: tSigns(exercise.sign.wordKey) })}
             </p>
           </div>
         )}

@@ -63,6 +63,7 @@ import { ErrorBoundary } from '../../../src/components/ErrorBoundary'
 // ─── Main ─────────────────────────────────────────────────────────────────────
 function LessonPageContent({ params }: { params: { lessonId: string } }) {
   const t = useTranslations('pages.lesson')
+  const tSigns = useTranslations('signs')
   const router = useRouter()
   const lesson = getLessonById(params.lessonId)
   const { progress, loseHeart, completeLesson, recordWeak } = useProgress()
@@ -95,9 +96,10 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
     async (answerId: string | null, typedVal?: string) => {
       if (answered || !exercise) return
       setAnswered(true)
+      const typedNorm = (typedVal ?? '').trim().toLowerCase()
       const isCorrect =
         exercise.type === 'typing'
-          ? (typedVal ?? '').trim().toLowerCase() === exercise.sign.word.toLowerCase()
+          ? typedNorm === tSigns(exercise.sign.wordKey).toLowerCase() || typedNorm === exercise.sign.word.toLowerCase()
           : answerId === exercise.sign.id
 
       setCorrect(isCorrect)
@@ -254,7 +256,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
         {/* Prompt */}
         <p className="mb-6 text-center text-lg font-extrabold text-gray-700 dark:text-gray-200">
           {exercise.type === 'image-to-word' && t('imageToWord')}
-          {exercise.type === 'word-to-image' && t('wordToImage', { word: exercise.sign.word })}
+          {exercise.type === 'word-to-image' && t('wordToImage', { word: tSigns(exercise.sign.wordKey) })}
           {exercise.type === 'typing' && t('typing')}
         </p>
 
@@ -312,7 +314,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
                   {exercise.type === 'word-to-image' ? (
                     <img src={choice.imagePath} alt={choice.word} className="h-24 w-auto object-contain" />
                   ) : (
-                    <span className="text-base font-extrabold text-gray-800 dark:text-gray-200">{choice.word}</span>
+                    <span className="text-base font-extrabold text-gray-800 dark:text-gray-200">{tSigns(choice.wordKey)}</span>
                   )}
                 </button>
               )
@@ -329,7 +331,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
               </p>
               {!correct && (
                 <p className="text-sm text-gray-500 dark:text-gray-300 mt-0.5">
-                  {t('answer')}: <strong>{exercise.sign.word}</strong>
+                  {t('answer')}: <strong>{tSigns(exercise.sign.wordKey)}</strong>
                 </p>
               )}
             </div>
