@@ -12,6 +12,7 @@ import { useTranslations } from 'next-intl'
 
 function StudyPageContent({ params }: { params: { lessonId: string } }) {
   const t = useTranslations('pages.study')
+  const tSigns = useTranslations('signs')
   const router = useRouter()
   const lesson = getLessonById(params.lessonId)
   const [lessonSigns, setLessonSigns] = useState<Sign[]>([])
@@ -112,7 +113,7 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
 
           {/* Word reveal */}
           <div className={`border-t border-gray-100 px-8 py-6 text-center transition-all duration-300 ${revealed ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-            <p className="text-3xl font-extrabold text-gray-800">{sign.word}</p>
+            <p className="text-3xl font-extrabold text-gray-800">{tSigns(sign.wordKey)}</p>
             <p className="mt-1 text-sm text-gray-400">{t('signLanguage')}</p>
           </div>
 
