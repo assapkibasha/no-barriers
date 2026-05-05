@@ -8,7 +8,7 @@ import Footer from './components/landing/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-[#f0faf8] font-sans text-slate-900">
       <Header />
       <HeroSection />
       <LanguageSelector />

@@ -2,6 +2,7 @@
 
 import LearnSidebar from '../../src/components/learn/LearnSidebar'
 import LearnRightPanel from '../../src/components/learn/LearnRightPanel'
+import { BookOpen, Lightbulb, RotateCcw, Star, UserRound, type LucideIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
 export default function GuidePage() {
@@ -10,26 +11,32 @@ export default function GuidePage() {
   const sections = [
     {
       id: 'learn',
-      icon: '📖',
+      icon: BookOpen,
       color: 'bg-teal-500',
       lightBg: 'bg-teal-50 dark:bg-teal-900/30',
       borderColor: 'border-teal-200 dark:border-teal-800',
     },
     {
       id: 'practice',
-      icon: '🔁',
+      icon: RotateCcw,
       color: 'bg-blue-500',
       lightBg: 'bg-blue-50 dark:bg-blue-900/30',
       borderColor: 'border-blue-200 dark:border-blue-800',
     },
     {
       id: 'profile',
-      icon: '👤',
+      icon: UserRound,
       color: 'bg-purple-500',
       lightBg: 'bg-purple-50 dark:bg-purple-900/30',
       borderColor: 'border-purple-200 dark:border-purple-800',
     }
-  ]
+  ] satisfies Array<{
+    id: 'learn' | 'practice' | 'profile'
+    icon: LucideIcon
+    color: string
+    lightBg: string
+    borderColor: string
+  }>
 
   return (
     <div className="flex min-h-screen">
@@ -48,43 +55,48 @@ export default function GuidePage() {
           </div>
 
           <div className="space-y-6">
-            {sections.map((section) => (
-              <div
-                key={section.id}
-                className={`rounded-3xl border-2 ${section.borderColor} ${section.lightBg} p-6 md:p-8 transition-transform hover:scale-[1.01]`}
-              >
-                <div className="flex items-center gap-5 mb-5">
-                  <div className={`flex h-16 w-16 items-center justify-center rounded-2xl ${section.color} text-white text-3xl shadow-lg border-b-4 border-black/20`}>
-                    {section.icon}
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-black text-gray-800 dark:text-gray-100 uppercase tracking-wide">
-                      {t(`sections.${section.id}.title`)}
-                    </h2>
-                    <p className="text-sm font-bold text-gray-600 dark:text-gray-400 mt-1">
-                      {t(`sections.${section.id}.description`)}
-                    </p>
-                  </div>
-                </div>
+            {sections.map((section) => {
+              const Icon = section.icon
 
-                <ul className="space-y-3 mt-6">
-                  {[0, 1, 2].map((idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/60 dark:bg-black/20 text-[10px] shadow-sm">
-                        ⭐
-                      </span>
-                      <span className="text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
-                        {t(`sections.${section.id}.details.${idx}`)}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              return (
+                <div
+                  key={section.id}
+                  className={`rounded-3xl border-2 ${section.borderColor} ${section.lightBg} p-6 md:p-8 transition-transform hover:scale-[1.01]`}
+                >
+                  <div className="flex items-center gap-5 mb-5">
+                    <div className={`flex h-16 w-16 items-center justify-center rounded-2xl ${section.color} text-white shadow-lg border-b-4 border-black/20`}>
+                      <Icon className="h-8 w-8" aria-hidden="true" strokeWidth={2.5} />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl font-black text-gray-800 dark:text-gray-100 uppercase tracking-wide">
+                        {t(`sections.${section.id}.title`)}
+                      </h2>
+                      <p className="text-sm font-bold text-gray-600 dark:text-gray-400 mt-1">
+                        {t(`sections.${section.id}.description`)}
+                      </p>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3 mt-6">
+                    {[0, 1, 2].map((idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/60 dark:bg-black/20 shadow-sm">
+                          <Star className="h-3 w-3 text-yellow-500" aria-hidden="true" fill="currentColor" strokeWidth={2.5} />
+                        </span>
+                        <span className="text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
+                          {t(`sections.${section.id}.details.${idx}`)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            })}
           </div>
 
           <div className="mt-12 rounded-3xl border-2 border-yellow-200 bg-yellow-50 dark:border-yellow-900/50 dark:bg-yellow-900/20 p-6 text-center shadow-sm">
-            <h3 className="text-lg font-black text-yellow-800 dark:text-yellow-500 mb-2 uppercase tracking-widest">
+            <h3 className="mb-2 flex items-center justify-center gap-2 text-lg font-black text-yellow-800 dark:text-yellow-500 uppercase tracking-widest">
+              <Lightbulb className="h-5 w-5" aria-hidden="true" fill="currentColor" strokeWidth={2.5} />
               {t('proTipTitle')}
             </h3>
             <p className="text-gray-700 dark:text-gray-300 font-medium">

@@ -2,6 +2,7 @@
 
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 import { useState } from 'react'
+import { BookOpenCheck, Flame, Gem } from 'lucide-react'
 import { ThemeToggle } from '../../src/components/ThemeToggle'
 import { LocaleSwitcher } from '../../src/components/LocaleSwitcher'
 import LearnSidebar from '../../src/components/learn/LearnSidebar'
@@ -44,50 +45,62 @@ export default function ProfilePage() {
     <div className="flex min-h-screen">
       <LearnSidebar />
 
-      <main className="mb-24 flex flex-1 flex-col items-center px-4 py-8 md:mb-0 md:ml-64 sm:px-6">
-        <div className="w-full max-w-2xl space-y-6">
+      <main className="mb-24 flex flex-1 flex-col items-center bg-[radial-gradient(circle_at_top,_rgba(20,184,166,0.07),_transparent_32rem)] px-4 py-7 md:mb-0 md:ml-64 sm:px-6">
+        <div className="w-full max-w-3xl space-y-5">
           <h1 className="text-2xl font-extrabold text-gray-800 dark:text-gray-100">{t('myProfile')}</h1>
 
           {/* Stats row */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {[
               { emoji: '🔥', label: t('streak'), value: `${progress.streak} ${t('days')}` },
               { emoji: '⚡', label: t('totalXp'), value: progress.xp },
               { emoji: '📚', label: t('lessonsDone'), value: progress.completedLessons.length },
             ].map((s) => (
-              <div key={s.label} className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 text-center shadow-sm">
-                <div className="text-3xl">{s.emoji}</div>
-                <div className="mt-1 text-2xl font-extrabold text-gray-800 dark:text-gray-100">{s.value}</div>
-                <div className="text-xs text-gray-400 dark:text-gray-500">{s.label}</div>
+              <div key={s.label} className="flex items-center gap-4 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900/80">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-2xl dark:bg-teal-950/60">
+                  {s.label === t('streak') ? (
+                    <Flame className="h-6 w-6 text-orange-500" strokeWidth={2.4} />
+                  ) : s.label === t('totalXp') ? (
+                    <Gem className="h-6 w-6 text-sky-500" strokeWidth={2.4} />
+                  ) : s.label === t('lessonsDone') ? (
+                    <BookOpenCheck className="h-6 w-6 text-emerald-500" strokeWidth={2.4} />
+                  ) : (
+                    s.emoji
+                  )}
+                </div>
+                <div className="min-w-0 text-left">
+                  <div className="text-2xl font-extrabold leading-none text-gray-800 dark:text-gray-100">{s.value}</div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">{s.label}</div>
+                </div>
               </div>
             ))}
           </div>
 
           {/* Level bar */}
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm">
-            <div className="flex justify-between mb-2">
-              <span className="font-extrabold text-gray-800 dark:text-gray-100">{tLevels(level.labelKey)}</span>
-              <span className="text-sm text-gray-400 dark:text-gray-500">{progress.xp} / {level.next} XP</span>
+          <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900/80">
+            <div className="mb-3 flex items-center justify-between gap-4">
+              <span className="text-lg font-extrabold text-gray-800 dark:text-gray-100">{tLevels(level.labelKey)}</span>
+              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-gray-500 dark:bg-slate-800 dark:text-gray-400">{progress.xp} / {level.next} XP</span>
             </div>
-            <div className="h-3 w-full overflow-hidden rounded-full bg-teal-100 dark:bg-teal-900/40">
-              <div className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600 transition-all" style={{ width: `${xpPct}%` }} />
+            <div className="h-2.5 w-full overflow-hidden rounded-full bg-teal-100 dark:bg-teal-950/70">
+              <div className="h-full rounded-full bg-gradient-to-r from-teal-300 to-teal-500 transition-all" style={{ width: `${xpPct}%` }} />
             </div>
           </div>
 
           {/* Badges */}
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm">
+          <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900/80">
             <h2 className="mb-4 text-lg font-extrabold text-gray-800 dark:text-gray-100">{t('badges')}</h2>
-            <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
               {BADGES.map((badge) => {
                 const earned = badge.check(progress)
                 return (
                   <div key={badge.id} title={tBadges(`${badge.id}.description`)}
-                    className={`flex flex-col items-center rounded-2xl p-3 text-center transition ${
-                      earned ? 'bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800' : 'bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800 opacity-60 grayscale'
+                    className={`flex min-h-[88px] flex-col items-center justify-center rounded-2xl border p-3 text-center transition ${
+                      earned ? 'border-amber-300 bg-amber-50 text-amber-950 shadow-sm dark:border-amber-500/60 dark:bg-amber-500/10 dark:text-amber-100' : 'border-gray-100 bg-gray-50 text-gray-400 opacity-60 grayscale dark:border-slate-800 dark:bg-slate-800/55 dark:text-gray-500'
                     }`}
                   >
-                    <span className="text-3xl">{badge.emoji}</span>
-                    <span className="mt-1 text-[10px] font-bold text-gray-600 dark:text-gray-400">{tBadges(`${badge.id}.label`)}</span>
+                    <span className="text-3xl leading-none">{badge.emoji}</span>
+                    <span className={`mt-2 text-[11px] font-extrabold leading-tight ${earned ? 'text-gray-700 dark:text-gray-200' : 'text-gray-500 dark:text-gray-500'}`}>{tBadges(`${badge.id}.label`)}</span>
                   </div>
                 )
               })}
@@ -98,15 +111,15 @@ export default function ProfilePage() {
           </div>
 
           {/* Progress chart */}
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm">
+          <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900/80">
             <h2 className="mb-4 text-lg font-extrabold text-gray-800 dark:text-gray-100">{t('progressByUnit')}</h2>
-            <ResponsiveContainer width="100%" height={220}>
-              <BarChart data={chartData} barCategoryGap="30%">
-                <XAxis dataKey="name" tick={{ fontSize: 10, fill: '#888' }} axisLine={{ stroke: '#555' }} tickLine={false} />
-                <YAxis allowDecimals={false} tick={{ fontSize: 10, fill: '#888' }} axisLine={{ stroke: '#555' }} tickLine={false} />
+            <ResponsiveContainer width="100%" height={200}>
+              <BarChart data={chartData} barCategoryGap="34%" margin={{ top: 4, right: 4, left: -18, bottom: 0 }}>
+                <XAxis dataKey="name" tick={{ fontSize: 10, fill: '#94a3b8' }} axisLine={{ stroke: '#334155' }} tickLine={false} />
+                <YAxis allowDecimals={false} tick={{ fontSize: 10, fill: '#94a3b8' }} axisLine={{ stroke: '#334155' }} tickLine={false} />
                 <Tooltip formatter={(val: number, name: string) => [val, name === 'done' ? t('completed') : t('total')]} contentStyle={{ backgroundColor: '#111827', borderColor: '#374151', color: '#fff', borderRadius: '8px' }} />
-                <Bar dataKey="total" fill="#14b8a6" fillOpacity={0.2} radius={[6, 6, 0, 0]} />
-                <Bar dataKey="done" fill="#0d9488" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="total" fill="#14b8a6" fillOpacity={0.18} radius={[8, 8, 0, 0]} />
+                <Bar dataKey="done" fill="#14b8a6" radius={[8, 8, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>

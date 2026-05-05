@@ -6,7 +6,7 @@ import { Phone, Mail } from 'lucide-react'
 export default function Footer() {
   const t = useTranslations('landing.footer')
   return (
-    <footer className="bg-gray-900 text-gray-400 py-16">
+    <footer className="bg-slate-950 text-slate-400 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="space-y-4">
@@ -19,19 +19,19 @@ export default function Footer() {
                   ;(e.target as HTMLImageElement).src = 'https://placehold.co/32x32/png'
                 }}
               />
-              <span className="text-xl font-extrabold text-yellow-400">NoBarriers</span>
+              <span className="text-xl font-extrabold text-teal-300">NoBarriers</span>
             </div>
             <p className="text-sm">{t('tagline')}</p>
             <div className="pt-2 flex flex-col gap-2 text-sm">
               <div className="flex items-center gap-2">
-                <Phone size={16} className="text-yellow-400" />
-                <a href="tel:0794008384" className="hover:text-yellow-400 transition-colors">
+                <Phone size={16} className="text-teal-300" />
+                <a href="tel:0794008384" className="hover:text-teal-300 transition-colors">
                   0794 008 384
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail size={16} className="text-yellow-400" />
-                <a href="mailto:notabarrier@yahoo.com" className="hover:text-yellow-400 transition-colors">
+                <Mail size={16} className="text-teal-300" />
+                <a href="mailto:notabarrier@yahoo.com" className="hover:text-teal-300 transition-colors">
                   notabarrier@yahoo.com
                 </a>
               </div>
@@ -41,33 +41,33 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">{t('productHeader')}</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('courses')}</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('pricing')}</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('forSchools')}</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('forBusiness')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('courses')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('pricing')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('forSchools')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('forBusiness')}</a></li>
             </ul>
           </div>
           <div>
             <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">{t('companyHeader')}</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('aboutUs')}</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('careers')}</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('blog')}</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('press')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('aboutUs')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('careers')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('blog')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('press')}</a></li>
             </ul>
           </div>
           <div>
             <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">{t('supportHeader')}</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('helpCenter')}</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('contactUs')}</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('privacyPolicy')}</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">{t('termsOfService')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('helpCenter')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('contactUs')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('privacyPolicy')}</a></li>
+              <li><a href="#" className="hover:text-teal-300 transition-colors">{t('termsOfService')}</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
+        <div className="border-t border-slate-800 mt-12 pt-8 text-center text-sm">
           <p>
             {t('copyright', { year: new Date().getFullYear() })}
           </p>

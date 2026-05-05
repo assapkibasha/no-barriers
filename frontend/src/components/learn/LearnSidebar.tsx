@@ -1,24 +1,24 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
+import { BookOpen, Compass, LogOut, RotateCcw, UserRound } from 'lucide-react'
 
 import { ThemeToggle } from '../ThemeToggle'
 import { LocaleSwitcher } from '../LocaleSwitcher'
 
 export default function LearnSidebar() {
   const path = usePathname()
-  const router = useRouter()
   const [loggingOut, setLoggingOut] = useState(false)
   const t = useTranslations('learn.sidebar')
 
   const navItems = [
-    { href: '/learn',    labelKey: 'learn',    icon: '📖' },
-    { href: '/profile',  labelKey: 'profile',  icon: '👤' },
-    { href: '/review',   labelKey: 'practice', icon: '🔁' },
-    { href: '/guide',    labelKey: 'guide',    icon: 'ℹ️' },
+    { href: '/learn', labelKey: 'learn', icon: BookOpen },
+    { href: '/profile', labelKey: 'profile', icon: UserRound },
+    { href: '/review', labelKey: 'practice', icon: RotateCcw },
+    { href: '/guide', labelKey: 'guide', icon: Compass },
   ]
 
   const handleLogout = async () => {
@@ -28,55 +28,56 @@ export default function LearnSidebar() {
   }
 
   return (
-    <aside className="fixed bottom-0 left-0 z-40 flex h-20 w-full flex-row items-center justify-around border-t-2 border-gray-200 bg-white px-2 py-0 transition-colors dark:border-gray-800 dark:bg-gray-950 md:top-0 md:h-screen md:w-64 md:flex-col md:justify-start md:border-r-2 md:border-t-0 md:px-4 md:py-6">
-      {/* Logo - Hidden on mobile */}
-      <Link href="/" className="mb-10 hidden items-center gap-3 px-4 md:flex">
-        <img src="/images/logo.png" alt="NoBarriers" className="h-10 w-10 object-contain" />
-        <span className="text-2xl font-black leading-none tracking-tight text-teal-600 dark:text-teal-400">No<br/>Barriers</span>
+    <aside className="fixed bottom-0 left-0 z-40 flex h-20 w-full flex-row items-center justify-around border-t border-gray-200 bg-white/95 px-2 shadow-[0_-8px_24px_rgba(15,23,42,0.06)] backdrop-blur transition-colors dark:border-gray-800 dark:bg-gray-950/95 md:top-0 md:h-screen md:w-64 md:flex-col md:justify-start md:border-r md:border-t-0 md:px-4 md:py-6 md:shadow-[8px_0_24px_rgba(15,23,42,0.06)]">
+      <Link href="/" className="mb-8 hidden w-full items-center gap-3 rounded-lg px-3 py-2 transition hover:bg-gray-50 dark:hover:bg-gray-900 md:flex">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-gray-800 bg-gray-950 p-1.5 shadow-sm dark:border-gray-700">
+          <img src="/images/logo.png" alt="NoBarriers" className="h-full w-full object-contain" />
+        </span>
+        <span className="text-xl font-black leading-none tracking-normal text-gray-950 dark:text-white">
+          No<span className="block text-teal-500">Barriers</span>
+        </span>
       </Link>
 
-      {/* Nav items */}
-      <nav className="flex w-full flex-row justify-around gap-2 md:flex-col">
+      <nav className="flex w-full flex-row justify-around gap-1 md:flex-col md:gap-1.5">
         {navItems.map((item) => {
           const active = path === item.href || path.startsWith(item.href + '/')
+          const Icon = item.icon
+
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center justify-center gap-4 rounded-2xl border-2 p-3 text-sm font-extrabold uppercase tracking-widest transition-all md:w-full md:justify-start md:px-4 ${
+              aria-current={active ? 'page' : undefined}
+              className={`group flex h-14 min-w-14 items-center justify-center gap-3 rounded-xl px-3 text-sm font-bold transition-all md:w-full md:justify-start ${
                 active
-                  ? 'border-teal-300 bg-teal-50 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400'
-                  : 'border-transparent text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-200'
+                  ? 'bg-teal-500 text-white shadow-sm shadow-teal-500/20'
+                  : 'text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-100'
               }`}
             >
-              <span className="text-2xl drop-shadow-sm">{item.icon}</span>
-              <span className="hidden md:inline">{t(item.labelKey)}</span>
+              <Icon className={`h-5 w-5 shrink-0 ${active ? 'text-white' : 'text-gray-400 group-hover:text-teal-500'}`} strokeWidth={2.25} />
+              <span className="hidden truncate md:inline">{t(item.labelKey)}</span>
             </Link>
           )
         })}
       </nav>
 
-      {/* Spacer */}
       <div className="hidden flex-1 md:block" />
 
-      {/* Locale Switcher - Hidden on mobile */}
-      <div className="hidden md:block mb-2">
+      <div className="mb-2 hidden w-full md:block">
         <LocaleSwitcher />
       </div>
 
-      {/* Theme Toggle - Hidden on mobile */}
-      <div className="hidden md:block">
+      <div className="hidden w-full md:block">
         <ThemeToggle />
       </div>
 
-      {/* Logout - Hidden on mobile */}
       <button
         onClick={handleLogout}
         disabled={loggingOut}
-        className="hidden w-full items-center gap-4 rounded-2xl border-2 border-transparent px-4 py-3 text-sm font-extrabold uppercase tracking-widest text-gray-400 transition-all hover:bg-red-50 hover:text-red-500 disabled:opacity-50 dark:text-gray-500 dark:hover:bg-red-900/30 dark:hover:text-red-400 md:flex"
+        className="hidden h-12 w-full items-center gap-3 rounded-xl px-3 text-sm font-bold text-gray-500 transition-all hover:bg-red-50 hover:text-red-600 disabled:opacity-50 dark:text-gray-400 dark:hover:bg-red-950/40 dark:hover:text-red-400 md:flex"
       >
-        <span className="text-2xl grayscale opacity-70">🚪</span>
-        <span>{loggingOut ? t('loggingOut') : t('logOut')}</span>
+        <LogOut className="h-5 w-5 shrink-0" strokeWidth={2.25} />
+        <span className="truncate">{loggingOut ? t('loggingOut') : t('logOut')}</span>
       </button>
     </aside>
   )

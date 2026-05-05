@@ -58,26 +58,38 @@ export default function LearnPage() {
       <LearnSidebar />
 
       {/* Center — skill path */}
-      <main className="mb-24 flex flex-1 justify-center px-4 py-8 md:mb-0 md:ml-64 sm:px-6">
-        <div className="w-full max-w-lg relative">
+      <main className="mb-24 flex flex-1 justify-center bg-[radial-gradient(circle_at_top,_rgba(20,184,166,0.08),_transparent_34rem)] px-4 py-8 md:mb-0 md:ml-64 lg:mr-[352px] sm:px-6">
+        <div className="relative w-full max-w-2xl">
 
           {/* SINGLE DYNAMIC STICKY HEADER */}
-          <div className="sticky top-6 z-30 mb-8 w-full">
+          <div className="sticky top-4 z-30 mb-7 w-full">
             {(() => {
               const activeC = courses.find((c) => c.id === activeCourseId) || courses[0]
-              const idx = courses.findIndex(c => c.id === activeCourseId)
               return (
-                <div className={`flex items-center justify-between min-h-[120px] rounded-2xl bg-gradient-to-r ${activeC.color} px-6 py-5 text-white shadow-lg backdrop-blur-md transition-all duration-300`}>
-                  <div className="flex-1 pr-4">
-                    <h2 className="text-2xl font-black line-clamp-1">{activeC.title}</h2>
-                    <p className="text-sm font-medium opacity-90 line-clamp-2">{activeC.description}</p>
+                <div className={`relative mx-auto max-w-xl overflow-hidden rounded-3xl bg-gradient-to-br ${activeC.color} p-[1px] shadow-[0_18px_42px_rgba(15,23,42,0.16)] transition-all duration-300`}>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(255,255,255,0.32),transparent_13rem)]" />
+                  <div className="absolute -right-10 -top-14 h-32 w-32 rounded-full bg-white/15" />
+                  <div className="relative flex min-h-[104px] items-center justify-between gap-4 rounded-[1.45rem] px-4 py-4 text-white sm:px-6">
+                    <div className="flex min-w-0 items-center gap-3.5">
+                      <div className="hidden h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-white/25 bg-white/15 shadow-inner sm:block">
+                        <img
+                          src={activeC.image}
+                          alt=""
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <h2 className="line-clamp-1 text-2xl font-black leading-tight">{activeC.title}</h2>
+                        <p className="mt-1 line-clamp-2 text-sm font-semibold leading-5 text-white/90">{activeC.description}</p>
+                      </div>
+                    </div>
+                    <Link
+                      href={`/learn/${activeC.id}`}
+                      className="group flex shrink-0 items-center gap-2 rounded-2xl border border-white/35 bg-white/18 px-3.5 py-2.5 text-xs font-extrabold uppercase tracking-wide text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] backdrop-blur transition hover:bg-white/28 focus:outline-none focus:ring-2 focus:ring-white/70"
+                    >
+                      {t('unitsButton')}
+                    </Link>
                   </div>
-                  <Link
-                    href={`/learn/${activeC.id}`}
-                    className="flex items-center gap-1.5 rounded-xl border-2 border-white/40 bg-white/20 px-4 py-2 text-xs font-extrabold uppercase tracking-wide backdrop-blur hover:bg-white/30 transition shrink-0"
-                  >
-                    {t('unitsButton')}
-                  </Link>
                 </div>
               )
             })()}
@@ -89,18 +101,19 @@ export default function LearnPage() {
               .sort((a, b) => a.order - b.order)
 
             return (
-              <div key={course.id} id={`course-${course.id}`} className="mb-2">
+              <div key={course.id} id={`course-${course.id}`} className="mb-4 scroll-mt-40">
                 {/* Elegant separator instead of bulky cards */}
                 {courseIdx > 0 && (
-                  <div className="my-10 flex w-full items-center gap-4 px-6 text-gray-400 dark:text-gray-500">
-                    <div className="h-0.5 flex-1 bg-gray-200 dark:bg-gray-800" />
-                    <span className="text-sm font-black uppercase tracking-widest">{course.title}</span>
-                    <div className="h-0.5 flex-1 bg-gray-200 dark:bg-gray-800" />
+                  <div className="my-12 flex w-full items-center gap-5 px-4 text-slate-400 dark:text-slate-500">
+                    <div className="h-px flex-1 bg-gradient-to-r from-transparent to-slate-200 dark:to-slate-800" />
+                    <span className="rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-black uppercase tracking-[0.2em] shadow-sm dark:border-slate-800 dark:bg-slate-950">{course.title}</span>
+                    <div className="h-px flex-1 bg-gradient-to-l from-transparent to-slate-200 dark:to-slate-800" />
                   </div>
                 )}
 
                 {/* Vertical node path */}
-                <div className="relative flex flex-col items-center gap-0 pb-4">
+                <div className="relative flex flex-col items-center pb-8">
+                  <div className="absolute bottom-16 left-1/2 top-8 hidden w-1 -translate-x-1/2 rounded-full bg-slate-200/80 dark:bg-slate-800/80 sm:block" />
                   {courseUnits.map((unit, unitIdx) => {
                     const { done, total, lessons } = unitProgress(unit.id)
                     const allDone = done === total
@@ -111,52 +124,53 @@ export default function LearnPage() {
                     const side = unitIdx % 4  // 0=center, 1=right, 2=center, 3=left
 
                     const offsetClass =
-                      side === 1 ? 'translate-x-16' :
-                      side === 3 ? '-translate-x-16' : ''
+                      side === 1 ? 'sm:translate-x-28' :
+                      side === 3 ? 'sm:-translate-x-28' : ''
 
                     return (
-                      <div key={unit.id} className="flex w-full flex-col items-center">
+                      <div key={unit.id} className="relative flex w-full flex-col items-center">
                         {/* Connector */}
                         {unitIdx > 0 && (
-                          <div className={`h-8 w-1 rounded-full ${allDone ? 'bg-teal-400' : 'bg-gray-300 dark:bg-gray-700'} ${offsetClass}`} />
+                          <div className={`h-10 w-1 rounded-full ${unlocked ? 'bg-teal-300 dark:bg-teal-500' : 'bg-slate-300 dark:bg-slate-700'} ${offsetClass}`} />
                         )}
 
                         {/* Node */}
-                        <div className={`flex flex-col items-center transform ${offsetClass}`}>
+                        <div className={`group relative flex w-36 transform flex-col items-center ${offsetClass}`}>
                           {/* START label for first unlocked uncompleted */}
                           {unlocked && !allDone && done === 0 && unitIdx === courseUnits.findIndex((u) => {
                             const p = unitProgress(u.id)
                             return !p.lessons.every((l) => completed.includes(l.id))
                           }) && (
-                            <div className="mb-1 rounded-full bg-teal-500 px-3 py-0.5 text-xs font-extrabold uppercase text-white shadow">
+                            <div className="mb-2 rounded-full bg-teal-500 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-white shadow-lg shadow-teal-500/25">
                               {t('startBadge')}
                             </div>
                           )}
 
                           <Link
                             href={unlocked && nextLesson ? `/study/${nextLesson.id}` : '#'}
-                            className={`flex h-16 w-16 items-center justify-center rounded-full border-b-[5px] text-2xl shadow-lg transition-all ${
+                            className={`relative flex h-[76px] w-[76px] items-center justify-center rounded-[1.65rem] border text-3xl shadow-xl transition-all ${
                               allDone
-                                ? 'border-teal-700 bg-teal-500 text-white hover:brightness-110'
+                                ? 'border-teal-600 bg-gradient-to-br from-teal-400 to-teal-600 text-white shadow-teal-700/20 hover:-translate-y-1 hover:brightness-110'
                                 : unlocked
-                                ? 'border-teal-700 bg-teal-500 text-white hover:scale-105 animate-pulse'
-                                : 'border-gray-400 bg-gray-300 text-gray-400 cursor-not-allowed'
+                                ? 'border-teal-600 bg-gradient-to-br from-white to-teal-50 text-teal-700 shadow-teal-700/15 ring-4 ring-teal-100 hover:-translate-y-1 hover:ring-teal-200 dark:from-slate-900 dark:to-teal-950 dark:text-teal-200 dark:ring-teal-900/40'
+                                : 'cursor-not-allowed border-slate-300 bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400 shadow-slate-500/10 dark:border-slate-700 dark:from-slate-800 dark:to-slate-900 dark:text-slate-500'
                             }`}
+                            aria-disabled={!unlocked}
                           >
                             {allDone ? '⭐' : unlocked ? unit.emoji : '🔒'}
                           </Link>
 
                           {/* Unit label */}
-                          <p className={`mt-1.5 text-xs font-bold ${unlocked ? 'text-gray-700 dark:text-gray-200' : 'text-gray-400 dark:text-gray-600'}`}>
+                          <p className={`mt-3 max-w-36 text-center text-sm font-black leading-tight ${unlocked ? 'text-slate-800 dark:text-slate-100' : 'text-slate-400 dark:text-slate-600'}`}>
                             {unit.title}
                           </p>
 
                           {/* Mini progress dots */}
-                          <div className="mt-1 flex gap-1">
+                          <div className="mt-2 flex h-2 gap-1">
                             {Array.from({ length: Math.min(total, 5) }).map((_, i) => (
                               <div
                                 key={i}
-                                className={`h-1.5 w-1.5 rounded-full ${i < done ? 'bg-teal-500' : 'bg-gray-300 dark:bg-gray-700'}`}
+                                className={`h-2 w-2 rounded-full ${i < done ? 'bg-teal-500' : 'bg-slate-300 dark:bg-slate-700'}`}
                               />
                             ))}
                           </div>
@@ -173,7 +187,7 @@ export default function LearnPage() {
       </main>
 
       {/* Right panel */}
-      <div className="sticky top-0 mr-4 hidden h-screen w-80 flex-shrink-0 overflow-y-auto py-8 pr-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] lg:block">
+      <div className="fixed right-4 top-0 hidden h-screen w-80 flex-shrink-0 pt-4 lg:block">
         <LearnRightPanel />
       </div>
     </div>

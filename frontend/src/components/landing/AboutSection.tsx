@@ -19,10 +19,10 @@ export default function AboutSection() {
             }}
           />
         </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800">
-          {t('title')} <span className="text-yellow-500">{t('brand')}</span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          {t('title')} <span className="text-teal-600">{t('brand')}</span>
         </h2>
-        <p className="text-lg text-gray-500">
+        <p className="text-lg text-slate-600">
           {t('description')}
         </p>
       </div>
@@ -30,8 +30,8 @@ export default function AboutSection() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
         {stats.map((stat, i) => (
           <div key={i} className="text-center space-y-2">
-            <div className="text-4xl sm:text-5xl font-extrabold text-yellow-500">{stat.number}</div>
-            <div className="text-gray-500 font-semibold uppercase tracking-wider text-sm">{t(statKeys[i])}</div>
+            <div className="text-4xl sm:text-5xl font-extrabold text-teal-600">{stat.number}</div>
+            <div className="text-slate-500 font-semibold uppercase tracking-wider text-sm">{t(statKeys[i])}</div>
           </div>
         ))}
       </div>

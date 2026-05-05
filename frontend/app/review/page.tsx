@@ -139,40 +139,43 @@ function ReviewPageContent() {
   const pct = Math.round((current / exercises.length) * 100)
 
   return (
-    <main className="flex min-h-screen flex-col bg-[#f0faf8] dark:bg-gray-950">
-      <div className="sticky top-0 z-30 bg-white/90 dark:bg-gray-900/90 backdrop-blur px-4 py-3 shadow-sm border-b border-gray-100 dark:border-gray-800">
-        <div className="mx-auto flex max-w-xl items-center gap-4">
+    <main className="flex min-h-screen flex-col bg-[#eef8f6] bg-[radial-gradient(circle_at_top,_rgba(168,85,247,0.12),_transparent_34rem)] dark:bg-slate-950 dark:bg-[radial-gradient(circle_at_top,_rgba(124,58,237,0.18),_transparent_36rem)]">
+      <div className="sticky top-0 z-30 border-b border-gray-100 bg-white/85 px-4 py-4 shadow-sm backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/82">
+        <div className="mx-auto flex max-w-2xl items-center gap-4">
           <button onClick={() => router.back()} className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 text-xl font-bold">✕</button>
           <div className="flex-1">
-            <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-gray-800">
+            <div className="h-2.5 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-slate-800">
               <div className="h-full rounded-full bg-gradient-to-r from-purple-400 to-purple-600 transition-all duration-500" style={{ width: `${pct}%` }} />
             </div>
           </div>
-          <span className="text-sm font-bold text-gray-500 dark:text-gray-400">{current + 1}/{exercises.length}</span>
+          <span className="min-w-12 text-right text-sm font-black text-gray-500 dark:text-slate-400">{current + 1}/{exercises.length}</span>
         </div>
       </div>
 
-      <div className="mx-auto flex w-full max-w-xl flex-1 flex-col px-4 py-8">
-        <div className="mb-2 flex items-center gap-2">
-          <span className="rounded-full bg-purple-100 dark:bg-purple-900/40 px-3 py-1 text-xs font-bold text-purple-700 dark:text-purple-300">{t('reviewMode')}</span>
+      <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col px-4 py-8 sm:py-10">
+        <section className="rounded-[1.75rem] border border-white/70 bg-white/80 p-5 shadow-[0_24px_70px_rgba(15,23,42,0.10)] backdrop-blur dark:border-slate-800 dark:bg-slate-900/72 dark:shadow-black/20 sm:p-7">
+        <div className="mb-5 flex justify-center">
+          <span className="rounded-full bg-purple-100 px-3.5 py-1.5 text-xs font-black text-purple-700 dark:bg-purple-900/45 dark:text-purple-200">{t('reviewMode')}</span>
         </div>
 
-        <p className="mb-6 mt-2 text-center text-lg font-extrabold text-gray-700 dark:text-gray-200">
+        <p className="mb-7 text-center text-2xl font-black tracking-tight text-gray-900 dark:text-white">
           {exercise.type === 'image-to-word' ? t('imageToWord') : t('wordToImage', { word: tSigns(exercise.sign.wordKey) })}
         </p>
 
         {exercise.type === 'image-to-word' && (
           <>
             <div className="mb-8 flex justify-center">
-              <img src={exercise.sign.imagePath} alt="Sign" className="h-52 w-52 rounded-2xl object-contain shadow-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-2" />
+              <div className="rounded-[1.65rem] border border-slate-200 bg-slate-100 p-3 shadow-xl shadow-slate-900/10 dark:border-slate-700 dark:bg-slate-800">
+                <img src={exercise.sign.imagePath} alt="Sign" className="h-56 w-56 rounded-2xl bg-white object-contain p-2 dark:bg-slate-100" />
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {exercise.choices.map((c) => {
-                let cls = 'rounded-2xl border-2 py-4 text-center font-bold text-gray-800 dark:text-gray-200 transition-all '
-                if (!answered) cls += 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/30 cursor-pointer'
-                else if (c.id === exercise.sign.id) cls += 'border-teal-500 bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400'
-                else if (c.id === selected) cls += 'border-red-400 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400'
-                else cls += 'border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 opacity-50'
+                let cls = 'min-h-[64px] rounded-2xl border px-5 py-4 text-center text-base font-black text-gray-800 shadow-sm transition-all dark:text-gray-100 '
+                if (!answered) cls += 'border-slate-200 bg-white hover:-translate-y-0.5 hover:border-purple-400 hover:bg-purple-50 hover:shadow-md dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-purple-950/35 cursor-pointer'
+                else if (c.id === exercise.sign.id) cls += 'border-teal-400 bg-teal-50 text-teal-700 shadow-teal-500/10 dark:bg-teal-950/40 dark:text-teal-300'
+                else if (c.id === selected) cls += 'border-red-400 bg-red-50 text-red-700 dark:bg-red-950/40 dark:text-red-300'
+                else cls += 'border-slate-100 bg-slate-50 opacity-50 dark:border-slate-800 dark:bg-slate-950'
                 return <button key={c.id} className={cls} onClick={() => handleAnswer(c.id)} disabled={answered}>{tSigns(c.wordKey)}</button>
               })}
             </div>
@@ -180,17 +183,17 @@ function ReviewPageContent() {
         )}
 
         {exercise.type === 'word-to-image' && (
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {exercise.choices.map((c) => {
-              let cls = 'overflow-hidden rounded-2xl border-2 transition-all '
-              if (!answered) cls += 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-purple-400 cursor-pointer'
-              else if (c.id === exercise.sign.id) cls += 'border-teal-500 bg-teal-50 dark:bg-teal-900/30'
-              else if (c.id === selected) cls += 'border-red-400 bg-red-50 dark:bg-red-900/30'
-              else cls += 'border-gray-100 dark:border-gray-800 opacity-50'
+              let cls = 'overflow-hidden rounded-2xl border shadow-sm transition-all '
+              if (!answered) cls += 'border-slate-200 bg-white hover:-translate-y-0.5 hover:border-purple-400 hover:shadow-md dark:border-slate-700 dark:bg-slate-800 cursor-pointer'
+              else if (c.id === exercise.sign.id) cls += 'border-teal-400 bg-teal-50 dark:bg-teal-950/40'
+              else if (c.id === selected) cls += 'border-red-400 bg-red-50 dark:bg-red-950/40'
+              else cls += 'border-slate-100 opacity-50 dark:border-slate-800'
               return (
                 <button key={c.id} className={cls} onClick={() => handleAnswer(c.id)} disabled={answered}>
-                  <img src={c.imagePath} alt={c.word} className="h-36 w-full object-contain bg-white dark:bg-gray-200 p-2" />
-                  <p className="py-2 text-center text-xs font-semibold text-gray-600 dark:text-gray-300">{tSigns(c.wordKey)}</p>
+                  <img src={c.imagePath} alt={c.word} className="h-40 w-full bg-white object-contain p-3 dark:bg-slate-100" />
+                  <p className="border-t border-slate-100 py-3 text-center text-sm font-black text-gray-700 dark:border-slate-700 dark:text-gray-200">{tSigns(c.wordKey)}</p>
                 </button>
               )
             })}
@@ -198,17 +201,19 @@ function ReviewPageContent() {
         )}
 
         {answered && (
-          <div className={`mt-6 rounded-2xl p-4 text-center ${correct ? 'bg-teal-50 dark:bg-teal-900/30 border border-teal-200 dark:border-teal-800' : 'bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800'}`}>
+          <div className={`mt-6 rounded-2xl border p-4 text-center ${correct ? 'border-teal-200 bg-teal-50 dark:border-teal-800 dark:bg-teal-950/40' : 'border-red-200 bg-red-50 dark:border-red-800 dark:bg-red-950/40'}`}>
             <p className={`text-lg font-extrabold ${correct ? 'text-teal-700 dark:text-teal-400' : 'text-red-700 dark:text-red-400'}`}>
               {correct ? t('correct') : t('wrongAnswer', { word: tSigns(exercise.sign.wordKey) })}
             </p>
           </div>
         )}
 
+        </section>
+
         <div className="flex-1" />
 
         {answered && (
-          <button onClick={handleNext} className="mt-6 w-full rounded-2xl bg-purple-600 dark:bg-purple-500 py-4 font-extrabold uppercase tracking-wide text-white hover:bg-purple-700 dark:hover:bg-purple-600">
+          <button onClick={handleNext} className="mt-6 w-full rounded-2xl bg-purple-600 py-4 font-extrabold uppercase tracking-wide text-white shadow-lg shadow-purple-600/20 transition hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600">
             {current + 1 >= exercises.length ? t('finishReview') : t('nextArrow')}
           </button>
         )}

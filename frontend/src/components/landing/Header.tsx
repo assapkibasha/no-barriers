@@ -6,13 +6,13 @@ import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { LocaleSwitcher } from '../LocaleSwitcher'
 
-type HeaderVariant = 'yellow' | 'teal'
+type HeaderVariant = 'teal' | 'dark'
 
 interface HeaderProps {
   variant?: HeaderVariant
 }
 
-export default function Header({ variant = 'yellow' }: HeaderProps) {
+export default function Header({ variant = 'teal' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const t = useTranslations('landing.header')
 
@@ -30,39 +30,39 @@ export default function Header({ variant = 'yellow' }: HeaderProps) {
 
   const bar = isTeal
     ? 'border-teal-600/70 bg-teal-700/95'
-    : 'border-yellow-700/70 bg-yellow-700/95'
+    : 'border-slate-700/70 bg-slate-900/95'
 
   const navLink = isTeal
     ? 'text-teal-100/90 hover:text-white'
-    : 'text-yellow-100/90 hover:text-white'
+    : 'text-slate-100/90 hover:text-white'
 
   const loginBtn = isTeal
     ? 'text-teal-100 hover:text-white'
-    : 'text-yellow-100 hover:text-white'
+    : 'text-slate-100 hover:text-white'
 
   const ctaBtn = isTeal
     ? 'border-teal-200/80 bg-teal-300 text-teal-950 hover:bg-teal-200'
-    : 'border-yellow-300/80 bg-yellow-400 text-yellow-950 hover:bg-yellow-300'
+    : 'border-slate-200/80 bg-white text-slate-950 hover:bg-slate-100'
 
   const mobileToggle = isTeal
     ? 'text-teal-100 hover:bg-teal-900/80'
-    : 'text-yellow-100 hover:bg-yellow-900/80'
+    : 'text-slate-100 hover:bg-slate-800/80'
 
   const sidebarBg = isTeal
     ? 'bg-teal-950'
-    : 'bg-yellow-950'
+    : 'bg-slate-950'
 
   const sidebarNavLink = isTeal
     ? 'text-teal-100 hover:bg-teal-800/60'
-    : 'text-yellow-100 hover:bg-yellow-800/60'
+    : 'text-slate-100 hover:bg-slate-800/60'
 
   const mobileLoginBtn = isTeal
     ? 'border-teal-700 text-teal-100 hover:bg-teal-800/40'
-    : 'border-yellow-700 text-yellow-100 hover:bg-yellow-800/40'
+    : 'border-slate-700 text-slate-100 hover:bg-slate-800/40'
 
   const mobileCtaBtn = isTeal
     ? 'border-teal-300/80 bg-teal-200 text-teal-950 hover:bg-teal-100'
-    : 'border-yellow-300/80 bg-yellow-200 text-yellow-950 hover:bg-yellow-100'
+    : 'border-slate-300/80 bg-white text-slate-950 hover:bg-slate-100'
 
   return (
     <>
@@ -108,10 +108,10 @@ export default function Header({ variant = 'yellow' }: HeaderProps) {
               {t('logIn')}
             </Link>
             <Link
-              href={isTeal ? '/register' : '/get-started'}
+              href="/get-started"
               className={`rounded-2xl border px-5 py-2 font-semibold transition-all ${ctaBtn}`}
             >
-              {isTeal ? t('register') : t('getStarted')}
+              {t('getStarted')}
             </Link>
           </div>
 
@@ -208,11 +208,11 @@ export default function Header({ variant = 'yellow' }: HeaderProps) {
             {t('logIn')}
           </Link>
           <Link
-            href={isTeal ? '/register' : '/get-started'}
+            href="/get-started"
             onClick={() => setMobileMenuOpen(false)}
             className={`block w-full rounded-2xl border py-2.5 text-center font-semibold transition-colors ${mobileCtaBtn}`}
           >
-            {isTeal ? t('register') : t('getStarted')}
+            {t('getStarted')}
           </Link>
         </div>
       </aside>
