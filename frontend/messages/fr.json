@@ -300,7 +300,7 @@
       "alreadyHaveAccount": "J'ai déjà un compte"
     },
     "features": {
-      "f1Title": "gratuit. amusant.\nefficace.",
+      "f1Title": "courtes. amusantes.\nefficaces.",
       "f1Body": "Apprendre avec NoBarriers est amusant et ça marche vraiment ! Avec nos courtes leçons interactives, gagnez des points, montez de niveau et développez de vraies compétences linguistiques.",
       "f1Badge1": "Interactif",
       "f1Badge2": "Ludique",
@@ -319,8 +319,8 @@
     },
     "cta": {
       "headline": "Prêt à supprimer les barrières linguistiques ?",
-      "subtitle": "Rejoignez des millions d'apprenants dans le monde et commencez votre parcours linguistique aujourd'hui. C'est gratuit, c'est amusant et ça marche.",
-      "button": "Commencer Gratuitement"
+      "subtitle": "Commencez à apprendre la langue des signes rwandaise dès aujourd'hui. Des leçons courtes, de vrais signes et des progrès visibles.",
+      "button": "Commencer"
     },
     "about": {
       "title": "À propos de",
@@ -353,8 +353,8 @@
     "faq": {
       "title": "Questions fréquentes",
       "q1": {
-        "question": "NoBarriers est-il gratuit ?",
-        "answer": "Oui — tous les cours, leçons et fonctionnalités sont entièrement gratuits. Il vous suffit de créer un compte."
+        "question": "Combien coûte NoBarriers ?",
+        "answer": "NoBarriers est en accès anticipé : vous pouvez créer un compte et commencer à apprendre immédiatement. Des formules d'abonnement seront introduites à mesure que la plateforme se développe, et les apprenants inscrits seront prévenus bien avant tout changement."
       },
       "q2": {
         "question": "Faut-il déjà connaître la langue des signes ?",
@@ -516,7 +516,7 @@
       "bandKicker": "Pour les familles et les écoles",
       "bandTitle": "Apprendre ensemble fait tomber les barrières plus vite.",
       "bandText": "Parents, camarades et amis peuvent apprendre aux côtés de leurs proches sourds — tous sur le même chemin, à s'encourager.",
-      "bandCta": "Créer un compte gratuit",
+      "bandCta": "Créer votre compte",
       "joinTitle": "Rejoignez NoBarriers aujourd'hui",
       "joinStart": "Commencer à apprendre"
     },

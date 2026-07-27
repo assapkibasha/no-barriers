@@ -1,8 +1,11 @@
 # NoBarriers
 
-A free web platform for learning **Rwandan Sign Language**, built so that families,
+A web platform for learning **Rwandan Sign Language**, built so that families,
 classmates, colleagues and friends of deaf people can learn to sign — and so that
 deaf learners see their language treated as a language worth teaching properly.
+
+The platform is in early access. Subscription plans are planned; payment and
+billing are **not yet implemented** (see [Roadmap](#roadmap)).
 
 **Live:** https://nobarriers.co.rw
 
@@ -70,6 +73,20 @@ The project follows a documented design system called **Deep Water**, defined in
   headlines only
 - Accessibility is non-negotiable: WCAG AA contrast, visible focus states,
   44px touch targets, and quiz answers must never leak through image alt text
+
+## Roadmap
+
+Known gaps and planned work:
+
+- **Subscriptions and payments — not built.** There is no payment provider
+  integration, no subscription records and no billing interface. Copy across the
+  site avoids promising the product is free, since paid plans are planned.
+- **Daily Quest counter** under-reports earned XP on the learner dashboard.
+- **Quiz answers are discoverable** in the page source: sign image filenames and
+  `alt` text carry the answer word. Needs neutral filenames on assessment
+  screens while keeping descriptive alt text in study mode for screen readers.
+- **Database connection strategy** should be reviewed before significant growth —
+  serverless hosting opens a connection per request.
 
 ## Contributing
 
