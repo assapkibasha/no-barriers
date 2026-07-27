@@ -592,7 +592,8 @@
       "correct2": "正确",
       "continueBtn": "继续 →",
       "errorTitle": "无法加载课程",
-      "errorBody": "准备练习时出现问题。"
+      "errorBody": "准备练习时出现问题。",
+      "optionLabel": "选项 {number}"
     },
     "profile": {
       "myProfile": "我的资料",

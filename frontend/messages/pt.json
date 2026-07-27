@@ -592,7 +592,8 @@
       "correct2": "Correto",
       "continueBtn": "Continuar →",
       "errorTitle": "Não foi possível carregar a lição",
-      "errorBody": "Algo deu errado ao preparar seus exercícios."
+      "errorBody": "Algo deu errado ao preparar seus exercícios.",
+      "optionLabel": "Opção {number}"
     },
     "profile": {
       "myProfile": "Meu Perfil",

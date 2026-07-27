@@ -592,7 +592,8 @@
       "correct2": "Corretto",
       "continueBtn": "Continua →",
       "errorTitle": "Impossibile caricare la lezione",
-      "errorBody": "Qualcosa è andato storto durante la preparazione dei tuoi esercizi."
+      "errorBody": "Qualcosa è andato storto durante la preparazione dei tuoi esercizi.",
+      "optionLabel": "Opzione {number}"
     },
     "profile": {
       "myProfile": "Il Mio Profilo",

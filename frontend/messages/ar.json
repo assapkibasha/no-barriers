@@ -592,7 +592,8 @@
       "correct2": "صحيح",
       "continueBtn": "متابعة →",
       "errorTitle": "تعذر تحميل الدرس",
-      "errorBody": "حدث خطأ أثناء تحضير التمارين."
+      "errorBody": "حدث خطأ أثناء تحضير التمارين.",
+      "optionLabel": "الخيار {number}"
     },
     "profile": {
       "myProfile": "ملفي الشخصي",

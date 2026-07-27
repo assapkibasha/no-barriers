@@ -592,7 +592,8 @@
       "correct2": "Sahihi",
       "continueBtn": "Endelea →",
       "errorTitle": "Imeshindwa kupakia somo",
-      "errorBody": "Kuna tatizo lilitokea wakati wa kuandaa mazoezi yako."
+      "errorBody": "Kuna tatizo lilitokea wakati wa kuandaa mazoezi yako.",
+      "optionLabel": "Chaguo la {number}"
     },
     "profile": {
       "myProfile": "Wasifu Wangu",
