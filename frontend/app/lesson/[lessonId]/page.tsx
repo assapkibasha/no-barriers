@@ -82,6 +82,11 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
   // Guards completeLesson against double-firing when Finish is clicked twice
   // before the async save resolves (would double-award XP).
   const completingRef = useRef(false)
+  // Guards against rapid repeat clicks on Next. State updates are batched, so
+  // every click in the same tick sees the same `answered`/`current` values and
+  // each would advance the index — skipping questions and, past the last one,
+  // leaving a permanently blank screen. A ref updates synchronously.
+  const advancingRef = useRef(false)
 
   useEffect(() => {
     setMounted(true)
@@ -95,10 +100,20 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
 
   const exercise = exercises[current]
 
+  // Safety net: should the index ever run past the last exercise, clamp it
+  // back rather than leaving the learner on a screen that renders nothing.
+  useEffect(() => {
+    if (exercises.length > 0 && current >= exercises.length) {
+      setCurrent(exercises.length - 1)
+    }
+  }, [current, exercises.length])
+
   const handleAnswer = useCallback(
     async (answerId: string | null, typedVal?: string) => {
       if (answered || !exercise) return
       setAnswered(true)
+      // A new question is in play, so Next may advance again.
+      advancingRef.current = false
       const typedNorm = (typedVal ?? '').trim().toLowerCase()
       const isCorrect =
         exercise.type === 'typing'
@@ -122,9 +137,8 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
   )
 
   const handleNext = useCallback(async () => {
-    // Only an answered question can advance — otherwise a rapid double-click
-    // on Next lands here again after the state reset and skips a question.
-    if (!answered) return
+    if (!answered || advancingRef.current) return
+    advancingRef.current = true
     if (current + 1 >= exercises.length) {
       if (completingRef.current) return
       completingRef.current = true
@@ -244,7 +258,13 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
     )
   }
 
-  if (!exercise) return null
+  if (!exercise) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-paper">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-brand border-t-transparent" />
+      </div>
+    )
+  }
 
   // ── Lesson player UI ──────────────────────────────────────────────────────
   return (
