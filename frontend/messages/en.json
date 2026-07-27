@@ -592,7 +592,8 @@
       "correct2": "Correct",
       "continueBtn": "Continue →",
       "errorTitle": "Unable to load lesson",
-      "errorBody": "Something went wrong while preparing your exercises."
+      "errorBody": "Something went wrong while preparing your exercises.",
+      "optionLabel": "Option {number}"
     },
     "profile": {
       "myProfile": "My Profile",

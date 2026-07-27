@@ -592,7 +592,8 @@
       "correct2": "Richtig",
       "continueBtn": "Weiter →",
       "errorTitle": "Lektion kann nicht geladen werden",
-      "errorBody": "Beim Vorbereiten deiner Übungen ist etwas schiefgelaufen."
+      "errorBody": "Beim Vorbereiten deiner Übungen ist etwas schiefgelaufen.",
+      "optionLabel": "Option {number}"
     },
     "profile": {
       "myProfile": "Mein Profil",

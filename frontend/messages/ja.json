@@ -592,7 +592,8 @@
       "correct2": "正解",
       "continueBtn": "続ける →",
       "errorTitle": "レッスンを読み込めません",
-      "errorBody": "演習の準備中に問題が発生しました。"
+      "errorBody": "演習の準備中に問題が発生しました。",
+      "optionLabel": "選択肢{number}"
     },
     "profile": {
       "myProfile": "マイプロフィール",

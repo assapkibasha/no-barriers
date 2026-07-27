@@ -592,7 +592,8 @@
       "correct2": "Neza",
       "continueBtn": "Komeza →",
       "errorTitle": "Ntibishoboka gufungura isomo",
-      "errorBody": "Hari ikibazo cyabaye mu gutegura imyitozo yawe."
+      "errorBody": "Hari ikibazo cyabaye mu gutegura imyitozo yawe.",
+      "optionLabel": "Amahitamo ya {number}"
     },
     "profile": {
       "myProfile": "Profili Yanjye",

@@ -592,7 +592,8 @@
       "correct2": "Correct",
       "continueBtn": "Continuer →",
       "errorTitle": "Impossible de charger la leçon",
-      "errorBody": "Quelque chose s'est mal passé lors de la préparation de vos exercices."
+      "errorBody": "Quelque chose s'est mal passé lors de la préparation de vos exercices.",
+      "optionLabel": "Option {number}"
     },
     "profile": {
       "myProfile": "Mon Profil",

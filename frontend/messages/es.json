@@ -592,7 +592,8 @@
       "correct2": "Correcto",
       "continueBtn": "Continuar →",
       "errorTitle": "No se puede cargar la lección",
-      "errorBody": "Algo salió mal al preparar tus ejercicios."
+      "errorBody": "Algo salió mal al preparar tus ejercicios.",
+      "optionLabel": "Opción {number}"
     },
     "profile": {
       "myProfile": "Mi Perfil",

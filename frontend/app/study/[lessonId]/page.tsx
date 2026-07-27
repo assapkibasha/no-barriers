@@ -34,7 +34,7 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
   if (!mounted) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-teal-500 border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-brand border-t-transparent" />
       </div>
     )
   }
@@ -42,7 +42,7 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
   if (!lesson) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <p className="text-gray-500">{t('lessonNotFound')}</p>
+        <p className="text-ink-soft">{t('lessonNotFound')}</p>
       </div>
     )
   }
@@ -70,20 +70,20 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
   }
 
   return (
-    <main className="flex min-h-screen flex-col bg-gradient-to-br from-[#e8f7f5] via-[#f0faf8]  to-[#eef4ff]">
+    <main className="flex min-h-screen flex-col bg-paper">
       {/* Top bar */}
-      <div className="sticky top-0 z-30 bg-white/90 backdrop-blur px-4 py-3 shadow-sm border-b border-gray-100">
+      <div className="sticky top-0 z-30 bg-white/90 backdrop-blur px-4 py-3 shadow-sm border-b border-line">
         <div className="mx-auto flex max-w-xl items-center gap-4">
-          <Link href="/learn" className="text-gray-400 hover:text-gray-600 text-xl font-bold">✕</Link>
+          <Link href="/learn" className="text-ink-soft/70 hover:text-ink text-xl font-bold">✕</Link>
           <div className="flex-1">
-            <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200">
+            <div className="h-3 w-full overflow-hidden rounded-full bg-line/60">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600 transition-all duration-500"
+                className="h-full rounded-full bg-brand transition-all duration-500"
                 style={{ width: `${pct}%` }}
               />
             </div>
           </div>
-          <span className="text-sm font-bold text-gray-500">{current + 1} / {lessonSigns.length}</span>
+          <span className="text-sm font-bold text-ink-soft [font-variant-numeric:tabular-nums]">{current + 1} / {lessonSigns.length}</span>
         </div>
       </div>
 
@@ -91,19 +91,19 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
 
         {/* Mode badge */}
         <div className="mb-6 flex items-center gap-2">
-          <span className="rounded-full bg-teal-100 px-4 py-1.5 text-sm font-extrabold text-teal-700">
+          <span className="rounded-full bg-brand-soft px-4 py-1.5 text-sm font-extrabold text-brand">
             {t('studyMode')}
           </span>
-          <span className="text-sm text-gray-400 font-medium">{t('learnTheSigns')}</span>
+          <span className="text-sm text-ink-soft font-medium">{t('learnTheSigns')}</span>
         </div>
 
         {/* Flashcard */}
         <div
-          className="relative w-full cursor-pointer select-none rounded-3xl bg-white shadow-xl border border-gray-100 overflow-hidden transition-all hover:shadow-2xl"
+          className="relative w-full cursor-pointer select-none rounded-3xl bg-white shadow-lg border border-line overflow-hidden transition-all hover:shadow-xl"
           onClick={() => setRevealed(true)}
         >
           {/* Sign image */}
-          <div className="flex items-center justify-center bg-gray-50 p-8 min-h-[260px]">
+          <div className="flex items-center justify-center bg-paper p-8 min-h-[260px]">
             <img
               src={sign.imagePath}
               alt={sign.word}
@@ -112,15 +112,15 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
           </div>
 
           {/* Word reveal */}
-          <div className={`border-t border-gray-100 px-8 py-6 text-center transition-all duration-300 ${revealed ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-            <p className="text-3xl font-extrabold text-gray-800">{tSigns(sign.wordKey)}</p>
-            <p className="mt-1 text-sm text-gray-400">{t('signLanguage')}</p>
+          <div className={`border-t border-line px-8 py-6 text-center transition-all duration-300 ${revealed ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+            <p className="font-display text-3xl font-extrabold text-ink">{tSigns(sign.wordKey)}</p>
+            <p className="mt-1 text-sm text-ink-soft">{t('signLanguage')}</p>
           </div>
 
           {/* Tap to reveal hint */}
           {!revealed && (
-            <div className="border-t border-gray-100 px-8 py-6 text-center">
-              <p className="text-sm font-semibold text-gray-400">{t('tapToReveal')}</p>
+            <div className="border-t border-line px-8 py-6 text-center">
+              <p className="text-sm font-semibold text-ink-soft">{t('tapToReveal')}</p>
             </div>
           )}
         </div>
@@ -130,17 +130,15 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
           <button
             onClick={goPrev}
             disabled={current === 0}
-            className="flex-1 rounded-2xl border-2 border-gray-200 py-3.5 font-extrabold text-gray-500 transition hover:border-gray-300 hover:bg-gray-50 disabled:opacity-30"
+            className="flex-1 rounded-full border-2 border-line py-3.5 font-extrabold text-ink-soft transition hover:border-ink/30 hover:bg-white disabled:opacity-30"
           >
             {t('prev')}
           </button>
 
           <button
             onClick={goNext}
-            className={`flex-2 flex-[2] rounded-2xl py-3.5 font-extrabold uppercase tracking-wide text-white transition-all hover:brightness-110 active:scale-[0.98] shadow-md ${
-              isLast
-                ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                : 'bg-gradient-to-r from-teal-500 to-teal-600'
+            className={`flex-2 flex-[2] rounded-full py-3.5 font-extrabold uppercase tracking-wide text-white transition-all hover:brightness-110 active:scale-[0.98] shadow-md ${
+              isLast ? 'bg-reward' : 'bg-brand'
             }`}
           >
             {isLast ? t('startQuiz') : t('next')}
@@ -150,7 +148,7 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
         {/* Skip to quiz */}
         <button
           onClick={() => router.push(`/lesson/${lesson.id}`)}
-          className="mt-5 text-sm text-gray-400 underline underline-offset-2 hover:text-gray-600"
+          className="mt-5 text-sm text-ink-soft underline underline-offset-2 hover:text-ink"
         >
           {t('skipToQuiz')}
         </button>
@@ -164,12 +162,12 @@ export default function StudyPage({ params }: { params: { lessonId: string } }) 
   const t = useTranslations('pages.study')
   return (
     <ErrorBoundary fallback={
-      <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#e8f7f5] via-[#f0faf8]  to-[#eef4ff] p-4">
-        <div className="text-center bg-white p-8 rounded-3xl shadow-xl max-w-sm w-full border border-gray-100">
+      <div className="flex min-h-screen flex-col items-center justify-center bg-paper p-4">
+        <div className="text-center bg-white p-8 rounded-3xl shadow-lg max-w-sm w-full border border-line">
           <div className="text-5xl mb-4">⚠️</div>
-          <h1 className="text-xl font-bold text-gray-800">{t('errorTitle')}</h1>
-          <p className="text-gray-500 mt-2 mb-6">{t('errorBody')}</p>
-          <Link href="/learn" className="block w-full rounded-2xl bg-teal-600 px-6 py-3.5 text-sm font-extrabold uppercase text-white hover:bg-teal-700 transition">
+          <h1 className="text-xl font-bold text-ink">{t('errorTitle')}</h1>
+          <p className="text-ink-soft mt-2 mb-6">{t('errorBody')}</p>
+          <Link href="/learn" className="block w-full rounded-full bg-brand px-6 py-3.5 text-sm font-extrabold uppercase text-white hover:bg-brand-hover transition">
             {t('backToDashboard')}
           </Link>
         </div>
@@ -177,7 +175,7 @@ export default function StudyPage({ params }: { params: { lessonId: string } }) 
     }>
       <Suspense fallback={
         <div className="flex min-h-screen items-center justify-center">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-teal-500 border-t-transparent" />
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-brand border-t-transparent" />
         </div>
       }>
         <StudyPageContent params={params} />
