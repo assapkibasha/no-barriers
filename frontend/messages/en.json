@@ -472,7 +472,26 @@
           "subtitle": "Use formal sign language for interviews, leadership, and client work.",
           "promo": "Pro Track"
         }
-      }
+      },
+      "heroTitle": "Sign language brings people together.",
+      "heroSubtitle": "Learn with short, fun lessons — real signs, real conversations, at your own pace.",
+      "alreadyHave": "Already have an account?",
+      "logIn": "Log in",
+      "catalogTitle": "What you'll learn",
+      "seeAll": "See all",
+      "whyTitle": "Why NoBarriers works",
+      "why1Title": "Personalized learning",
+      "why1Text": "Study mode teaches each sign first, then quizzes check what stuck — always at your pace.",
+      "why2Title": "Real, clear signs",
+      "why2Text": "Every lesson uses clear sign illustrations you can practice anywhere, anytime.",
+      "why3Title": "Motivation built in",
+      "why3Text": "Streaks, XP and daily quests keep you coming back until signing feels natural.",
+      "bandKicker": "For families & schools",
+      "bandTitle": "Learning together breaks barriers faster.",
+      "bandText": "Parents, classmates and friends can learn alongside deaf loved ones — everyone on the same path, cheering each other on.",
+      "bandCta": "Create a free account",
+      "joinTitle": "Join NoBarriers today",
+      "joinStart": "Start learning"
     },
     "getStartedGoal": {
       "back": "Back",

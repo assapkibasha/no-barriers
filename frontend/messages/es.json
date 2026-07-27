@@ -472,7 +472,26 @@
           "subtitle": "Usa lengua de señas formal para entrevistas, liderazgo y trabajo con clientes.",
           "promo": "Vía Pro"
         }
-      }
+      },
+      "heroTitle": "La lengua de señas une a las personas.",
+      "heroSubtitle": "Aprende con lecciones cortas y divertidas: señas reales, conversaciones reales, a tu ritmo.",
+      "alreadyHave": "¿Ya tienes una cuenta?",
+      "logIn": "Iniciar sesión",
+      "catalogTitle": "Lo que aprenderás",
+      "seeAll": "Ver todo",
+      "whyTitle": "Por qué NoBarriers funciona",
+      "why1Title": "Aprendizaje personalizado",
+      "why1Text": "El modo estudio te enseña cada seña primero y luego los quizzes comprueban lo aprendido, siempre a tu ritmo.",
+      "why2Title": "Señas reales y claras",
+      "why2Text": "Cada lección usa ilustraciones claras que puedes practicar donde y cuando quieras.",
+      "why3Title": "Motivación incorporada",
+      "why3Text": "Rachas, XP y misiones diarias te hacen volver hasta que señar se vuelva natural.",
+      "bandKicker": "Para familias y escuelas",
+      "bandTitle": "Aprender juntos derriba barreras más rápido.",
+      "bandText": "Padres, compañeros y amigos pueden aprender junto a sus seres queridos sordos: todos en el mismo camino, animándose entre sí.",
+      "bandCta": "Crea una cuenta gratis",
+      "joinTitle": "Únete a NoBarriers hoy",
+      "joinStart": "Empieza a aprender"
     },
     "getStartedGoal": {
       "back": "Volver",

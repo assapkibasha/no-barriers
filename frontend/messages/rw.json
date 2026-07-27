@@ -472,7 +472,26 @@
           "subtitle": "Koresha ururimi rw'ibimenyetso rw'imikorere ku biganiro, ubuyobozi, n'akazi na cliyenti.",
           "promo": "Inzira y'Inzobere"
         }
-      }
+      },
+      "heroTitle": "Ururimi rw'amarenga ruhuza abantu.",
+      "heroSubtitle": "Iga mu masomo magufi kandi ashimishije — amarenga nyayo, ibiganiro nyabyo, ku muvuduko wawe.",
+      "alreadyHave": "Usanzwe ufite konti?",
+      "logIn": "Injira",
+      "catalogTitle": "Ibyo uziga",
+      "seeAll": "Reba byose",
+      "whyTitle": "Impamvu NoBarriers ikora",
+      "why1Title": "Kwiga bikunoze",
+      "why1Text": "Uburyo bwo kwiga bukwigisha buri karenga mbere, hanyuma ibibazo bikagenzura ibyafashwe — buri gihe ku muvuduko wawe.",
+      "why2Title": "Amarenga nyayo kandi asobanutse",
+      "why2Text": "Buri somo rikoresha amashusho asobanutse ushobora kwitoza aho uri hose, igihe icyo ari cyo cyose.",
+      "why3Title": "Gushishikarizwa biri imbere",
+      "why3Text": "Iminsi ikurikirana, XP n'inshingano za buri munsi bigutera gukomeza kugeza amarenga abaye kamere.",
+      "bandKicker": "Ku miryango n'amashuri",
+      "bandTitle": "Kwigira hamwe gusenya inzitizi vuba.",
+      "bandText": "Ababyeyi, abanyeshuri bagenzi n'inshuti bashobora kwigana n'abavandimwe b'ibipfamatwi — bose mu nzira imwe.",
+      "bandCta": "Fungura konti y'ubuntu",
+      "joinTitle": "Ifatanye na NoBarriers uyu munsi",
+      "joinStart": "Tangira kwiga"
     },
     "getStartedGoal": {
       "back": "Subira",

@@ -472,7 +472,26 @@
           "subtitle": "Use linguagem de sinais formal para entrevistas, liderança e trabalho com clientes.",
           "promo": "Trilha Pro"
         }
-      }
+      },
+      "heroTitle": "A língua de sinais aproxima as pessoas.",
+      "heroSubtitle": "Aprenda com lições curtas e divertidas — sinais reais, conversas reais, no seu ritmo.",
+      "alreadyHave": "Já tem uma conta?",
+      "logIn": "Entrar",
+      "catalogTitle": "O que você vai aprender",
+      "seeAll": "Ver tudo",
+      "whyTitle": "Por que o NoBarriers funciona",
+      "why1Title": "Aprendizado personalizado",
+      "why1Text": "O modo estudo ensina cada sinal primeiro e depois os quizzes verificam o que ficou — sempre no seu ritmo.",
+      "why2Title": "Sinais reais e claros",
+      "why2Text": "Cada lição usa ilustrações claras que você pode praticar em qualquer lugar, a qualquer hora.",
+      "why3Title": "Motivação integrada",
+      "why3Text": "Sequências, XP e missões diárias fazem você voltar até sinalizar ficar natural.",
+      "bandKicker": "Para famílias e escolas",
+      "bandTitle": "Aprender juntos derruba barreiras mais rápido.",
+      "bandText": "Pais, colegas e amigos podem aprender ao lado de entes queridos surdos — todos no mesmo caminho.",
+      "bandCta": "Crie uma conta grátis",
+      "joinTitle": "Junte-se ao NoBarriers hoje",
+      "joinStart": "Comece a aprender"
     },
     "getStartedGoal": {
       "back": "Voltar",

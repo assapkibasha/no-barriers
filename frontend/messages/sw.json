@@ -472,7 +472,26 @@
           "subtitle": "Tumia lugha ya ishara rasmi kwa mahojiano, uongozi, na kazi na wateja.",
           "promo": "Mkondo wa Wataalamu"
         }
-      }
+      },
+      "heroTitle": "Lugha ya alama huwaunganisha watu.",
+      "heroSubtitle": "Jifunze kwa masomo mafupi na ya kufurahisha — alama halisi, mazungumzo halisi, kwa kasi yako.",
+      "alreadyHave": "Je, tayari una akaunti?",
+      "logIn": "Ingia",
+      "catalogTitle": "Utakachojifunza",
+      "seeAll": "Tazama zote",
+      "whyTitle": "Kwa nini NoBarriers inafanya kazi",
+      "why1Title": "Kujifunza kulingana nawe",
+      "why1Text": "Hali ya kusoma hukufundisha kila alama kwanza, kisha maswali huhakiki ulichokumbuka — daima kwa kasi yako.",
+      "why2Title": "Alama halisi na wazi",
+      "why2Text": "Kila somo lina michoro wazi unayoweza kufanyia mazoezi popote, wakati wowote.",
+      "why3Title": "Motisha ndani yake",
+      "why3Text": "Mfululizo, XP na majukumu ya kila siku hukurudisha hadi kutumia alama kuwe jambo la kawaida.",
+      "bandKicker": "Kwa familia na shule",
+      "bandTitle": "Kujifunza pamoja huvunja vizuizi haraka zaidi.",
+      "bandText": "Wazazi, wanafunzi wenzako na marafiki wanaweza kujifunza pamoja na wapendwa wao viziwi — wote kwenye njia moja.",
+      "bandCta": "Fungua akaunti bila malipo",
+      "joinTitle": "Jiunge na NoBarriers leo",
+      "joinStart": "Anza kujifunza"
     },
     "getStartedGoal": {
       "back": "Rudi",

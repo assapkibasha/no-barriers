@@ -472,7 +472,26 @@
           "subtitle": "在面试、领导力和客户工作中使用正式手语。",
           "promo": "专业赛道"
         }
-      }
+      },
+      "heroTitle": "手语让人们心意相通。",
+      "heroSubtitle": "通过简短有趣的课程学习——真实的手语、真实的对话，按自己的节奏进行。",
+      "alreadyHave": "已经有账户了？",
+      "logIn": "登录",
+      "catalogTitle": "你将学到什么",
+      "seeAll": "查看全部",
+      "whyTitle": "为什么 NoBarriers 有效",
+      "why1Title": "个性化学习",
+      "why1Text": "学习模式先教每个手语，再用测验检查掌握情况——始终按你的节奏。",
+      "why2Title": "真实清晰的手语",
+      "why2Text": "每节课都配有清晰的手语插图，随时随地都能练习。",
+      "why3Title": "内置激励机制",
+      "why3Text": "连续打卡、经验值和每日任务让你坚持学习，直到打手语成为自然。",
+      "bandKicker": "面向家庭和学校",
+      "bandTitle": "一起学习，更快打破障碍。",
+      "bandText": "父母、同学和朋友可以与聋人亲友一起学习——大家走在同一条路上，相互鼓励。",
+      "bandCta": "创建免费账户",
+      "joinTitle": "立即加入 NoBarriers",
+      "joinStart": "开始学习"
     },
     "getStartedGoal": {
       "back": "返回",

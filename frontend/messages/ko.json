@@ -472,7 +472,26 @@
           "subtitle": "면접, 리더십, 고객 업무를 위한 공식 수어를 사용하세요.",
           "promo": "프로 트랙"
         }
-      }
+      },
+      "heroTitle": "수어는 사람들을 이어줍니다.",
+      "heroSubtitle": "짧고 재미있는 레슨으로 배우세요 — 진짜 수어, 진짜 대화를 내 속도에 맞춰.",
+      "alreadyHave": "이미 계정이 있으신가요?",
+      "logIn": "로그인",
+      "catalogTitle": "배우게 될 내용",
+      "seeAll": "모두 보기",
+      "whyTitle": "NoBarriers가 효과적인 이유",
+      "why1Title": "맞춤형 학습",
+      "why1Text": "스터디 모드로 수어를 먼저 배우고, 퀴즈로 확인합니다 — 언제나 내 속도로.",
+      "why2Title": "명확한 실제 수어",
+      "why2Text": "모든 레슨은 언제 어디서나 연습할 수 있는 명확한 그림으로 구성됩니다.",
+      "why3Title": "동기부여 시스템",
+      "why3Text": "연속 기록, XP, 일일 퀘스트가 수어가 자연스러워질 때까지 함께합니다.",
+      "bandKicker": "가족과 학교를 위해",
+      "bandTitle": "함께 배우면 장벽이 더 빨리 사라집니다.",
+      "bandText": "부모, 친구, 급우가 청각장애인 가족·친구와 같은 길에서 함께 배울 수 있습니다.",
+      "bandCta": "무료 계정 만들기",
+      "joinTitle": "지금 NoBarriers를 시작하세요",
+      "joinStart": "학습 시작하기"
     },
     "getStartedGoal": {
       "back": "뒤로",

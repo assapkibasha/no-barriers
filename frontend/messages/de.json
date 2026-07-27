@@ -472,7 +472,26 @@
           "subtitle": "Nutze formelle Gebärdensprache für Vorstellungsgespräche, Führung und Kundenkontakt.",
           "promo": "Pro-Kurs"
         }
-      }
+      },
+      "heroTitle": "Gebärdensprache bringt Menschen zusammen.",
+      "heroSubtitle": "Lerne mit kurzen, unterhaltsamen Lektionen — echte Gebärden, echte Gespräche, in deinem Tempo.",
+      "alreadyHave": "Hast du schon ein Konto?",
+      "logIn": "Anmelden",
+      "catalogTitle": "Was du lernen wirst",
+      "seeAll": "Alle ansehen",
+      "whyTitle": "Warum NoBarriers funktioniert",
+      "why1Title": "Personalisiertes Lernen",
+      "why1Text": "Der Lernmodus zeigt dir jede Gebärde zuerst, dann prüfen Quizze, was sitzt — immer in deinem Tempo.",
+      "why2Title": "Echte, klare Gebärden",
+      "why2Text": "Jede Lektion nutzt klare Illustrationen, die du überall und jederzeit üben kannst.",
+      "why3Title": "Eingebaute Motivation",
+      "why3Text": "Serien, XP und tägliche Quests bringen dich zurück, bis Gebärden ganz natürlich wird.",
+      "bandKicker": "Für Familien & Schulen",
+      "bandTitle": "Gemeinsam lernen baut Barrieren schneller ab.",
+      "bandText": "Eltern, Mitschüler und Freunde können gemeinsam mit gehörlosen Angehörigen lernen — alle auf demselben Weg.",
+      "bandCta": "Kostenloses Konto erstellen",
+      "joinTitle": "Werde heute Teil von NoBarriers",
+      "joinStart": "Jetzt lernen"
     },
     "getStartedGoal": {
       "back": "Zurück",

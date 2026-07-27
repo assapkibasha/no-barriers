@@ -472,7 +472,26 @@
           "subtitle": "Utilisez la langue des signes formelle pour les entretiens, le leadership et le travail avec les clients.",
           "promo": "Parcours Pro"
         }
-      }
+      },
+      "heroTitle": "La langue des signes rapproche les gens.",
+      "heroSubtitle": "Apprenez avec des leçons courtes et amusantes — de vrais signes, de vraies conversations, à votre rythme.",
+      "alreadyHave": "Vous avez déjà un compte ?",
+      "logIn": "Se connecter",
+      "catalogTitle": "Ce que vous allez apprendre",
+      "seeAll": "Voir tout",
+      "whyTitle": "Pourquoi NoBarriers fonctionne",
+      "why1Title": "Apprentissage personnalisé",
+      "why1Text": "Le mode étude enseigne d'abord chaque signe, puis les quiz vérifient ce qui est acquis — toujours à votre rythme.",
+      "why2Title": "Des signes clairs et réels",
+      "why2Text": "Chaque leçon utilise des illustrations claires que vous pouvez pratiquer partout, à tout moment.",
+      "why3Title": "La motivation intégrée",
+      "why3Text": "Séries, XP et quêtes quotidiennes vous font revenir jusqu'à ce que signer devienne naturel.",
+      "bandKicker": "Pour les familles et les écoles",
+      "bandTitle": "Apprendre ensemble fait tomber les barrières plus vite.",
+      "bandText": "Parents, camarades et amis peuvent apprendre aux côtés de leurs proches sourds — tous sur le même chemin, à s'encourager.",
+      "bandCta": "Créer un compte gratuit",
+      "joinTitle": "Rejoignez NoBarriers aujourd'hui",
+      "joinStart": "Commencer à apprendre"
     },
     "getStartedGoal": {
       "back": "Retour",
