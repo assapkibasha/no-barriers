@@ -58,7 +58,7 @@ export default function LearnPage() {
       <LearnSidebar />
 
       {/* Center — skill path */}
-      <main className="mb-24 flex flex-1 justify-center bg-[radial-gradient(circle_at_top,_rgba(20,184,166,0.08),_transparent_34rem)] px-4 py-8 md:mb-0 md:ml-64 lg:mr-[352px] sm:px-6">
+      <main className="mb-24 flex flex-1 justify-center px-4 py-8 md:mb-0 md:ml-64 lg:mr-[352px] sm:px-6">
         <div className="relative w-full max-w-2xl">
 
           {/* SINGLE DYNAMIC STICKY HEADER */}
@@ -104,16 +104,16 @@ export default function LearnPage() {
               <div key={course.id} id={`course-${course.id}`} className="mb-4 scroll-mt-40">
                 {/* Elegant separator instead of bulky cards */}
                 {courseIdx > 0 && (
-                  <div className="my-12 flex w-full items-center gap-5 px-4 text-slate-400 dark:text-slate-500">
-                    <div className="h-px flex-1 bg-gradient-to-r from-transparent to-slate-200 dark:to-slate-800" />
-                    <span className="rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-black uppercase tracking-[0.2em] shadow-sm dark:border-slate-800 dark:bg-slate-950">{course.title}</span>
-                    <div className="h-px flex-1 bg-gradient-to-l from-transparent to-slate-200 dark:to-slate-800" />
+                  <div className="my-12 flex w-full items-center gap-5 px-4">
+                    <div className="h-px flex-1 bg-gradient-to-r from-transparent to-line dark:to-slate-800" />
+                    <span className="rounded-full bg-unit-soft px-5 py-2 text-sm font-extrabold uppercase tracking-[0.2em] text-unit">{course.title}</span>
+                    <div className="h-px flex-1 bg-gradient-to-l from-transparent to-line dark:to-slate-800" />
                   </div>
                 )}
 
                 {/* Vertical node path */}
                 <div className="relative flex flex-col items-center pb-8">
-                  <div className="absolute bottom-16 left-1/2 top-8 hidden w-1 -translate-x-1/2 rounded-full bg-slate-200/80 dark:bg-slate-800/80 sm:block" />
+                  <div className="absolute bottom-16 left-1/2 top-8 hidden w-1 -translate-x-1/2 rounded-full bg-line/80 dark:bg-slate-800/80 sm:block" />
                   {courseUnits.map((unit, unitIdx) => {
                     const { done, total, lessons } = unitProgress(unit.id)
                     const allDone = done === total
@@ -131,7 +131,7 @@ export default function LearnPage() {
                       <div key={unit.id} className="relative flex w-full flex-col items-center">
                         {/* Connector */}
                         {unitIdx > 0 && (
-                          <div className={`h-10 w-1 rounded-full ${unlocked ? 'bg-teal-300 dark:bg-teal-500' : 'bg-slate-300 dark:bg-slate-700'} ${offsetClass}`} />
+                          <div className={`h-10 w-1 rounded-full ${unlocked ? 'bg-brand/40' : 'bg-line dark:bg-slate-700'} ${offsetClass}`} />
                         )}
 
                         {/* Node */}
@@ -141,7 +141,7 @@ export default function LearnPage() {
                             const p = unitProgress(u.id)
                             return !p.lessons.every((l) => completed.includes(l.id))
                           }) && (
-                            <div className="mb-2 rounded-full bg-teal-500 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-white shadow-lg shadow-teal-500/25">
+                            <div className="mb-2 rounded-full bg-brand px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-white shadow-lg shadow-brand/25">
                               {t('startBadge')}
                             </div>
                           )}
@@ -150,10 +150,10 @@ export default function LearnPage() {
                             href={unlocked && nextLesson ? `/study/${nextLesson.id}` : '#'}
                             className={`relative flex h-[76px] w-[76px] items-center justify-center rounded-[1.65rem] border text-3xl shadow-xl transition-all ${
                               allDone
-                                ? 'border-teal-600 bg-gradient-to-br from-teal-400 to-teal-600 text-white shadow-teal-700/20 hover:-translate-y-1 hover:brightness-110'
+                                ? 'border-brand bg-gradient-to-br from-brand-hover to-brand text-white shadow-brand/20 hover:-translate-y-1 hover:brightness-110'
                                 : unlocked
-                                ? 'border-teal-600 bg-gradient-to-br from-white to-teal-50 text-teal-700 shadow-teal-700/15 ring-4 ring-teal-100 hover:-translate-y-1 hover:ring-teal-200 dark:from-slate-900 dark:to-teal-950 dark:text-teal-200 dark:ring-teal-900/40'
-                                : 'cursor-not-allowed border-slate-300 bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400 shadow-slate-500/10 dark:border-slate-700 dark:from-slate-800 dark:to-slate-900 dark:text-slate-500'
+                                ? 'border-brand bg-gradient-to-br from-white to-brand-soft text-brand shadow-brand/15 ring-4 ring-brand-soft hover:-translate-y-1 hover:ring-brand/30 dark:from-slate-900 dark:to-teal-950 dark:text-teal-200 dark:ring-teal-900/40'
+                                : 'cursor-not-allowed border-line bg-gradient-to-br from-paper to-line text-ink-soft/50 shadow-ink/5 dark:border-slate-700 dark:from-slate-800 dark:to-slate-900 dark:text-slate-500'
                             }`}
                             aria-disabled={!unlocked}
                           >
@@ -161,7 +161,7 @@ export default function LearnPage() {
                           </Link>
 
                           {/* Unit label */}
-                          <p className={`mt-3 max-w-36 text-center text-sm font-black leading-tight ${unlocked ? 'text-slate-800 dark:text-slate-100' : 'text-slate-400 dark:text-slate-600'}`}>
+                          <p className={`mt-3 max-w-36 text-center text-sm font-extrabold leading-tight ${unlocked ? 'text-ink dark:text-slate-100' : 'text-ink-soft/60 dark:text-slate-600'}`}>
                             {unit.title}
                           </p>
 
@@ -170,7 +170,7 @@ export default function LearnPage() {
                             {Array.from({ length: Math.min(total, 5) }).map((_, i) => (
                               <div
                                 key={i}
-                                className={`h-2 w-2 rounded-full ${i < done ? 'bg-teal-500' : 'bg-slate-300 dark:bg-slate-700'}`}
+                                className={`h-2 w-2 rounded-full ${i < done ? 'bg-brand' : 'bg-line dark:bg-slate-700'}`}
                               />
                             ))}
                           </div>

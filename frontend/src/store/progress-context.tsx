@@ -15,6 +15,8 @@ export interface ProgressState {
   hearts: number
   maxHearts: number
   lastHeartsRefill: string
+  xpToday: number
+  xpTodayDate: string
   completedLessons: string[]
   perfectLessons: string[]
   weakSigns: string[]
@@ -31,6 +33,7 @@ function defaultState(): ProgressState {
     xp: 0, streak: 0, lastActivityDate: '',
     hearts: MAX_HEARTS, maxHearts: MAX_HEARTS,
     lastHeartsRefill: today(),
+    xpToday: 0, xpTodayDate: '',
     completedLessons: [], perfectLessons: [], weakSigns: [],
   }
 }
@@ -44,6 +47,8 @@ function fromAPI(data: any): ProgressState {
     hearts: data.hearts ?? MAX_HEARTS,
     maxHearts: MAX_HEARTS,
     lastHeartsRefill: data.heartsLastRefill ?? today(),
+    xpToday: data.xpToday ?? 0,
+    xpTodayDate: data.xpTodayDate ?? '',
     completedLessons: data.completedLessons ?? [],
     perfectLessons: data.perfectLessons ?? [],
     weakSigns: data.weakSigns ?? [],
@@ -57,6 +62,8 @@ function toAPI(state: ProgressState) {
     lastActivity: state.lastActivityDate || null,
     hearts: state.hearts,
     heartsLastRefill: state.lastHeartsRefill || null,
+    xpToday: state.xpToday,
+    xpTodayDate: state.xpTodayDate || null,
     completedLessons: state.completedLessons,
     perfectLessons: state.perfectLessons,
     badges: [],
@@ -127,6 +134,9 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     const next: ProgressState = {
       ...progress,
       xp: progress.xp + amount,
+      // Daily-quest counter: resets when the calendar day changes.
+      xpToday: (progress.xpTodayDate === t ? progress.xpToday : 0) + amount,
+      xpTodayDate: t,
       streak: progress.lastActivityDate !== t
         ? (progress.lastActivityDate === yStr ? progress.streak + 1 : 1)
         : progress.streak,
