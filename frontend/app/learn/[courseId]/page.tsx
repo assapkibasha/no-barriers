@@ -14,7 +14,7 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
   const { progress } = useProgress()
 
   const course = courses.find((c) => c.id === params.courseId)
-  if (!course) return <div className="p-10 text-center text-gray-500">{t('courseNotFound')}</div>
+  if (!course) return <div className="p-10 text-center text-ink-soft">{t('courseNotFound')}</div>
 
   const courseUnits = units
     .filter((u) => u.courseId === params.courseId)
@@ -39,7 +39,7 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
       <LearnSidebar />
 
       {/* Center */}
-      <main className="ml-64 flex flex-1 justify-center px-6 py-8">
+      <main className="mb-24 flex flex-1 justify-center px-4 py-8 sm:px-6 md:mb-0 md:ml-64">
         <div className="w-full max-w-lg">
           {/* Course banner */}
           <div className={`sticky top-4 z-20 mb-6 flex items-center justify-between rounded-2xl bg-gradient-to-r ${course.color} px-6 py-4 text-white shadow-md backdrop-blur-md`}>
@@ -70,19 +70,19 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
                 <div key={unit.id} className="flex w-full flex-col items-center">
                   {/* Connector */}
                   {idx > 0 && (
-                    <div className={`h-8 w-1 rounded-full transition-colors ${allDone ? 'bg-teal-400' : 'bg-gray-300 dark:bg-gray-700'} ${offsetClass}`} />
+                    <div className={`h-8 w-1 rounded-full transition-colors ${allDone ? 'bg-brand/40' : 'bg-line dark:bg-gray-700'} ${offsetClass}`} />
                   )}
 
                   {/* Node + label */}
                   <div className={`flex flex-col items-center transform ${offsetClass}`}>
                     {/* START badge */}
                     {unlocked && !allDone && done === 0 && (
-                      <div className="mb-1 rounded-full bg-teal-500 px-3 py-0.5 text-xs font-extrabold uppercase text-white shadow animate-bounce">
+                      <div className="mb-1 rounded-full bg-brand px-3 py-0.5 text-xs font-extrabold uppercase text-white shadow motion-safe:animate-bounce">
                         {t('startBadge')}
                       </div>
                     )}
                     {unlocked && done > 0 && !allDone && (
-                      <div className="mb-1 rounded-full bg-yellow-400 px-3 py-0.5 text-xs font-extrabold uppercase text-yellow-900 shadow">
+                      <div className="mb-1 rounded-full bg-reward px-3 py-0.5 text-xs font-extrabold uppercase text-white shadow">
                         {t('continueBadge')}
                       </div>
                     )}
@@ -92,16 +92,16 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
                       href={unlocked && firstLesson ? `/study/${firstLesson.id}` : '#'}
                       className={`flex h-16 w-16 items-center justify-center rounded-full border-b-[5px] text-2xl shadow-lg transition-all ${
                         allDone
-                          ? 'border-teal-700 bg-teal-500 text-white hover:brightness-110'
+                          ? 'border-ink/30 bg-brand text-white hover:brightness-110'
                           : unlocked
-                          ? 'border-teal-700 bg-teal-500 text-white hover:scale-110'
-                          : 'border-gray-400 bg-gray-300 text-gray-400 cursor-not-allowed'
+                          ? 'border-ink/30 bg-brand text-white hover:scale-110'
+                          : 'border-line bg-line text-ink-soft/50 cursor-not-allowed'
                       }`}
                     >
                       {allDone ? '⭐' : unlocked ? unit.emoji : '🔒'}
                     </Link>
 
-                    <p className={`mt-1.5 text-xs font-bold ${unlocked ? 'text-gray-700 dark:text-gray-200' : 'text-gray-400 dark:text-gray-600'}`}>
+                    <p className={`mt-1.5 text-xs font-bold ${unlocked ? 'text-ink dark:text-gray-200' : 'text-ink-soft/60 dark:text-gray-600'}`}>
                       {unit.title}
                     </p>
 
@@ -109,7 +109,7 @@ export default function CourseSkillTree({ params }: { params: { courseId: string
                     {unlocked && (
                       <div className="mt-1 flex gap-1">
                         {Array.from({ length: Math.min(total, 5) }).map((_, i) => (
-                          <div key={i} className={`h-1.5 w-1.5 rounded-full ${i < done ? 'bg-teal-500' : 'bg-gray-300 dark:bg-gray-700'}`} />
+                          <div key={i} className={`h-1.5 w-1.5 rounded-full ${i < done ? 'bg-brand' : 'bg-line dark:bg-gray-700'}`} />
                         ))}
                       </div>
                     )}

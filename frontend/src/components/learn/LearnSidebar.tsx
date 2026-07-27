@@ -28,13 +28,13 @@ export default function LearnSidebar() {
   }
 
   return (
-    <aside className="fixed bottom-0 left-0 z-40 flex h-20 w-full flex-row items-center justify-around border-t border-gray-200 bg-white/95 px-2 shadow-[0_-8px_24px_rgba(15,23,42,0.06)] backdrop-blur transition-colors dark:border-gray-800 dark:bg-gray-950/95 md:top-0 md:h-screen md:w-64 md:flex-col md:justify-start md:border-r md:border-t-0 md:px-4 md:py-6 md:shadow-[8px_0_24px_rgba(15,23,42,0.06)]">
-      <Link href="/" className="mb-8 hidden w-full items-center gap-3 rounded-lg px-3 py-2 transition hover:bg-gray-50 dark:hover:bg-gray-900 md:flex">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-gray-800 bg-gray-950 p-1.5 shadow-sm dark:border-gray-700">
+    <aside className="fixed bottom-0 left-0 z-40 flex h-20 w-full flex-row items-center justify-around border-t border-line bg-white/95 px-2 shadow-[0_-8px_24px_rgba(18,43,48,0.06)] backdrop-blur transition-colors dark:border-gray-800 dark:bg-gray-950/95 md:top-0 md:h-screen md:w-64 md:flex-col md:justify-start md:border-r md:border-t-0 md:px-4 md:py-6 md:shadow-[8px_0_24px_rgba(18,43,48,0.06)]">
+      <Link href="/" className="mb-8 hidden w-full items-center gap-3 rounded-lg px-3 py-2 transition hover:bg-brand-soft/50 dark:hover:bg-gray-900 md:flex">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-ink p-1.5 shadow-sm">
           <img src="/images/logo.png" alt="NoBarriers" className="h-full w-full object-contain" />
         </span>
-        <span className="text-xl font-black leading-none tracking-normal text-gray-950 dark:text-white">
-          No<span className="block text-teal-500">Barriers</span>
+        <span className="font-display text-xl font-extrabold leading-none tracking-normal text-ink dark:text-white">
+          No<span className="block text-brand">Barriers</span>
         </span>
       </Link>
 
@@ -50,11 +50,11 @@ export default function LearnSidebar() {
               aria-current={active ? 'page' : undefined}
               className={`group flex h-14 min-w-14 items-center justify-center gap-3 rounded-xl px-3 text-sm font-bold transition-all md:w-full md:justify-start ${
                 active
-                  ? 'bg-teal-500 text-white shadow-sm shadow-teal-500/20'
-                  : 'text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-100'
+                  ? 'bg-brand text-white shadow-sm shadow-brand/20'
+                  : 'text-ink-soft hover:bg-brand-soft/60 hover:text-ink dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-100'
               }`}
             >
-              <Icon className={`h-5 w-5 shrink-0 ${active ? 'text-white' : 'text-gray-400 group-hover:text-teal-500'}`} strokeWidth={2.25} />
+              <Icon className={`h-5 w-5 shrink-0 ${active ? 'text-white' : 'text-ink-soft/70 group-hover:text-brand'}`} strokeWidth={2.25} />
               <span className="hidden truncate md:inline">{t(item.labelKey)}</span>
             </Link>
           )
@@ -74,7 +74,7 @@ export default function LearnSidebar() {
       <button
         onClick={handleLogout}
         disabled={loggingOut}
-        className="hidden h-12 w-full items-center gap-3 rounded-xl px-3 text-sm font-bold text-gray-500 transition-all hover:bg-red-50 hover:text-red-600 disabled:opacity-50 dark:text-gray-400 dark:hover:bg-red-950/40 dark:hover:text-red-400 md:flex"
+        className="hidden h-12 w-full items-center gap-3 rounded-xl px-3 text-sm font-bold text-ink-soft transition-all hover:bg-heart-soft hover:text-heart disabled:opacity-50 dark:text-gray-400 dark:hover:bg-red-950/40 dark:hover:text-red-400 md:flex"
       >
         <LogOut className="h-5 w-5 shrink-0" strokeWidth={2.25} />
         <span className="truncate">{loggingOut ? t('loggingOut') : t('logOut')}</span>
