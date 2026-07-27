@@ -251,12 +251,30 @@
     "advanced-smell": "Geruch"
   },
   "badges": {
-    "first-lesson": { "label": "Erster Schritt", "description": "Schließe deine erste Lektion ab" },
-    "streak-3": { "label": "3-Tage-Serie", "description": "Lerne 3 Tage hintereinander" },
-    "streak-7": { "label": "Wochenkämpfer", "description": "Lerne 7 Tage hintereinander" },
-    "perfect": { "label": "Perfektionist", "description": "Schließe eine Lektion ohne Fehler ab" },
-    "xp-500": { "label": "XP-Jäger", "description": "Verdiene insgesamt 500 XP" },
-    "lessons-10": { "label": "Engagiert", "description": "Schließe 10 Lektionen ab" }
+    "first-lesson": {
+      "label": "Erster Schritt",
+      "description": "Schließe deine erste Lektion ab"
+    },
+    "streak-3": {
+      "label": "3-Tage-Serie",
+      "description": "Lerne 3 Tage hintereinander"
+    },
+    "streak-7": {
+      "label": "Wochenkämpfer",
+      "description": "Lerne 7 Tage hintereinander"
+    },
+    "perfect": {
+      "label": "Perfektionist",
+      "description": "Schließe eine Lektion ohne Fehler ab"
+    },
+    "xp-500": {
+      "label": "XP-Jäger",
+      "description": "Verdiene insgesamt 500 XP"
+    },
+    "lessons-10": {
+      "label": "Engagiert",
+      "description": "Schließe 10 Lektionen ab"
+    }
   },
   "levels": {
     "Beginner": "Anfänger",
@@ -331,6 +349,33 @@
       "privacyPolicy": "Datenschutzrichtlinie",
       "termsOfService": "Nutzungsbedingungen",
       "copyright": "© {year} NoBarriers. Alle Rechte vorbehalten."
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "q1": {
+        "question": "Ist NoBarriers kostenlos?",
+        "answer": "Ja — alle Kurse, Lektionen und Funktionen sind komplett kostenlos. Du brauchst nur ein Konto."
+      },
+      "q2": {
+        "question": "Brauche ich Vorkenntnisse in Gebärdensprache?",
+        "answer": "Nein. Der Anfängerkurs beginnt bei null mit Begrüßungen, Alphabet und Zahlen, und jede Einheit wird freigeschaltet, sobald du die vorherige abschließt."
+      },
+      "q3": {
+        "question": "Wie funktionieren die Lektionen?",
+        "answer": "Jede Lektion hat zwei Teile: Der Lernmodus zeigt dir zuerst jede Gebärde, dann prüft ein kurzes Quiz, was du behalten hast. Die meisten Lektionen dauern nur wenige Minuten."
+      },
+      "q4": {
+        "question": "Was sind Herzen, XP und Serien?",
+        "answer": "Du bekommst XP für jede richtige Antwort, hältst deine Serie durch tägliches Lernen, und Herzen sind deine Chancen im Quiz — ein Fehler kostet eines."
+      },
+      "q5": {
+        "question": "Kann ich NoBarriers auf dem Handy nutzen?",
+        "answer": "Ja. NoBarriers läuft in jedem modernen Browser auf Handy, Tablet oder Computer — ohne Installation."
+      },
+      "q6": {
+        "question": "Für wen ist NoBarriers?",
+        "answer": "Für alle: Familien und Freunde gehörloser Menschen, Schüler, Lehrkräfte und alle, die ohne Barrieren kommunizieren möchten."
+      }
     }
   },
   "learn": {
@@ -454,7 +499,26 @@
           "subtitle": "Nutze formelle Gebärdensprache für Vorstellungsgespräche, Führung und Kundenkontakt.",
           "promo": "Pro-Kurs"
         }
-      }
+      },
+      "heroTitle": "Gebärdensprache bringt Menschen <hl>zusammen</hl>.",
+      "heroSubtitle": "Lerne mit kurzen, unterhaltsamen Lektionen — echte Gebärden, echte Gespräche, in deinem Tempo.",
+      "alreadyHave": "Hast du schon ein Konto?",
+      "logIn": "Anmelden",
+      "catalogTitle": "Was du lernen wirst",
+      "seeAll": "Alle ansehen",
+      "whyTitle": "Warum NoBarriers funktioniert",
+      "why1Title": "Personalisiertes Lernen",
+      "why1Text": "Der Lernmodus zeigt dir jede Gebärde zuerst, dann prüfen Quizze, was sitzt — immer in deinem Tempo.",
+      "why2Title": "Echte, klare Gebärden",
+      "why2Text": "Jede Lektion nutzt klare Illustrationen, die du überall und jederzeit üben kannst.",
+      "why3Title": "Eingebaute Motivation",
+      "why3Text": "Serien, XP und tägliche Quests bringen dich zurück, bis Gebärden ganz natürlich wird.",
+      "bandKicker": "Für Familien & Schulen",
+      "bandTitle": "Gemeinsam lernen baut Barrieren schneller ab.",
+      "bandText": "Eltern, Mitschüler und Freunde können gemeinsam mit gehörlosen Angehörigen lernen — alle auf demselben Weg.",
+      "bandCta": "Kostenloses Konto erstellen",
+      "joinTitle": "Werde heute Teil von NoBarriers",
+      "joinStart": "Jetzt lernen"
     },
     "getStartedGoal": {
       "back": "Zurück",
@@ -598,6 +662,17 @@
       "back": "Zurück",
       "errorTitle": "Wiederholung kann nicht geladen werden",
       "errorBody": "Beim Vorbereiten deiner Wiederholungssitzung ist etwas schiefgelaufen."
+    },
+    "forgotPassword": {
+      "title": "Passwort vergessen?",
+      "subtitle": "Gib deine E-Mail ein und wir senden dir Anweisungen zum Zurücksetzen.",
+      "email": "E-Mail",
+      "sendReset": "Link senden",
+      "sending": "Wird gesendet…",
+      "backToLogin": "Zurück zur Anmeldung",
+      "checkInbox": "Prüfe dein Postfach",
+      "sentMessage": "Falls ein Konto für {email} existiert, haben wir Anweisungen zum Zurücksetzen gesendet.",
+      "networkError": "Netzwerkfehler. Bitte erneut versuchen."
     }
   }
 }

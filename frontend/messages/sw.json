@@ -251,12 +251,30 @@
     "advanced-smell": "Harufu"
   },
   "badges": {
-    "first-lesson": { "label": "Hatua ya Kwanza", "description": "Kamilisha somo lako la kwanza" },
-    "streak-3": { "label": "Mfululizo wa Siku 3", "description": "Jifunze siku 3 mfululizo" },
-    "streak-7": { "label": "Shujaa wa Wiki", "description": "Jifunze siku 7 mfululizo" },
-    "perfect": { "label": "Mkamilifu", "description": "Kamilisha somo bila makosa" },
-    "xp-500": { "label": "Mwindaji wa XP", "description": "Pata jumla ya XP 500" },
-    "lessons-10": { "label": "Mwenye Bidii", "description": "Kamilisha masomo 10" }
+    "first-lesson": {
+      "label": "Hatua ya Kwanza",
+      "description": "Kamilisha somo lako la kwanza"
+    },
+    "streak-3": {
+      "label": "Mfululizo wa Siku 3",
+      "description": "Jifunze siku 3 mfululizo"
+    },
+    "streak-7": {
+      "label": "Shujaa wa Wiki",
+      "description": "Jifunze siku 7 mfululizo"
+    },
+    "perfect": {
+      "label": "Mkamilifu",
+      "description": "Kamilisha somo bila makosa"
+    },
+    "xp-500": {
+      "label": "Mwindaji wa XP",
+      "description": "Pata jumla ya XP 500"
+    },
+    "lessons-10": {
+      "label": "Mwenye Bidii",
+      "description": "Kamilisha masomo 10"
+    }
   },
   "levels": {
     "Beginner": "Mwanzo",
@@ -331,6 +349,33 @@
       "privacyPolicy": "Sera ya Faragha",
       "termsOfService": "Masharti ya Huduma",
       "copyright": "© {year} NoBarriers. Haki zote zimehifadhiwa."
+    },
+    "faq": {
+      "title": "Maswali yanayoulizwa mara kwa mara",
+      "q1": {
+        "question": "Je, NoBarriers ni bure?",
+        "answer": "Ndiyo — kozi zote, masomo na huduma zote ni bure kabisa. Unahitaji akaunti tu."
+      },
+      "q2": {
+        "question": "Je, nahitaji uzoefu wa lugha ya alama?",
+        "answer": "Hapana. Kozi ya Mwanzo huanza kutoka sifuri na salamu, alfabeti na namba, na kila sehemu hufunguka ukimaliza iliyotangulia."
+      },
+      "q3": {
+        "question": "Masomo hufanyaje kazi?",
+        "answer": "Kila somo lina sehemu mbili: hali ya kusoma hukuonyesha kila alama kwanza, kisha jaribio fupi huhakiki unachokumbuka. Mengi huchukua dakika chache tu."
+      },
+      "q4": {
+        "question": "Mioyo, XP na mfululizo ni nini?",
+        "answer": "Unapata XP kwa kila jibu sahihi, unadumisha mfululizo kwa kujifunza kila siku, na mioyo ni nafasi zako kwenye jaribio — kosa moja hugharimu moyo mmoja."
+      },
+      "q5": {
+        "question": "Naweza kutumia NoBarriers kwenye simu?",
+        "answer": "Ndiyo. NoBarriers hufanya kazi kwenye kivinjari chochote cha kisasa kwenye simu, kompyuta kibao au kompyuta — hakuna cha kusakinisha."
+      },
+      "q6": {
+        "question": "NoBarriers ni ya nani?",
+        "answer": "Ya kila mtu: familia na marafiki wa viziwi, wanafunzi, walimu, na yeyote anayetaka kuwasiliana bila vizuizi."
+      }
     }
   },
   "learn": {
@@ -454,7 +499,26 @@
           "subtitle": "Tumia lugha ya ishara rasmi kwa mahojiano, uongozi, na kazi na wateja.",
           "promo": "Mkondo wa Wataalamu"
         }
-      }
+      },
+      "heroTitle": "Lugha ya alama <hl>huwaunganisha</hl> watu.",
+      "heroSubtitle": "Jifunze kwa masomo mafupi na ya kufurahisha — alama halisi, mazungumzo halisi, kwa kasi yako.",
+      "alreadyHave": "Je, tayari una akaunti?",
+      "logIn": "Ingia",
+      "catalogTitle": "Utakachojifunza",
+      "seeAll": "Tazama zote",
+      "whyTitle": "Kwa nini NoBarriers inafanya kazi",
+      "why1Title": "Kujifunza kulingana nawe",
+      "why1Text": "Hali ya kusoma hukufundisha kila alama kwanza, kisha maswali huhakiki ulichokumbuka — daima kwa kasi yako.",
+      "why2Title": "Alama halisi na wazi",
+      "why2Text": "Kila somo lina michoro wazi unayoweza kufanyia mazoezi popote, wakati wowote.",
+      "why3Title": "Motisha ndani yake",
+      "why3Text": "Mfululizo, XP na majukumu ya kila siku hukurudisha hadi kutumia alama kuwe jambo la kawaida.",
+      "bandKicker": "Kwa familia na shule",
+      "bandTitle": "Kujifunza pamoja huvunja vizuizi haraka zaidi.",
+      "bandText": "Wazazi, wanafunzi wenzako na marafiki wanaweza kujifunza pamoja na wapendwa wao viziwi — wote kwenye njia moja.",
+      "bandCta": "Fungua akaunti bila malipo",
+      "joinTitle": "Jiunge na NoBarriers leo",
+      "joinStart": "Anza kujifunza"
     },
     "getStartedGoal": {
       "back": "Rudi",
@@ -598,6 +662,17 @@
       "back": "Rudi",
       "errorTitle": "Imeshindwa kupakia mapitio",
       "errorBody": "Kuna tatizo lilitokea wakati wa kuandaa kikao chako cha mapitio."
+    },
+    "forgotPassword": {
+      "title": "Umesahau nenosiri?",
+      "subtitle": "Weka barua pepe yako na tutakutumia maelekezo ya kuweka upya.",
+      "email": "Barua pepe",
+      "sendReset": "Tuma kiungo",
+      "sending": "Inatuma…",
+      "backToLogin": "Rudi kwenye kuingia",
+      "checkInbox": "Angalia barua pepe zako",
+      "sentMessage": "Ikiwa akaunti ya {email} ipo, tumetuma maelekezo ya kuweka upya nenosiri.",
+      "networkError": "Hitilafu ya mtandao. Jaribu tena."
     }
   }
 }

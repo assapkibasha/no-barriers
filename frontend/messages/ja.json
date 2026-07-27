@@ -251,12 +251,30 @@
     "advanced-smell": "においを嗅ぐ"
   },
   "badges": {
-    "first-lesson": { "label": "最初の一歩", "description": "最初のレッスンを完了する" },
-    "streak-3": { "label": "3日連続", "description": "3日連続で学習する" },
-    "streak-7": { "label": "週間戦士", "description": "7日連続で学習する" },
-    "perfect": { "label": "完璧主義者", "description": "エラーなしでレッスンを完了する" },
-    "xp-500": { "label": "XPハンター", "description": "合計500 XPを獲得する" },
-    "lessons-10": { "label": "熱心な学習者", "description": "10レッスンを完了する" }
+    "first-lesson": {
+      "label": "最初の一歩",
+      "description": "最初のレッスンを完了する"
+    },
+    "streak-3": {
+      "label": "3日連続",
+      "description": "3日連続で学習する"
+    },
+    "streak-7": {
+      "label": "週間戦士",
+      "description": "7日連続で学習する"
+    },
+    "perfect": {
+      "label": "完璧主義者",
+      "description": "エラーなしでレッスンを完了する"
+    },
+    "xp-500": {
+      "label": "XPハンター",
+      "description": "合計500 XPを獲得する"
+    },
+    "lessons-10": {
+      "label": "熱心な学習者",
+      "description": "10レッスンを完了する"
+    }
   },
   "levels": {
     "Beginner": "初級",
@@ -331,6 +349,33 @@
       "privacyPolicy": "プライバシーポリシー",
       "termsOfService": "利用規約",
       "copyright": "© {year} NoBarriers. 全著作権所有。"
+    },
+    "faq": {
+      "title": "よくある質問",
+      "q1": {
+        "question": "NoBarriersは無料ですか？",
+        "answer": "はい。すべてのコース、レッスン、機能が完全に無料です。必要なのはアカウントだけです。"
+      },
+      "q2": {
+        "question": "手話の経験がなくても大丈夫ですか？",
+        "answer": "大丈夫です。初級コースはあいさつ、アルファベット、数字などゼロから始まり、前のユニットを終えると次が解放されます。"
+      },
+      "q3": {
+        "question": "レッスンはどのように進みますか？",
+        "answer": "各レッスンは2部構成です。スタディモードでまず手話を学び、短いクイズで覚えたかを確認します。ほとんどのレッスンは数分で終わります。"
+      },
+      "q4": {
+        "question": "ハート・XP・連続記録とは何ですか？",
+        "answer": "正解するとXPがもらえ、毎日学習すると連続記録が続きます。ハートはクイズでのチャンスで、間違えると1つ減ります。"
+      },
+      "q5": {
+        "question": "スマートフォンで使えますか？",
+        "answer": "はい。NoBarriersはスマホ、タブレット、パソコンのモダンブラウザで動作します。インストールは不要です。"
+      },
+      "q6": {
+        "question": "NoBarriersは誰のためのものですか？",
+        "answer": "すべての人のためです。ろう者のご家族や友人、学生、教師、そして壁なくコミュニケーションしたいすべての人へ。"
+      }
     }
   },
   "learn": {
@@ -454,7 +499,26 @@
           "subtitle": "面接、リーダーシップ、顧客対応のためのフォーマルな手話を使いましょう。",
           "promo": "プロトラック"
         }
-      }
+      },
+      "heroTitle": "手話は人と人を<hl>つなぎます</hl>。",
+      "heroSubtitle": "短くて楽しいレッスンで学びましょう。本物の手話、本物の会話を、自分のペースで。",
+      "alreadyHave": "すでにアカウントをお持ちですか？",
+      "logIn": "ログイン",
+      "catalogTitle": "学べる内容",
+      "seeAll": "すべて見る",
+      "whyTitle": "NoBarriersが効果的な理由",
+      "why1Title": "パーソナライズ学習",
+      "why1Text": "スタディモードでまず手話を学び、クイズで定着を確認。いつでも自分のペースで。",
+      "why2Title": "わかりやすい本物の手話",
+      "why2Text": "すべてのレッスンに、いつでもどこでも練習できるわかりやすいイラストを使用しています。",
+      "why3Title": "続けられる仕組み",
+      "why3Text": "連続記録、XP、デイリークエストが、手話が自然になるまで学習を後押しします。",
+      "bandKicker": "ご家族・学校向け",
+      "bandTitle": "一緒に学べば、壁はもっと早くなくなる。",
+      "bandText": "家族や友達、クラスメイトが、ろうの大切な人と一緒に同じ道のりで学べます。",
+      "bandCta": "無料アカウントを作成",
+      "joinTitle": "今日からNoBarriersを始めよう",
+      "joinStart": "学習を始める"
     },
     "getStartedGoal": {
       "back": "戻る",
@@ -598,6 +662,17 @@
       "back": "戻る",
       "errorTitle": "復習を読み込めません",
       "errorBody": "復習セッションの準備中に問題が発生しました。"
+    },
+    "forgotPassword": {
+      "title": "パスワードをお忘れですか？",
+      "subtitle": "メールアドレスを入力すると、再設定の手順をお送りします。",
+      "email": "メールアドレス",
+      "sendReset": "リセットリンクを送信",
+      "sending": "送信中…",
+      "backToLogin": "ログインに戻る",
+      "checkInbox": "受信トレイをご確認ください",
+      "sentMessage": "{email} のアカウントが存在する場合、再設定の手順を送信しました。",
+      "networkError": "ネットワークエラーです。もう一度お試しください。"
     }
   }
 }

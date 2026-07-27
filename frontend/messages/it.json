@@ -251,12 +251,30 @@
     "advanced-smell": "Odore"
   },
   "badges": {
-    "first-lesson": { "label": "Primo Passo", "description": "Completa la tua prima lezione" },
-    "streak-3": { "label": "Serie di 3 Giorni", "description": "Studia 3 giorni di fila" },
-    "streak-7": { "label": "Guerriero della Settimana", "description": "Studia 7 giorni di fila" },
-    "perfect": { "label": "Perfezionista", "description": "Completa una lezione senza errori" },
-    "xp-500": { "label": "Cacciatore di XP", "description": "Guadagna 500 XP in totale" },
-    "lessons-10": { "label": "Dedicato", "description": "Completa 10 lezioni" }
+    "first-lesson": {
+      "label": "Primo Passo",
+      "description": "Completa la tua prima lezione"
+    },
+    "streak-3": {
+      "label": "Serie di 3 Giorni",
+      "description": "Studia 3 giorni di fila"
+    },
+    "streak-7": {
+      "label": "Guerriero della Settimana",
+      "description": "Studia 7 giorni di fila"
+    },
+    "perfect": {
+      "label": "Perfezionista",
+      "description": "Completa una lezione senza errori"
+    },
+    "xp-500": {
+      "label": "Cacciatore di XP",
+      "description": "Guadagna 500 XP in totale"
+    },
+    "lessons-10": {
+      "label": "Dedicato",
+      "description": "Completa 10 lezioni"
+    }
   },
   "levels": {
     "Beginner": "Principiante",
@@ -331,6 +349,33 @@
       "privacyPolicy": "Informativa sulla Privacy",
       "termsOfService": "Termini di Servizio",
       "copyright": "© {year} NoBarriers. Tutti i diritti riservati."
+    },
+    "faq": {
+      "title": "Domande frequenti",
+      "q1": {
+        "question": "NoBarriers è gratuito?",
+        "answer": "Sì — tutti i corsi, le lezioni e le funzioni sono completamente gratuiti. Ti serve solo un account."
+      },
+      "q2": {
+        "question": "Serve esperienza con la lingua dei segni?",
+        "answer": "No. Il corso Principiante parte da zero con saluti, alfabeto e numeri, e ogni unità si sblocca completando la precedente."
+      },
+      "q3": {
+        "question": "Come funzionano le lezioni?",
+        "answer": "Ogni lezione ha due parti: la modalità studio ti mostra prima ogni segno, poi un breve quiz verifica cosa ricordi. La maggior parte dura pochi minuti."
+      },
+      "q4": {
+        "question": "Cosa sono cuori, XP e serie?",
+        "answer": "Guadagni XP per ogni risposta corretta, mantieni la serie imparando ogni giorno, e i cuori sono le tue possibilità nel quiz: un errore ne costa uno."
+      },
+      "q5": {
+        "question": "Posso usare NoBarriers sul telefono?",
+        "answer": "Sì. NoBarriers funziona in qualsiasi browser moderno su telefono, tablet o computer — niente da installare."
+      },
+      "q6": {
+        "question": "Per chi è NoBarriers?",
+        "answer": "Per tutti: famiglie e amici di persone sorde, studenti, insegnanti e chiunque voglia comunicare senza barriere."
+      }
     }
   },
   "learn": {
@@ -454,7 +499,26 @@
           "subtitle": "Usa la lingua dei segni formale per colloqui, leadership e lavoro con i clienti.",
           "promo": "Percorso Pro"
         }
-      }
+      },
+      "heroTitle": "La lingua dei segni <hl>unisce</hl> le persone.",
+      "heroSubtitle": "Impara con lezioni brevi e divertenti: segni veri, conversazioni vere, al tuo ritmo.",
+      "alreadyHave": "Hai già un account?",
+      "logIn": "Accedi",
+      "catalogTitle": "Cosa imparerai",
+      "seeAll": "Vedi tutto",
+      "whyTitle": "Perché NoBarriers funziona",
+      "why1Title": "Apprendimento personalizzato",
+      "why1Text": "La modalità studio insegna prima ogni segno, poi i quiz verificano cosa hai imparato — sempre al tuo ritmo.",
+      "why2Title": "Segni veri e chiari",
+      "why2Text": "Ogni lezione usa illustrazioni chiare che puoi esercitare ovunque, in qualsiasi momento.",
+      "why3Title": "Motivazione integrata",
+      "why3Text": "Serie, XP e missioni giornaliere ti fanno tornare finché segnare non diventa naturale.",
+      "bandKicker": "Per famiglie e scuole",
+      "bandTitle": "Imparare insieme abbatte le barriere più in fretta.",
+      "bandText": "Genitori, compagni e amici possono imparare accanto ai propri cari sordi: tutti sullo stesso percorso.",
+      "bandCta": "Crea un account gratuito",
+      "joinTitle": "Unisciti a NoBarriers oggi",
+      "joinStart": "Inizia a imparare"
     },
     "getStartedGoal": {
       "back": "Indietro",
@@ -598,6 +662,17 @@
       "back": "Indietro",
       "errorTitle": "Impossibile caricare il ripasso",
       "errorBody": "Qualcosa è andato storto durante la preparazione della tua sessione di ripasso."
+    },
+    "forgotPassword": {
+      "title": "Password dimenticata?",
+      "subtitle": "Inserisci la tua email e ti invieremo le istruzioni per reimpostarla.",
+      "email": "Email",
+      "sendReset": "Invia link",
+      "sending": "Invio…",
+      "backToLogin": "Torna all'accesso",
+      "checkInbox": "Controlla la tua casella",
+      "sentMessage": "Se esiste un account per {email}, abbiamo inviato le istruzioni per reimpostare la password.",
+      "networkError": "Errore di rete. Riprova."
     }
   }
 }

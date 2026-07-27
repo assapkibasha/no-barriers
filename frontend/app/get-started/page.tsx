@@ -1,84 +1,210 @@
 import Header from '../../src/components/landing/Header'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
+import { courses } from '../../src/data/courses'
 
-const goalSlugs = [
-  {
-    slug: 'friend',
-    theme: 'bg-gradient-to-br from-[#0f9aa8] via-[#0a7d88] to-[#07545d]',
-    accent: 'text-teal-100',
-  },
-  {
-    slug: 'business',
-    theme: 'bg-gradient-to-br from-[#1f3ca6] via-[#1e2f8a] to-[#151f5f]',
-    accent: 'text-blue-100',
-  },
-  {
-    slug: 'school',
-    theme: 'bg-gradient-to-br from-[#2850b7] via-[#233f9a] to-[#1a2d75]',
-    accent: 'text-blue-100',
-  },
-  {
-    slug: 'family',
-    theme: 'bg-gradient-to-br from-[#0f8c96] via-[#0a7079] to-[#084e55]',
-    accent: 'text-teal-100',
-  },
-  {
-    slug: 'professional',
-    theme: 'bg-gradient-to-br from-[#213da1] via-[#1b2f80] to-[#122058]',
-    accent: 'text-blue-100',
-  },
-]
+const goalSlugs = ['friend', 'business', 'school', 'family', 'professional']
+
+const courseStyles: Record<string, { icon: string; bg: string }> = {
+  beginner: { icon: '🤟', bg: 'bg-brand' },
+  everyday: { icon: '🏠', bg: 'bg-unit' },
+  intermediate: { icon: '⏰', bg: 'bg-ink' },
+}
 
 export default async function GetStartedPage() {
   const t = await getTranslations('pages.getStarted')
+  const tCourses = await getTranslations('courses')
+  const tUnits = await getTranslations('units')
 
   return (
-    <main className="min-h-screen bg-[#f0faf8] lg:h-screen lg:overflow-hidden">
+    <main className="min-h-screen bg-paper">
       <Header variant="teal" />
-      <div className="mx-auto flex w-full max-w-[1500px] flex-col px-4 pb-8 pt-3 sm:px-6 lg:h-[calc(100vh-96px)] lg:px-8 lg:pb-4">
-        <section className="mt-2 flex min-h-0 flex-1 flex-col">
-          <h1 className="text-center text-3xl font-extrabold text-slate-900 sm:text-4xl">
-            {t('headline')}
+
+      {/* ── Hero: value statement + photo collage | signup goal cards ── */}
+      <section className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-14 px-4 pb-20 pt-12 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
+        <div>
+          <h1 className="font-accent text-6xl font-bold leading-tight text-ink sm:text-7xl">
+            {t.rich('heroTitle', {
+              hl: (chunks) => <span className="marker-highlight">{chunks}</span>,
+            })}
           </h1>
+          <p className="mt-5 max-w-lg text-lg text-ink-soft">{t('heroSubtitle')}</p>
 
-          <div className="mt-6 grid min-h-0 flex-1 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {goalSlugs.map((goal) => (
+          {/* Photo collage on organic shapes */}
+          <div className="relative mt-12 h-72 w-full max-w-md sm:h-80" aria-hidden="true">
+            <div className="absolute left-6 top-2 h-56 w-44 rotate-6 bg-brand/20 [border-radius:45%_55%_60%_40%/50%_45%_55%_50%]" />
+            <div className="absolute bottom-0 right-16 h-40 w-40 -rotate-6 bg-reward/20 [border-radius:55%_45%_40%_60%/45%_50%_50%_55%]" />
+            <img
+              src="/images/images/child and grama.png"
+              alt=""
+              className="absolute left-0 bottom-2 h-36 w-36 rounded-full border-4 border-white object-cover shadow-lg"
+            />
+            <img
+              src="/images/images/girl in front.png"
+              alt=""
+              className="absolute left-24 top-0 h-44 w-40 rotate-3 rounded-[2rem] border-4 border-white object-cover shadow-lg"
+            />
+            <img
+              src="/images/images/smilling.jpg"
+              alt=""
+              className="absolute right-4 top-16 h-40 w-40 -rotate-3 rounded-[2rem] border-4 border-white object-cover shadow-lg"
+            />
+            <span className="absolute right-2 top-2 text-3xl text-reward">✳</span>
+            <span className="absolute bottom-6 right-0 h-4 w-4 rotate-12 border-2 border-heart" />
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-extrabold text-ink">{t('headline')}</h2>
+          <div className="mt-6 flex flex-col gap-4">
+            {goalSlugs.map((slug) => (
               <Link
-                key={goal.slug}
-                href={`/get-started/${goal.slug}`}
-                className={`group relative overflow-hidden rounded-2xl p-7 text-left text-white shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl ${goal.theme}`}
+                key={slug}
+                href={`/get-started/${slug}`}
+                className="group flex items-center justify-between rounded-2xl border border-line bg-white px-6 py-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand hover:shadow-md"
               >
-                <div className="absolute inset-x-0 top-0 h-1 bg-white/35" />
-
-                <div className="relative z-10 flex h-full min-h-[220px] flex-col">
-                  <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-white/80">
-                    {t(`goals.${goal.slug}.kicker`)}
+                <span>
+                  <span className="block font-display text-base font-extrabold text-ink">
+                    {t(`goals.${slug}.title`)}
                   </span>
-
-                  <h2 className={`mt-2 text-3xl font-black uppercase leading-none tracking-tight xl:text-4xl ${goal.accent}`}>
-                    Sign
-                    <br />
-                    Flow
-                  </h2>
-
-                  <p className="mt-3 text-lg font-extrabold leading-tight text-white xl:text-xl">{t(`goals.${goal.slug}.title`)}</p>
-                  <p className="mt-2 text-sm text-white/90 xl:text-[15px]">{t(`goals.${goal.slug}.subtitle`)}</p>
-
-                  <div className="mt-auto flex items-end justify-between pt-4">
-                    <span className="inline-flex rotate-[-10deg] rounded-xl border-2 border-white/60 bg-teal-50 px-2 py-1 text-xs font-black uppercase tracking-wide text-teal-900 shadow-md">
-                      {t(`goals.${goal.slug}.promo`)}
-                    </span>
-                    <span className="rounded-full border border-white/40 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white/90">
-                      {t('tapToStart')}
-                    </span>
-                  </div>
-                </div>
+                  <span className="mt-0.5 block text-sm text-ink-soft">
+                    {t(`goals.${slug}.subtitle`)}
+                  </span>
+                </span>
+                <span className="ml-4 text-brand transition-transform group-hover:translate-x-1" aria-hidden="true">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
               </Link>
             ))}
           </div>
-        </section>
-      </div>
+          <p className="mt-5 text-sm text-ink-soft">
+            {t('alreadyHave')}{' '}
+            <Link href="/login" className="font-bold text-brand underline underline-offset-2 hover:text-ink">
+              {t('logIn')}
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* ── Course catalog teaser ── */}
+      <section className="border-y border-line bg-white">
+        <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-extrabold text-ink">{t('catalogTitle')}</h2>
+          <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-3">
+            {courses.map((course) => (
+              <div key={course.id}>
+                <div className="flex items-center gap-3 border-b border-line pb-4">
+                  <span
+                    className={`grid h-11 w-11 place-items-center rounded-full text-xl text-white ${courseStyles[course.id]?.bg ?? 'bg-brand'}`}
+                    aria-hidden="true"
+                  >
+                    {courseStyles[course.id]?.icon ?? '🤟'}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-lg font-extrabold text-ink">
+                      {tCourses(`${course.id}.title`)}
+                    </h3>
+                  </div>
+                </div>
+                <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5">
+                  {course.units.map((unit) => (
+                    <li key={unit}>
+                      <Link
+                        href="/register"
+                        className="text-sm font-semibold text-ink-soft transition-colors hover:text-brand"
+                      >
+                        {tUnits(unit)}
+                      </Link>
+                    </li>
+                  ))}
+                  <li>
+                    <Link href="/register" className="text-sm font-extrabold text-brand hover:underline">
+                      {t('seeAll')}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why NoBarriers works ── */}
+      <section className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+        <h2 className="text-center text-3xl font-extrabold text-ink">{t('whyTitle')}</h2>
+        <div className="mt-12 grid grid-cols-1 gap-12 text-center sm:grid-cols-3">
+          {([
+            { key: 'why1', icon: '🎯', blob: 'bg-brand-soft' },
+            { key: 'why2', icon: '🖐️', blob: 'bg-unit-soft' },
+            { key: 'why3', icon: '🔥', blob: 'bg-reward-soft' },
+          ] as const).map(({ key, icon, blob }) => (
+            <div key={key} className="mx-auto max-w-xs">
+              <span
+                className={`mx-auto grid h-20 w-20 place-items-center text-3xl ${blob} [border-radius:55%_45%_50%_50%/50%_55%_45%_50%]`}
+                aria-hidden="true"
+              >
+                {icon}
+              </span>
+              <h3 className="mt-5 font-display text-lg font-extrabold text-ink">{t(`${key}Title`)}</h3>
+              <p className="mt-2.5 text-sm leading-relaxed text-ink-soft">{t(`${key}Text`)}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Families & schools band ── */}
+      <section className="border-y border-line bg-white">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div className="relative mx-auto h-64 w-full max-w-sm" aria-hidden="true">
+            <div className="absolute left-10 top-4 h-48 w-48 rotate-12 bg-unit/15 [border-radius:50%_50%_45%_55%/55%_45%_55%_45%]" />
+            <img
+              src="/images/images/funny.png"
+              alt=""
+              className="absolute left-0 top-10 h-40 w-40 rounded-full border-4 border-white object-cover shadow-lg"
+            />
+            <img
+              src="/images/motivation.jpg"
+              alt=""
+              className="absolute right-6 top-0 h-44 w-44 rotate-3 rounded-[2rem] border-4 border-white object-cover shadow-lg"
+            />
+            <span className="absolute bottom-2 right-2 text-2xl text-brand">✳</span>
+          </div>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-ink-soft">{t('bandKicker')}</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-ink">{t('bandTitle')}</h2>
+            <p className="mt-4 max-w-md text-ink-soft">{t('bandText')}</p>
+            <Link
+              href="/register"
+              className="mt-8 inline-block rounded-full bg-brand px-8 py-3.5 text-sm font-extrabold uppercase tracking-wide text-white transition-all hover:bg-brand-hover"
+            >
+              {t('bandCta')}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Join today ── */}
+      <section className="mx-auto w-full max-w-6xl px-4 py-20 text-center sm:px-6 lg:px-8">
+        <h2 className="font-accent text-5xl font-bold text-ink">
+          <span className="marker-underline">{t('joinTitle')}</span>
+        </h2>
+        <div className="mx-auto mt-8 flex w-full max-w-xs flex-col gap-3">
+          <Link
+            href="/register"
+            className="rounded-full bg-brand py-3.5 text-sm font-extrabold uppercase tracking-wide text-white transition-all hover:bg-brand-hover"
+          >
+            {t('joinStart')}
+          </Link>
+          <Link
+            href="/login"
+            className="rounded-full border-2 border-ink py-3 text-sm font-extrabold uppercase tracking-wide text-ink transition-all hover:bg-ink hover:text-white"
+          >
+            {t('logIn')}
+          </Link>
+        </div>
+      </section>
     </main>
   )
 }

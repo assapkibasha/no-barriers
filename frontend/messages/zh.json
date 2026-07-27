@@ -251,12 +251,30 @@
     "advanced-smell": "气味"
   },
   "badges": {
-    "first-lesson": { "label": "第一步", "description": "完成第一课" },
-    "streak-3": { "label": "3天连续", "description": "连续学习3天" },
-    "streak-7": { "label": "周战士", "description": "连续学习7天" },
-    "perfect": { "label": "完美主义者", "description": "无错误完成课程" },
-    "xp-500": { "label": "XP猎手", "description": "累计获得500 XP" },
-    "lessons-10": { "label": "专注学习者", "description": "完成10课" }
+    "first-lesson": {
+      "label": "第一步",
+      "description": "完成第一课"
+    },
+    "streak-3": {
+      "label": "3天连续",
+      "description": "连续学习3天"
+    },
+    "streak-7": {
+      "label": "周战士",
+      "description": "连续学习7天"
+    },
+    "perfect": {
+      "label": "完美主义者",
+      "description": "无错误完成课程"
+    },
+    "xp-500": {
+      "label": "XP猎手",
+      "description": "累计获得500 XP"
+    },
+    "lessons-10": {
+      "label": "专注学习者",
+      "description": "完成10课"
+    }
   },
   "levels": {
     "Beginner": "初级",
@@ -331,6 +349,33 @@
       "privacyPolicy": "隐私政策",
       "termsOfService": "服务条款",
       "copyright": "© {year} NoBarriers. 保留所有权利。"
+    },
+    "faq": {
+      "title": "常见问题",
+      "q1": {
+        "question": "NoBarriers 是免费的吗？",
+        "answer": "是的——所有课程、课时和功能完全免费，只需注册一个账户。"
+      },
+      "q2": {
+        "question": "没有手语基础可以学吗？",
+        "answer": "可以。初级课程从零开始，包括问候、字母和数字，完成上一单元即可解锁下一单元。"
+      },
+      "q3": {
+        "question": "课程是如何进行的？",
+        "answer": "每节课分两部分：学习模式先教你每个手语，然后简短测验检查记忆情况。大多数课程只需几分钟。"
+      },
+      "q4": {
+        "question": "爱心、经验值和连续打卡是什么？",
+        "answer": "每答对一题获得经验值，每天学习保持连续打卡；爱心是测验中的机会，答错会扣一颗。"
+      },
+      "q5": {
+        "question": "可以在手机上使用吗？",
+        "answer": "可以。NoBarriers 可在手机、平板或电脑的任何现代浏览器中运行，无需安装。"
+      },
+      "q6": {
+        "question": "NoBarriers 适合哪些人？",
+        "answer": "适合所有人：聋人朋友的家人和朋友、学生、教师，以及任何想无障碍沟通的人。"
+      }
     }
   },
   "learn": {
@@ -454,7 +499,26 @@
           "subtitle": "在面试、领导力和客户工作中使用正式手语。",
           "promo": "专业赛道"
         }
-      }
+      },
+      "heroTitle": "手语让人们<hl>心意相通</hl>。",
+      "heroSubtitle": "通过简短有趣的课程学习——真实的手语、真实的对话，按自己的节奏进行。",
+      "alreadyHave": "已经有账户了？",
+      "logIn": "登录",
+      "catalogTitle": "你将学到什么",
+      "seeAll": "查看全部",
+      "whyTitle": "为什么 NoBarriers 有效",
+      "why1Title": "个性化学习",
+      "why1Text": "学习模式先教每个手语，再用测验检查掌握情况——始终按你的节奏。",
+      "why2Title": "真实清晰的手语",
+      "why2Text": "每节课都配有清晰的手语插图，随时随地都能练习。",
+      "why3Title": "内置激励机制",
+      "why3Text": "连续打卡、经验值和每日任务让你坚持学习，直到打手语成为自然。",
+      "bandKicker": "面向家庭和学校",
+      "bandTitle": "一起学习，更快打破障碍。",
+      "bandText": "父母、同学和朋友可以与聋人亲友一起学习——大家走在同一条路上，相互鼓励。",
+      "bandCta": "创建免费账户",
+      "joinTitle": "立即加入 NoBarriers",
+      "joinStart": "开始学习"
     },
     "getStartedGoal": {
       "back": "返回",
@@ -598,6 +662,17 @@
       "back": "返回",
       "errorTitle": "无法加载复习",
       "errorBody": "准备复习课程时出现问题。"
+    },
+    "forgotPassword": {
+      "title": "忘记密码？",
+      "subtitle": "输入您的邮箱，我们将发送重置说明。",
+      "email": "邮箱",
+      "sendReset": "发送重置链接",
+      "sending": "发送中…",
+      "backToLogin": "返回登录",
+      "checkInbox": "请查收邮件",
+      "sentMessage": "如果 {email} 对应的账户存在，我们已发送密码重置说明。",
+      "networkError": "网络错误，请重试。"
     }
   }
 }

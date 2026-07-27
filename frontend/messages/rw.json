@@ -251,12 +251,30 @@
     "advanced-smell": "Kuruma"
   },
   "badges": {
-    "first-lesson": { "label": "Intangiriro", "description": "Maranira isomo rya mbere" },
-    "streak-3": { "label": "Iminsi 3 Yombi", "description": "Iga iminsi 3 ikurikirana" },
-    "streak-7": { "label": "Intwari y'Icyumweru", "description": "Iga iminsi 7 ikurikirana" },
-    "perfect": { "label": "Intangarugero", "description": "Maranira isomo nta makosa" },
-    "xp-500": { "label": "Umuhigi wa XP", "description": "Unguka XP 500 byose" },
-    "lessons-10": { "label": "Uwiherera", "description": "Maranira amasomo 10" }
+    "first-lesson": {
+      "label": "Intangiriro",
+      "description": "Maranira isomo rya mbere"
+    },
+    "streak-3": {
+      "label": "Iminsi 3 Yombi",
+      "description": "Iga iminsi 3 ikurikirana"
+    },
+    "streak-7": {
+      "label": "Intwari y'Icyumweru",
+      "description": "Iga iminsi 7 ikurikirana"
+    },
+    "perfect": {
+      "label": "Intangarugero",
+      "description": "Maranira isomo nta makosa"
+    },
+    "xp-500": {
+      "label": "Umuhigi wa XP",
+      "description": "Unguka XP 500 byose"
+    },
+    "lessons-10": {
+      "label": "Uwiherera",
+      "description": "Maranira amasomo 10"
+    }
   },
   "levels": {
     "Beginner": "Intangiriro",
@@ -331,6 +349,33 @@
       "privacyPolicy": "Politiki y'Ibanga",
       "termsOfService": "Amategeko y'Ikoreshwa",
       "copyright": "© {year} NoBarriers. Uburenganzira bwose burabikwa."
+    },
+    "faq": {
+      "title": "Ibibazo bikunze kubazwa",
+      "q1": {
+        "question": "Ese NoBarriers ni ubuntu?",
+        "answer": "Yego — amasomo yose, ibice byose n’ibikorwa byose ni ubuntu rwose. Icyo ukeneye ni konti gusa."
+      },
+      "q2": {
+        "question": "Ese nkeneye kuba nzi ururimi rw’amarenga?",
+        "answer": "Oya. Isomo ry’abatangiye ritangirira ku busa n’indamukanyo, inyuguti n’imibare, kandi buri gice gifunguka umaze kurangiza ikibanziriza."
+      },
+      "q3": {
+        "question": "Amasomo akora ate?",
+        "answer": "Buri somo rigizwe n’ibice bibiri: uburyo bwo kwiga bukwereka buri karenga mbere, hanyuma akabazo gato kakagenzura ibyo wibuka. Menshi amara iminota mike gusa."
+      },
+      "q4": {
+        "question": "Imitima, XP n’iminsi ikurikirana ni iki?",
+        "answer": "Ubona XP kuri buri gisubizo cyiza, ukomeza iminsi ikurikirana wiga buri munsi, kandi imitima ni amahirwe yawe mu kabazo — ikosa rimwe ritwara umutima umwe."
+      },
+      "q5": {
+        "question": "Nshobora gukoresha NoBarriers kuri telefoni?",
+        "answer": "Yego. NoBarriers ikora muri mushakisha iyo ari yo yose igezweho kuri telefoni, tableti cyangwa mudasobwa — nta kintu gishyirwamo."
+      },
+      "q6": {
+        "question": "NoBarriers yagenewe nde?",
+        "answer": "Bose: imiryango n’inshuti z’ibipfamatwi, abanyeshuri, abarimu, n’umuntu wese ushaka kuvugana nta nzitizi."
+      }
     }
   },
   "learn": {
@@ -454,7 +499,26 @@
           "subtitle": "Koresha ururimi rw'ibimenyetso rw'imikorere ku biganiro, ubuyobozi, n'akazi na cliyenti.",
           "promo": "Inzira y'Inzobere"
         }
-      }
+      },
+      "heroTitle": "Ururimi rw'amarenga <hl>ruhuza</hl> abantu.",
+      "heroSubtitle": "Iga mu masomo magufi kandi ashimishije — amarenga nyayo, ibiganiro nyabyo, ku muvuduko wawe.",
+      "alreadyHave": "Usanzwe ufite konti?",
+      "logIn": "Injira",
+      "catalogTitle": "Ibyo uziga",
+      "seeAll": "Reba byose",
+      "whyTitle": "Impamvu NoBarriers ikora",
+      "why1Title": "Kwiga bikunoze",
+      "why1Text": "Uburyo bwo kwiga bukwigisha buri karenga mbere, hanyuma ibibazo bikagenzura ibyafashwe — buri gihe ku muvuduko wawe.",
+      "why2Title": "Amarenga nyayo kandi asobanutse",
+      "why2Text": "Buri somo rikoresha amashusho asobanutse ushobora kwitoza aho uri hose, igihe icyo ari cyo cyose.",
+      "why3Title": "Gushishikarizwa biri imbere",
+      "why3Text": "Iminsi ikurikirana, XP n'inshingano za buri munsi bigutera gukomeza kugeza amarenga abaye kamere.",
+      "bandKicker": "Ku miryango n'amashuri",
+      "bandTitle": "Kwigira hamwe gusenya inzitizi vuba.",
+      "bandText": "Ababyeyi, abanyeshuri bagenzi n'inshuti bashobora kwigana n'abavandimwe b'ibipfamatwi — bose mu nzira imwe.",
+      "bandCta": "Fungura konti y'ubuntu",
+      "joinTitle": "Ifatanye na NoBarriers uyu munsi",
+      "joinStart": "Tangira kwiga"
     },
     "getStartedGoal": {
       "back": "Subira",
@@ -598,6 +662,17 @@
       "back": "Subira",
       "errorTitle": "Ntibishoboka gufungura kongera kwiga",
       "errorBody": "Hari ikibazo cyabaye mu gutegura ibiganiro byo kongera kwiga."
+    },
+    "forgotPassword": {
+      "title": "Wibagiwe ijambobanga?",
+      "subtitle": "Andika imeyili yawe maze tukoherereze amabwiriza yo kurihindura.",
+      "email": "Imeyili",
+      "sendReset": "Ohereza umuyoboro",
+      "sending": "Birimo koherezwa…",
+      "backToLogin": "Subira ku kwinjira",
+      "checkInbox": "Reba mu butumwa bwawe",
+      "sentMessage": "Niba konti ya {email} ibaho, twohereje amabwiriza yo guhindura ijambobanga.",
+      "networkError": "Ikibazo cy’umurongo. Ongera ugerageze."
     }
   }
 }

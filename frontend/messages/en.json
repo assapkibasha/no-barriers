@@ -251,12 +251,30 @@
     "advanced-smell": "Smell"
   },
   "badges": {
-    "first-lesson": { "label": "First Step", "description": "Complete your first lesson" },
-    "streak-3": { "label": "3-Day Streak", "description": "Learn 3 days in a row" },
-    "streak-7": { "label": "Week Warrior", "description": "Learn 7 days in a row" },
-    "perfect": { "label": "Perfectionist", "description": "Complete a lesson without errors" },
-    "xp-500": { "label": "XP Hunter", "description": "Earn 500 XP total" },
-    "lessons-10": { "label": "Dedicated", "description": "Complete 10 lessons" }
+    "first-lesson": {
+      "label": "First Step",
+      "description": "Complete your first lesson"
+    },
+    "streak-3": {
+      "label": "3-Day Streak",
+      "description": "Learn 3 days in a row"
+    },
+    "streak-7": {
+      "label": "Week Warrior",
+      "description": "Learn 7 days in a row"
+    },
+    "perfect": {
+      "label": "Perfectionist",
+      "description": "Complete a lesson without errors"
+    },
+    "xp-500": {
+      "label": "XP Hunter",
+      "description": "Earn 500 XP total"
+    },
+    "lessons-10": {
+      "label": "Dedicated",
+      "description": "Complete 10 lessons"
+    }
   },
   "levels": {
     "Beginner": "Beginner",
@@ -331,6 +349,33 @@
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
       "copyright": "© {year} NoBarriers. All rights reserved."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": {
+        "question": "Is NoBarriers free?",
+        "answer": "Yes — every course, lesson and feature is completely free. All you need is an account."
+      },
+      "q2": {
+        "question": "Do I need any experience with sign language?",
+        "answer": "No. The Beginner course starts from zero with greetings, the alphabet and numbers, and each unit unlocks as you finish the one before it."
+      },
+      "q3": {
+        "question": "How do lessons work?",
+        "answer": "Each lesson has two parts: study mode shows you every sign first, then a short quiz checks what you remember. Most lessons take just a few minutes."
+      },
+      "q4": {
+        "question": "What are hearts, XP and streaks?",
+        "answer": "You earn XP for every correct answer, keep a streak by learning every day, and hearts are your chances in a quiz — a wrong answer costs one."
+      },
+      "q5": {
+        "question": "Can I use NoBarriers on my phone?",
+        "answer": "Yes. NoBarriers runs in any modern browser on your phone, tablet or computer — nothing to install."
+      },
+      "q6": {
+        "question": "Who is NoBarriers for?",
+        "answer": "Everyone: deaf learners' families and friends, students, teachers, and anyone who wants to communicate without barriers."
+      }
     }
   },
   "learn": {
@@ -454,7 +499,26 @@
           "subtitle": "Use formal sign language for interviews, leadership, and client work.",
           "promo": "Pro Track"
         }
-      }
+      },
+      "heroTitle": "Sign language brings people <hl>together</hl>.",
+      "heroSubtitle": "Learn with short, fun lessons — real signs, real conversations, at your own pace.",
+      "alreadyHave": "Already have an account?",
+      "logIn": "Log in",
+      "catalogTitle": "What you'll learn",
+      "seeAll": "See all",
+      "whyTitle": "Why NoBarriers works",
+      "why1Title": "Personalized learning",
+      "why1Text": "Study mode teaches each sign first, then quizzes check what stuck — always at your pace.",
+      "why2Title": "Real, clear signs",
+      "why2Text": "Every lesson uses clear sign illustrations you can practice anywhere, anytime.",
+      "why3Title": "Motivation built in",
+      "why3Text": "Streaks, XP and daily quests keep you coming back until signing feels natural.",
+      "bandKicker": "For families & schools",
+      "bandTitle": "Learning together breaks barriers faster.",
+      "bandText": "Parents, classmates and friends can learn alongside deaf loved ones — everyone on the same path, cheering each other on.",
+      "bandCta": "Create a free account",
+      "joinTitle": "Join NoBarriers today",
+      "joinStart": "Start learning"
     },
     "getStartedGoal": {
       "back": "Back",
@@ -598,6 +662,17 @@
       "back": "Back",
       "errorTitle": "Unable to load review",
       "errorBody": "Something went wrong while preparing your review session."
+    },
+    "forgotPassword": {
+      "title": "Forgot your password?",
+      "subtitle": "Enter your email and we'll send you instructions to reset it.",
+      "email": "Email",
+      "sendReset": "Send reset link",
+      "sending": "Sending…",
+      "backToLogin": "Back to log in",
+      "checkInbox": "Check your inbox",
+      "sentMessage": "If an account exists for {email}, we've sent password reset instructions.",
+      "networkError": "Network error. Please try again."
     }
   }
 }
