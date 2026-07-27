@@ -122,6 +122,9 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
   )
 
   const handleNext = useCallback(async () => {
+    // Only an answered question can advance — otherwise a rapid double-click
+    // on Next lands here again after the state reset and skips a question.
+    if (!answered) return
     if (current + 1 >= exercises.length) {
       if (completingRef.current) return
       completingRef.current = true
@@ -146,7 +149,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
       setTyped('')
       setCorrect(false)
     }
-  }, [current, exercises.length, mistakes, lesson, completeLesson])
+  }, [answered, current, exercises.length, mistakes, lesson, completeLesson])
 
   if (!mounted) {
     return (
