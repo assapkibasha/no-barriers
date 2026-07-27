@@ -473,7 +473,7 @@
           "promo": "Pro Track"
         }
       },
-      "heroTitle": "Sign language brings people together.",
+      "heroTitle": "Sign language brings people <hl>together</hl>.",
       "heroSubtitle": "Learn with short, fun lessons — real signs, real conversations, at your own pace.",
       "alreadyHave": "Already have an account?",
       "logIn": "Log in",

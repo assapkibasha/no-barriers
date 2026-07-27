@@ -23,8 +23,10 @@ export default async function GetStartedPage() {
       {/* ── Hero: value statement + photo collage | signup goal cards ── */}
       <section className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-14 px-4 pb-20 pt-12 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
         <div>
-          <h1 className="text-4xl font-extrabold leading-tight text-ink sm:text-5xl">
-            {t('heroTitle')}
+          <h1 className="font-accent text-6xl font-bold leading-tight text-ink sm:text-7xl">
+            {t.rich('heroTitle', {
+              hl: (chunks) => <span className="marker-highlight">{chunks}</span>,
+            })}
           </h1>
           <p className="mt-5 max-w-lg text-lg text-ink-soft">{t('heroSubtitle')}</p>
 
@@ -185,7 +187,9 @@ export default async function GetStartedPage() {
 
       {/* ── Join today ── */}
       <section className="mx-auto w-full max-w-6xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-ink">{t('joinTitle')}</h2>
+        <h2 className="font-accent text-5xl font-bold text-ink">
+          <span className="marker-underline">{t('joinTitle')}</span>
+        </h2>
         <div className="mx-auto mt-8 flex w-full max-w-xs flex-col gap-3">
           <Link
             href="/register"

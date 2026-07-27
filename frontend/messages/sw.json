@@ -473,7 +473,7 @@
           "promo": "Mkondo wa Wataalamu"
         }
       },
-      "heroTitle": "Lugha ya alama huwaunganisha watu.",
+      "heroTitle": "Lugha ya alama <hl>huwaunganisha</hl> watu.",
       "heroSubtitle": "Jifunze kwa masomo mafupi na ya kufurahisha — alama halisi, mazungumzo halisi, kwa kasi yako.",
       "alreadyHave": "Je, tayari una akaunti?",
       "logIn": "Ingia",

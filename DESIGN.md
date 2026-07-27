@@ -84,6 +84,18 @@ Usage: `bg-brand text-white`, `bg-paper`, `text-ink`, `bg-unit-soft text-unit`,
 - **Display / headings:** Nunito (700–800). Rounded, friendly, readable,
   good multilingual coverage. Tight letter-spacing (-0.01 to -0.03em) on large sizes.
 - **Body / UI:** Nunito Sans (400/600/700).
+- **Accent / handwritten:** Caveat (600/700), Tailwind class `font-accent` —
+  the Odoo-style marker voice. STRICT rules:
+  - Hero headlines and short display moments ONLY (max 1–2 per page).
+    Never body text, buttons, labels, or anything users must read quickly.
+  - Set it 1.5–2× larger than the equivalent Nunito size (Caveat runs small).
+  - Pairs with hand-drawn decorations (`src/index.css`):
+    `.marker-highlight` (amber highlighter swipe — decoration, exempt from
+    the amber-is-gamification rule) and `.marker-underline` (blue stroke).
+    One decoration per headline, on the key word only. In translations the
+    highlighted word is marked with `<hl>` tags and rendered via `t.rich`.
+  - Caveat covers Latin + Cyrillic only; ja/ko/zh/ar fall back to Nunito
+    automatically — this is expected and fine.
 - **Stat eyebrows & small labels:** monospace (JetBrains Mono or system mono),
   11–12px, uppercase, letter-spacing 0.14–0.18em (the Shopify pattern).
 - Scale: 12 / 13.5 / 15 / 18 / 24 / 32 / 44 / 56. Stay on it.

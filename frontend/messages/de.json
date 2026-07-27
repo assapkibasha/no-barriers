@@ -473,7 +473,7 @@
           "promo": "Pro-Kurs"
         }
       },
-      "heroTitle": "Gebärdensprache bringt Menschen zusammen.",
+      "heroTitle": "Gebärdensprache bringt Menschen <hl>zusammen</hl>.",
       "heroSubtitle": "Lerne mit kurzen, unterhaltsamen Lektionen — echte Gebärden, echte Gespräche, in deinem Tempo.",
       "alreadyHave": "Hast du schon ein Konto?",
       "logIn": "Anmelden",

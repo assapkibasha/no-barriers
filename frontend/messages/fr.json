@@ -473,7 +473,7 @@
           "promo": "Parcours Pro"
         }
       },
-      "heroTitle": "La langue des signes rapproche les gens.",
+      "heroTitle": "La langue des signes <hl>rapproche</hl> les gens.",
       "heroSubtitle": "Apprenez avec des leçons courtes et amusantes — de vrais signes, de vraies conversations, à votre rythme.",
       "alreadyHave": "Vous avez déjà un compte ?",
       "logIn": "Se connecter",
