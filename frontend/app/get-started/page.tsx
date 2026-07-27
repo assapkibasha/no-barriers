@@ -5,28 +5,28 @@ import { getTranslations } from 'next-intl/server'
 const goalSlugs = [
   {
     slug: 'friend',
-    theme: 'bg-gradient-to-br from-[#0f9aa8] via-[#0a7d88] to-[#07545d]',
-    accent: 'text-teal-100',
+    theme: 'bg-gradient-to-br from-brand-hover via-brand to-ink',
+    accent: 'text-brand-soft',
   },
   {
     slug: 'business',
-    theme: 'bg-gradient-to-br from-[#1f3ca6] via-[#1e2f8a] to-[#151f5f]',
-    accent: 'text-blue-100',
+    theme: 'bg-gradient-to-br from-unit via-[#1A3FAE] to-ink',
+    accent: 'text-unit-soft',
   },
   {
     slug: 'school',
-    theme: 'bg-gradient-to-br from-[#2850b7] via-[#233f9a] to-[#1a2d75]',
-    accent: 'text-blue-100',
+    theme: 'bg-gradient-to-br from-unit via-[#1A3FAE] to-ink',
+    accent: 'text-unit-soft',
   },
   {
     slug: 'family',
-    theme: 'bg-gradient-to-br from-[#0f8c96] via-[#0a7079] to-[#084e55]',
-    accent: 'text-teal-100',
+    theme: 'bg-gradient-to-br from-brand-hover via-brand to-ink',
+    accent: 'text-brand-soft',
   },
   {
     slug: 'professional',
-    theme: 'bg-gradient-to-br from-[#213da1] via-[#1b2f80] to-[#122058]',
-    accent: 'text-blue-100',
+    theme: 'bg-gradient-to-br from-unit via-[#1A3FAE] to-ink',
+    accent: 'text-unit-soft',
   },
 ]
 
@@ -34,11 +34,11 @@ export default async function GetStartedPage() {
   const t = await getTranslations('pages.getStarted')
 
   return (
-    <main className="min-h-screen bg-[#f0faf8] lg:h-screen lg:overflow-hidden">
+    <main className="min-h-screen bg-paper lg:h-screen lg:overflow-hidden">
       <Header variant="teal" />
       <div className="mx-auto flex w-full max-w-[1500px] flex-col px-4 pb-8 pt-3 sm:px-6 lg:h-[calc(100vh-96px)] lg:px-8 lg:pb-4">
         <section className="mt-2 flex min-h-0 flex-1 flex-col">
-          <h1 className="text-center text-3xl font-extrabold text-slate-900 sm:text-4xl">
+          <h1 className="text-center text-3xl font-extrabold text-ink sm:text-4xl">
             {t('headline')}
           </h1>
 
@@ -66,7 +66,7 @@ export default async function GetStartedPage() {
                   <p className="mt-2 text-sm text-white/90 xl:text-[15px]">{t(`goals.${goal.slug}.subtitle`)}</p>
 
                   <div className="mt-auto flex items-end justify-between pt-4">
-                    <span className="inline-flex rotate-[-10deg] rounded-xl border-2 border-white/60 bg-teal-50 px-2 py-1 text-xs font-black uppercase tracking-wide text-teal-900 shadow-md">
+                    <span className="inline-flex rotate-[-10deg] rounded-xl border-2 border-white/60 bg-white px-2 py-1 text-xs font-black uppercase tracking-wide text-ink shadow-md">
                       {t(`goals.${goal.slug}.promo`)}
                     </span>
                     <span className="rounded-full border border-white/40 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white/90">

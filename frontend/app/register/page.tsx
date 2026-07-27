@@ -40,8 +40,8 @@ function RegisterForm() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#eef7f5] p-4">
-      <div className="flex w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-2xl">
+    <main className="flex min-h-screen items-center justify-center bg-paper p-4">
+      <div className="flex w-full max-w-5xl overflow-hidden rounded-3xl border border-line bg-white shadow-sm">
 
         {/* ── Left: Form ── */}
         <div className="flex w-full flex-col justify-center px-10 py-12 md:w-1/2">
@@ -53,16 +53,16 @@ function RegisterForm() {
               className="h-9 w-9 object-contain"
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
             />
-            <span className="text-xl font-extrabold tracking-tight text-teal-700">NoBarriers</span>
+            <span className="font-display text-xl font-extrabold tracking-tight text-brand">NoBarriers</span>
           </div>
 
-          <h1 className="text-3xl font-extrabold text-gray-800">{t('createAccount')}</h1>
-          <p className="mt-1.5 text-sm text-gray-500">{t('subtitle')}</p>
+          <h1 className="text-3xl font-extrabold text-ink">{t('createAccount')}</h1>
+          <p className="mt-1.5 text-sm text-ink-soft">{t('subtitle')}</p>
 
           <form onSubmit={handleSubmit} className="mt-7 space-y-4">
             {/* Name */}
             <div>
-              <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-gray-700">
+              <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-ink">
                 {t('fullName')}
               </label>
               <input
@@ -73,13 +73,13 @@ function RegisterForm() {
                 placeholder="Jane Doe"
                 value={form.name}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+                className="w-full rounded-xl border border-line bg-paper px-4 py-3 text-sm text-ink outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-gray-700">
+              <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-ink">
                 {t('emailAddress')}
               </label>
               <input
@@ -90,13 +90,13 @@ function RegisterForm() {
                 placeholder="jane@example.com"
                 value={form.email}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+                className="w-full rounded-xl border border-line bg-paper px-4 py-3 text-sm text-ink outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20"
               />
             </div>
 
             {/* Password */}
             <div>
-              <label htmlFor="password" className="mb-1.5 block text-sm font-semibold text-gray-700">
+              <label htmlFor="password" className="mb-1.5 block text-sm font-semibold text-ink">
                 {t('password')}
               </label>
               <div className="relative">
@@ -108,12 +108,12 @@ function RegisterForm() {
                   placeholder="At least 8 characters"
                   value={form.password}
                   onChange={handleChange}
-                  className="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 pr-11 text-sm text-gray-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+                  className="w-full rounded-xl border border-line bg-paper px-4 py-3 pr-11 text-sm text-ink outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-teal-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-soft/70 hover:text-brand"
                   aria-label="Toggle password visibility"
                 >
                   {showPassword ? (
@@ -127,7 +127,7 @@ function RegisterForm() {
 
             {/* Confirm Password */}
             <div>
-              <label htmlFor="confirm" className="mb-1.5 block text-sm font-semibold text-gray-700">
+              <label htmlFor="confirm" className="mb-1.5 block text-sm font-semibold text-ink">
                 {t('confirmPassword')}
               </label>
               <div className="relative">
@@ -139,12 +139,12 @@ function RegisterForm() {
                   placeholder="Repeat your password"
                   value={form.confirm}
                   onChange={handleChange}
-                  className="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 pr-11 text-sm text-gray-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+                  className="w-full rounded-xl border border-line bg-paper px-4 py-3 pr-11 text-sm text-ink outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20"
                 />
                 <button
                   type="button"
                   onClick={() => setShowConfirm(!showConfirm)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-teal-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-soft/70 hover:text-brand"
                   aria-label="Toggle confirm password visibility"
                 >
                   {showConfirm ? (
@@ -157,40 +157,40 @@ function RegisterForm() {
             </div>
 
             {error && (
-              <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-2.5 text-sm font-semibold text-red-600">{error}</p>
+              <p className="rounded-xl border border-heart/25 bg-heart-soft px-4 py-2.5 text-sm font-semibold text-heart">{error}</p>
             )}
 
             <button
               type="submit"
               disabled={loading}
-              className="mt-2 w-full rounded-2xl bg-teal-600 py-3.5 text-sm font-extrabold uppercase tracking-wide text-white transition-all hover:bg-teal-700 active:scale-[0.98] disabled:opacity-60"
+              className="mt-2 w-full rounded-full bg-brand py-3.5 text-sm font-extrabold uppercase tracking-wide text-white transition-all hover:bg-brand-hover active:scale-[0.98] disabled:opacity-60"
             >
               {loading ? t('creatingAccount') : t('createAccountBtn')}
             </button>
           </form>
 
-          <p className="mt-7 text-center text-sm text-gray-500">
+          <p className="mt-7 text-center text-sm text-ink-soft">
             {t('alreadyHaveAccount')}{' '}
-            <Link href="/login" className="font-bold text-teal-600 hover:underline">
+            <Link href="/login" className="font-bold text-brand hover:underline">
               {t('logInHere')}
             </Link>
           </p>
         </div>
 
         {/* ── Right: Image panel ── */}
-        <div className="hidden flex-col items-center justify-center bg-[#eef7f5] px-10 py-14 md:flex md:w-1/2">
+        <div className="hidden flex-col items-center justify-center bg-brand-soft px-10 py-14 md:flex md:w-1/2">
           <img
             src="/images/images/login and register image.png"
             alt="Learning illustration"
             className="w-full max-w-sm object-contain drop-shadow-xl"
             onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0.3' }}
           />
-          <h2 className="mt-8 text-center text-2xl font-extrabold text-gray-800">
+          <h2 className="mt-8 text-center text-2xl font-extrabold text-ink">
             {t('panelHeadline').split('\n').map((line, i) => (
               <span key={i}>{line}{i === 0 && <br />}</span>
             ))}
           </h2>
-          <p className="mt-3 max-w-xs text-center text-sm text-gray-500">
+          <p className="mt-3 max-w-xs text-center text-sm text-ink-soft">
             {t('panelSubtitle')}
           </p>
         </div>
