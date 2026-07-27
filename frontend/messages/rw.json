@@ -300,7 +300,7 @@
       "alreadyHaveAccount": "Nifite konte"
     },
     "features": {
-      "f1Title": "ubuntu. giraneza.\nbukorera.",
+      "f1Title": "magufi. ashimishije.\nakora.",
       "f1Body": "Kwiga na NoBarriers ni gushimishije kandi bikora rwose! Grâce à nos courtes leçons interactives, earn points, level up, and develop real-world language skills.",
       "f1Badge1": "Gukora",
       "f1Badge2": "Imikino",
@@ -319,8 +319,8 @@
     },
     "cta": {
       "headline": "Witeguye kuraho inzitizi z'ururimi?",
-      "subtitle": "Kwinjira mu bagize imiliyoni y'abantu biga mu isi hose hanyuma utangire urugendo rwawe rw'ururimi uyu munsi. Ni ubuntu, ni gushimishije, kandi bikora.",
-      "button": "Tangira Ubuntu"
+      "subtitle": "Tangira kwiga ururimi rw'amarenga rw'u Rwanda uyu munsi. Amasomo magufi, amarenga nyayo, n'iterambere ubona.",
+      "button": "Tangira"
     },
     "about": {
       "title": "Ibyerekeye",
@@ -353,8 +353,8 @@
     "faq": {
       "title": "Ibibazo bikunze kubazwa",
       "q1": {
-        "question": "Ese NoBarriers ni ubuntu?",
-        "answer": "Yego — amasomo yose, ibice byose n’ibikorwa byose ni ubuntu rwose. Icyo ukeneye ni konti gusa."
+        "question": "NoBarriers itwara amafaranga angahe?",
+        "answer": "NoBarriers iri mu gihe cy'itangiriro, bityo ushobora gufungura konti ugatangira kwiga ako kanya. Gahunda zo kwiyandikisha zizatangizwa uko urubuga rukura, kandi tuzamenyesha abanditse hakiri kare mbere y'impinduka iyo ari yo yose."
       },
       "q2": {
         "question": "Ese nkeneye kuba nzi ururimi rw’amarenga?",
@@ -516,7 +516,7 @@
       "bandKicker": "Ku miryango n'amashuri",
       "bandTitle": "Kwigira hamwe gusenya inzitizi vuba.",
       "bandText": "Ababyeyi, abanyeshuri bagenzi n'inshuti bashobora kwigana n'abavandimwe b'ibipfamatwi — bose mu nzira imwe.",
-      "bandCta": "Fungura konti y'ubuntu",
+      "bandCta": "Fungura konti yawe",
       "joinTitle": "Ifatanye na NoBarriers uyu munsi",
       "joinStart": "Tangira kwiga"
     },

@@ -300,7 +300,7 @@
       "alreadyHaveAccount": "Ya Tengo una Cuenta"
     },
     "features": {
-      "f1Title": "gratis. divertido.\nefectivo.",
+      "f1Title": "cortas. divertidas.\neficaces.",
       "f1Body": "¡Aprender con NoBarriers es divertido y realmente funciona! Con nuestras lecciones cortas e interactivas, gana puntos, sube de nivel y desarrolla habilidades lingüísticas reales.",
       "f1Badge1": "Interactivo",
       "f1Badge2": "Gamificado",
@@ -319,8 +319,8 @@
     },
     "cta": {
       "headline": "¿Listo para romper las barreras lingüísticas?",
-      "subtitle": "Únete a millones de estudiantes en todo el mundo y comienza tu viaje lingüístico hoy. Es gratis, es divertido y funciona.",
-      "button": "Comenzar Gratis"
+      "subtitle": "Empieza hoy a aprender la lengua de señas ruandesa. Lecciones cortas, señas reales y progreso que puedes ver.",
+      "button": "Empezar"
     },
     "about": {
       "title": "Acerca de",
@@ -353,8 +353,8 @@
     "faq": {
       "title": "Preguntas frecuentes",
       "q1": {
-        "question": "¿NoBarriers es gratis?",
-        "answer": "Sí — todos los cursos, lecciones y funciones son completamente gratuitos. Solo necesitas una cuenta."
+        "question": "¿Cuánto cuesta NoBarriers?",
+        "answer": "NoBarriers está en acceso anticipado, así que puedes crear una cuenta y empezar a aprender de inmediato. Los planes de suscripción se introducirán a medida que la plataforma crezca, y avisaremos a las personas registradas mucho antes de cualquier cambio."
       },
       "q2": {
         "question": "¿Necesito experiencia con la lengua de señas?",
@@ -516,7 +516,7 @@
       "bandKicker": "Para familias y escuelas",
       "bandTitle": "Aprender juntos derriba barreras más rápido.",
       "bandText": "Padres, compañeros y amigos pueden aprender junto a sus seres queridos sordos: todos en el mismo camino, animándose entre sí.",
-      "bandCta": "Crea una cuenta gratis",
+      "bandCta": "Crea tu cuenta",
       "joinTitle": "Únete a NoBarriers hoy",
       "joinStart": "Empieza a aprender"
     },

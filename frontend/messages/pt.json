@@ -300,7 +300,7 @@
       "alreadyHaveAccount": "Já Tenho uma Conta"
     },
     "features": {
-      "f1Title": "grátis. divertido.\neficaz.",
+      "f1Title": "curtas. divertidas.\neficazes.",
       "f1Body": "Aprender com NoBarriers é divertido e realmente funciona! Com nossas lições curtas e interativas, ganhe pontos, suba de nível e desenvolva habilidades linguísticas reais.",
       "f1Badge1": "Interativo",
       "f1Badge2": "Gamificado",
@@ -319,8 +319,8 @@
     },
     "cta": {
       "headline": "Pronto para quebrar as barreiras linguísticas?",
-      "subtitle": "Junte-se a milhões de aprendizes em todo o mundo e inicie sua jornada linguística hoje. É grátis, é divertido e funciona.",
-      "button": "Começar Gratuitamente"
+      "subtitle": "Comece hoje a aprender a língua de sinais ruandesa. Lições curtas, sinais reais e progresso visível.",
+      "button": "Começar"
     },
     "about": {
       "title": "Sobre",
@@ -353,8 +353,8 @@
     "faq": {
       "title": "Perguntas frequentes",
       "q1": {
-        "question": "O NoBarriers é gratuito?",
-        "answer": "Sim — todos os cursos, lições e recursos são totalmente gratuitos. Você só precisa de uma conta."
+        "question": "Quanto custa o NoBarriers?",
+        "answer": "O NoBarriers está em acesso antecipado, então você pode criar uma conta e começar a aprender imediatamente. Os planos de assinatura serão introduzidos conforme a plataforma cresce, e avisaremos os inscritos bem antes de qualquer mudança."
       },
       "q2": {
         "question": "Preciso de experiência com língua de sinais?",
@@ -516,7 +516,7 @@
       "bandKicker": "Para famílias e escolas",
       "bandTitle": "Aprender juntos derruba barreiras mais rápido.",
       "bandText": "Pais, colegas e amigos podem aprender ao lado de entes queridos surdos — todos no mesmo caminho.",
-      "bandCta": "Crie uma conta grátis",
+      "bandCta": "Crie sua conta",
       "joinTitle": "Junte-se ao NoBarriers hoje",
       "joinStart": "Comece a aprender"
     },

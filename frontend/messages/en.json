@@ -300,7 +300,7 @@
       "alreadyHaveAccount": "I Already Have an Account"
     },
     "features": {
-      "f1Title": "free. fun.\neffective.",
+      "f1Title": "short. fun.\neffective.",
       "f1Body": "Learning with NoBarriers is fun, and it really works! With our short, interactive lessons, earn points, level up, and develop real-world language skills.",
       "f1Badge1": "Interactive",
       "f1Badge2": "Gamified",
@@ -319,8 +319,8 @@
     },
     "cta": {
       "headline": "Ready to break down language barriers?",
-      "subtitle": "Join millions of learners worldwide and start your language journey today. It's free, it's fun, and it works.",
-      "button": "Get Started for Free"
+      "subtitle": "Start learning Rwandan Sign Language today. Short lessons, real signs, and progress you can see.",
+      "button": "Get Started"
     },
     "about": {
       "title": "About",
@@ -353,8 +353,8 @@
     "faq": {
       "title": "Frequently asked questions",
       "q1": {
-        "question": "Is NoBarriers free?",
-        "answer": "Yes — every course, lesson and feature is completely free. All you need is an account."
+        "question": "How much does NoBarriers cost?",
+        "answer": "NoBarriers is in early access, so you can create an account and start learning straight away. Subscription plans will be introduced as the platform grows, and registered learners will be notified well before anything changes."
       },
       "q2": {
         "question": "Do I need any experience with sign language?",
@@ -516,7 +516,7 @@
       "bandKicker": "For families & schools",
       "bandTitle": "Learning together breaks barriers faster.",
       "bandText": "Parents, classmates and friends can learn alongside deaf loved ones — everyone on the same path, cheering each other on.",
-      "bandCta": "Create a free account",
+      "bandCta": "Create your account",
       "joinTitle": "Join NoBarriers today",
       "joinStart": "Start learning"
     },

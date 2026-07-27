@@ -300,7 +300,7 @@
       "alreadyHaveAccount": "Ich Habe Bereits ein Konto"
     },
     "features": {
-      "f1Title": "kostenlos. spaßig.\neffektiv.",
+      "f1Title": "kurz. unterhaltsam.\neffektiv.",
       "f1Body": "Mit NoBarriers zu lernen macht Spaß und funktioniert wirklich! Mit unseren kurzen, interaktiven Lektionen Punkte sammeln, aufsteigen und echte Sprachkenntnisse entwickeln.",
       "f1Badge1": "Interaktiv",
       "f1Badge2": "Gamifiziert",
@@ -319,8 +319,8 @@
     },
     "cta": {
       "headline": "Bereit, Sprachbarrieren abzubauen?",
-      "subtitle": "Schließ dich Millionen von Lernenden weltweit an und starte noch heute deine Sprachreise. Es ist kostenlos, es macht Spaß und es funktioniert.",
-      "button": "Kostenlos Starten"
+      "subtitle": "Beginne noch heute mit ruandischer Gebärdensprache. Kurze Lektionen, echte Gebärden und sichtbarer Fortschritt.",
+      "button": "Loslegen"
     },
     "about": {
       "title": "Über uns",
@@ -353,8 +353,8 @@
     "faq": {
       "title": "Häufige Fragen",
       "q1": {
-        "question": "Ist NoBarriers kostenlos?",
-        "answer": "Ja — alle Kurse, Lektionen und Funktionen sind komplett kostenlos. Du brauchst nur ein Konto."
+        "question": "Was kostet NoBarriers?",
+        "answer": "NoBarriers befindet sich im Early Access: Du kannst ein Konto erstellen und sofort loslegen. Abonnements werden eingeführt, während die Plattform wächst — registrierte Lernende werden lange vorher informiert."
       },
       "q2": {
         "question": "Brauche ich Vorkenntnisse in Gebärdensprache?",
@@ -516,7 +516,7 @@
       "bandKicker": "Für Familien & Schulen",
       "bandTitle": "Gemeinsam lernen baut Barrieren schneller ab.",
       "bandText": "Eltern, Mitschüler und Freunde können gemeinsam mit gehörlosen Angehörigen lernen — alle auf demselben Weg.",
-      "bandCta": "Kostenloses Konto erstellen",
+      "bandCta": "Konto erstellen",
       "joinTitle": "Werde heute Teil von NoBarriers",
       "joinStart": "Jetzt lernen"
     },

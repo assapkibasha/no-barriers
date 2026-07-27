@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# NoBarriers — frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Next.js application. See the [project README](../README.md) for an overview
+and [`DESIGN.md`](../DESIGN.md) for the design rules that govern all UI changes.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
+cp .env.example .env.local   # fill in database credentials
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Runs at http://localhost:3000.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Scripts
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Development server with hot reload |
+| `npm run build` | Production build |
+| `npm start` | Serve a production build locally |
+| `npm run lint` | ESLint |
+
+## Layout
+
 ```
+app/            Routes (App Router) and API endpoints
+  api/auth/     Register, login, logout, session
+  api/progress/ Learner progress read/write
+  learn/        Course pathway
+  study/        Study mode — learn the signs
+  lesson/       Quiz mode — assessment
+src/
+  components/   UI components, grouped by area
+  data/         Course, unit, lesson and sign definitions
+  lib/          Database pool and auth helpers
+  store/        Progress context
+messages/       Translations — 12 locale files
+public/signs/   Sign images served to learners
+```
+
+## Notes
+
+- Tailwind config changes require a dev-server restart to take effect.
+- Any new interface text must be added to **all** files in `messages/`.
+- Database tables are created on first request by `initDB()` in `src/lib/db.ts`.

@@ -300,7 +300,7 @@
       "alreadyHaveAccount": "Tayari Nina Akaunti"
     },
     "features": {
-      "f1Title": "bure. ya kufurahisha.\nyenye ufanisi.",
+      "f1Title": "mafupi. ya kufurahisha.\nyenye matokeo.",
       "f1Body": "Kujifunza na NoBarriers ni ya kufurahisha na inafanya kazi kweli kweli! Kwa masomo yetu mafupi na ya maingiliano, pata pointi, panda ngazi, na ukuze ujuzi wa lugha wa kweli.",
       "f1Badge1": "Maingiliano",
       "f1Badge2": "Gamification",
@@ -319,8 +319,8 @@
     },
     "cta": {
       "headline": "Uko tayari kuvunja vizuizi vya lugha?",
-      "subtitle": "Jiunge na mamilioni ya wanafunzi duniani kote na uanze safari yako ya lugha leo. Ni bure, ni ya kufurahisha, na inafanya kazi.",
-      "button": "Anza Bure"
+      "subtitle": "Anza kujifunza lugha ya alama ya Rwanda leo. Masomo mafupi, alama halisi, na maendeleo unayoyaona.",
+      "button": "Anza sasa"
     },
     "about": {
       "title": "Kuhusu",
@@ -353,8 +353,8 @@
     "faq": {
       "title": "Maswali yanayoulizwa mara kwa mara",
       "q1": {
-        "question": "Je, NoBarriers ni bure?",
-        "answer": "Ndiyo — kozi zote, masomo na huduma zote ni bure kabisa. Unahitaji akaunti tu."
+        "question": "NoBarriers inagharimu kiasi gani?",
+        "answer": "NoBarriers iko katika kipindi cha awali, hivyo unaweza kufungua akaunti na kuanza kujifunza mara moja. Mipango ya usajili itaanzishwa jukwaa linapokua, na tutawajulisha waliojisajili mapema kabla ya mabadiliko yoyote."
       },
       "q2": {
         "question": "Je, nahitaji uzoefu wa lugha ya alama?",
@@ -516,7 +516,7 @@
       "bandKicker": "Kwa familia na shule",
       "bandTitle": "Kujifunza pamoja huvunja vizuizi haraka zaidi.",
       "bandText": "Wazazi, wanafunzi wenzako na marafiki wanaweza kujifunza pamoja na wapendwa wao viziwi — wote kwenye njia moja.",
-      "bandCta": "Fungua akaunti bila malipo",
+      "bandCta": "Fungua akaunti yako",
       "joinTitle": "Jiunge na NoBarriers leo",
       "joinStart": "Anza kujifunza"
     },
