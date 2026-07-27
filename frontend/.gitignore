@@ -13,6 +13,14 @@ dist-ssr
 .next
 *.local
 
+# Build artifacts
+tsconfig.tsbuildinfo
+
+# Secrets — never commit. Use .env.example as the template.
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

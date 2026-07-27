@@ -1,0 +1,13 @@
+# Generated implementation and financial reports.
+# These contain grant figures and individual team payment amounts.
+# This repository is PUBLIC — keep them out of it.
+reports/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
