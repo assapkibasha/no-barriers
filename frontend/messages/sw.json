@@ -251,12 +251,30 @@
     "advanced-smell": "Harufu"
   },
   "badges": {
-    "first-lesson": { "label": "Hatua ya Kwanza", "description": "Kamilisha somo lako la kwanza" },
-    "streak-3": { "label": "Mfululizo wa Siku 3", "description": "Jifunze siku 3 mfululizo" },
-    "streak-7": { "label": "Shujaa wa Wiki", "description": "Jifunze siku 7 mfululizo" },
-    "perfect": { "label": "Mkamilifu", "description": "Kamilisha somo bila makosa" },
-    "xp-500": { "label": "Mwindaji wa XP", "description": "Pata jumla ya XP 500" },
-    "lessons-10": { "label": "Mwenye Bidii", "description": "Kamilisha masomo 10" }
+    "first-lesson": {
+      "label": "Hatua ya Kwanza",
+      "description": "Kamilisha somo lako la kwanza"
+    },
+    "streak-3": {
+      "label": "Mfululizo wa Siku 3",
+      "description": "Jifunze siku 3 mfululizo"
+    },
+    "streak-7": {
+      "label": "Shujaa wa Wiki",
+      "description": "Jifunze siku 7 mfululizo"
+    },
+    "perfect": {
+      "label": "Mkamilifu",
+      "description": "Kamilisha somo bila makosa"
+    },
+    "xp-500": {
+      "label": "Mwindaji wa XP",
+      "description": "Pata jumla ya XP 500"
+    },
+    "lessons-10": {
+      "label": "Mwenye Bidii",
+      "description": "Kamilisha masomo 10"
+    }
   },
   "levels": {
     "Beginner": "Mwanzo",
@@ -598,6 +616,17 @@
       "back": "Rudi",
       "errorTitle": "Imeshindwa kupakia mapitio",
       "errorBody": "Kuna tatizo lilitokea wakati wa kuandaa kikao chako cha mapitio."
+    },
+    "forgotPassword": {
+      "title": "Umesahau nenosiri?",
+      "subtitle": "Weka barua pepe yako na tutakutumia maelekezo ya kuweka upya.",
+      "email": "Barua pepe",
+      "sendReset": "Tuma kiungo",
+      "sending": "Inatuma…",
+      "backToLogin": "Rudi kwenye kuingia",
+      "checkInbox": "Angalia barua pepe zako",
+      "sentMessage": "Ikiwa akaunti ya {email} ipo, tumetuma maelekezo ya kuweka upya nenosiri.",
+      "networkError": "Hitilafu ya mtandao. Jaribu tena."
     }
   }
 }

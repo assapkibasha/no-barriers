@@ -251,12 +251,30 @@
     "advanced-smell": "Cheiro"
   },
   "badges": {
-    "first-lesson": { "label": "Primeiro Passo", "description": "Conclua sua primeira lição" },
-    "streak-3": { "label": "Sequência de 3 Dias", "description": "Aprenda 3 dias seguidos" },
-    "streak-7": { "label": "Guerreiro da Semana", "description": "Aprenda 7 dias seguidos" },
-    "perfect": { "label": "Perfeccionista", "description": "Conclua uma lição sem erros" },
-    "xp-500": { "label": "Caçador de XP", "description": "Ganhe 500 XP no total" },
-    "lessons-10": { "label": "Dedicado", "description": "Conclua 10 lições" }
+    "first-lesson": {
+      "label": "Primeiro Passo",
+      "description": "Conclua sua primeira lição"
+    },
+    "streak-3": {
+      "label": "Sequência de 3 Dias",
+      "description": "Aprenda 3 dias seguidos"
+    },
+    "streak-7": {
+      "label": "Guerreiro da Semana",
+      "description": "Aprenda 7 dias seguidos"
+    },
+    "perfect": {
+      "label": "Perfeccionista",
+      "description": "Conclua uma lição sem erros"
+    },
+    "xp-500": {
+      "label": "Caçador de XP",
+      "description": "Ganhe 500 XP no total"
+    },
+    "lessons-10": {
+      "label": "Dedicado",
+      "description": "Conclua 10 lições"
+    }
   },
   "levels": {
     "Beginner": "Iniciante",
@@ -598,6 +616,17 @@
       "back": "Voltar",
       "errorTitle": "Não foi possível carregar a revisão",
       "errorBody": "Algo deu errado ao preparar sua sessão de revisão."
+    },
+    "forgotPassword": {
+      "title": "Esqueceu sua senha?",
+      "subtitle": "Digite seu e-mail e enviaremos instruções para redefini-la.",
+      "email": "E-mail",
+      "sendReset": "Enviar link",
+      "sending": "Enviando…",
+      "backToLogin": "Voltar ao login",
+      "checkInbox": "Verifique sua caixa de entrada",
+      "sentMessage": "Se existir uma conta para {email}, enviamos instruções de redefinição.",
+      "networkError": "Erro de rede. Tente novamente."
     }
   }
 }

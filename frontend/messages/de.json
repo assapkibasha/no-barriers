@@ -251,12 +251,30 @@
     "advanced-smell": "Geruch"
   },
   "badges": {
-    "first-lesson": { "label": "Erster Schritt", "description": "Schließe deine erste Lektion ab" },
-    "streak-3": { "label": "3-Tage-Serie", "description": "Lerne 3 Tage hintereinander" },
-    "streak-7": { "label": "Wochenkämpfer", "description": "Lerne 7 Tage hintereinander" },
-    "perfect": { "label": "Perfektionist", "description": "Schließe eine Lektion ohne Fehler ab" },
-    "xp-500": { "label": "XP-Jäger", "description": "Verdiene insgesamt 500 XP" },
-    "lessons-10": { "label": "Engagiert", "description": "Schließe 10 Lektionen ab" }
+    "first-lesson": {
+      "label": "Erster Schritt",
+      "description": "Schließe deine erste Lektion ab"
+    },
+    "streak-3": {
+      "label": "3-Tage-Serie",
+      "description": "Lerne 3 Tage hintereinander"
+    },
+    "streak-7": {
+      "label": "Wochenkämpfer",
+      "description": "Lerne 7 Tage hintereinander"
+    },
+    "perfect": {
+      "label": "Perfektionist",
+      "description": "Schließe eine Lektion ohne Fehler ab"
+    },
+    "xp-500": {
+      "label": "XP-Jäger",
+      "description": "Verdiene insgesamt 500 XP"
+    },
+    "lessons-10": {
+      "label": "Engagiert",
+      "description": "Schließe 10 Lektionen ab"
+    }
   },
   "levels": {
     "Beginner": "Anfänger",
@@ -598,6 +616,17 @@
       "back": "Zurück",
       "errorTitle": "Wiederholung kann nicht geladen werden",
       "errorBody": "Beim Vorbereiten deiner Wiederholungssitzung ist etwas schiefgelaufen."
+    },
+    "forgotPassword": {
+      "title": "Passwort vergessen?",
+      "subtitle": "Gib deine E-Mail ein und wir senden dir Anweisungen zum Zurücksetzen.",
+      "email": "E-Mail",
+      "sendReset": "Link senden",
+      "sending": "Wird gesendet…",
+      "backToLogin": "Zurück zur Anmeldung",
+      "checkInbox": "Prüfe dein Postfach",
+      "sentMessage": "Falls ein Konto für {email} existiert, haben wir Anweisungen zum Zurücksetzen gesendet.",
+      "networkError": "Netzwerkfehler. Bitte erneut versuchen."
     }
   }
 }

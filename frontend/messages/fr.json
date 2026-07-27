@@ -251,12 +251,30 @@
     "advanced-smell": "Odeur"
   },
   "badges": {
-    "first-lesson": { "label": "Premier Pas", "description": "Terminez votre première leçon" },
-    "streak-3": { "label": "Série de 3 Jours", "description": "Apprenez 3 jours de suite" },
-    "streak-7": { "label": "Guerrier de la Semaine", "description": "Apprenez 7 jours de suite" },
-    "perfect": { "label": "Perfectionniste", "description": "Terminez une leçon sans erreurs" },
-    "xp-500": { "label": "Chasseur d'XP", "description": "Gagnez 500 XP au total" },
-    "lessons-10": { "label": "Dévoué", "description": "Terminez 10 leçons" }
+    "first-lesson": {
+      "label": "Premier Pas",
+      "description": "Terminez votre première leçon"
+    },
+    "streak-3": {
+      "label": "Série de 3 Jours",
+      "description": "Apprenez 3 jours de suite"
+    },
+    "streak-7": {
+      "label": "Guerrier de la Semaine",
+      "description": "Apprenez 7 jours de suite"
+    },
+    "perfect": {
+      "label": "Perfectionniste",
+      "description": "Terminez une leçon sans erreurs"
+    },
+    "xp-500": {
+      "label": "Chasseur d'XP",
+      "description": "Gagnez 500 XP au total"
+    },
+    "lessons-10": {
+      "label": "Dévoué",
+      "description": "Terminez 10 leçons"
+    }
   },
   "levels": {
     "Beginner": "Débutant",
@@ -598,6 +616,17 @@
       "back": "Retour",
       "errorTitle": "Impossible de charger la révision",
       "errorBody": "Quelque chose s'est mal passé lors de la préparation de votre session de révision."
+    },
+    "forgotPassword": {
+      "title": "Mot de passe oublié ?",
+      "subtitle": "Entrez votre e-mail et nous vous enverrons les instructions pour le réinitialiser.",
+      "email": "E-mail",
+      "sendReset": "Envoyer le lien",
+      "sending": "Envoi…",
+      "backToLogin": "Retour à la connexion",
+      "checkInbox": "Vérifiez votre boîte mail",
+      "sentMessage": "Si un compte existe pour {email}, nous avons envoyé les instructions de réinitialisation.",
+      "networkError": "Erreur réseau. Veuillez réessayer."
     }
   }
 }

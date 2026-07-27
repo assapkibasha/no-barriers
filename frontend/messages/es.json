@@ -251,12 +251,30 @@
     "advanced-smell": "Olor"
   },
   "badges": {
-    "first-lesson": { "label": "Primer Paso", "description": "Completa tu primera lección" },
-    "streak-3": { "label": "Racha de 3 Días", "description": "Aprende 3 días seguidos" },
-    "streak-7": { "label": "Guerrero de la Semana", "description": "Aprende 7 días seguidos" },
-    "perfect": { "label": "Perfeccionista", "description": "Completa una lección sin errores" },
-    "xp-500": { "label": "Cazador de XP", "description": "Gana 500 XP en total" },
-    "lessons-10": { "label": "Dedicado", "description": "Completa 10 lecciones" }
+    "first-lesson": {
+      "label": "Primer Paso",
+      "description": "Completa tu primera lección"
+    },
+    "streak-3": {
+      "label": "Racha de 3 Días",
+      "description": "Aprende 3 días seguidos"
+    },
+    "streak-7": {
+      "label": "Guerrero de la Semana",
+      "description": "Aprende 7 días seguidos"
+    },
+    "perfect": {
+      "label": "Perfeccionista",
+      "description": "Completa una lección sin errores"
+    },
+    "xp-500": {
+      "label": "Cazador de XP",
+      "description": "Gana 500 XP en total"
+    },
+    "lessons-10": {
+      "label": "Dedicado",
+      "description": "Completa 10 lecciones"
+    }
   },
   "levels": {
     "Beginner": "Principiante",
@@ -598,6 +616,17 @@
       "back": "Volver",
       "errorTitle": "No se puede cargar el repaso",
       "errorBody": "Algo salió mal al preparar tu sesión de repaso."
+    },
+    "forgotPassword": {
+      "title": "¿Olvidaste tu contraseña?",
+      "subtitle": "Introduce tu correo y te enviaremos instrucciones para restablecerla.",
+      "email": "Correo electrónico",
+      "sendReset": "Enviar enlace",
+      "sending": "Enviando…",
+      "backToLogin": "Volver a iniciar sesión",
+      "checkInbox": "Revisa tu bandeja de entrada",
+      "sentMessage": "Si existe una cuenta para {email}, hemos enviado instrucciones para restablecer la contraseña.",
+      "networkError": "Error de red. Inténtalo de nuevo."
     }
   }
 }

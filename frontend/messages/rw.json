@@ -251,12 +251,30 @@
     "advanced-smell": "Kuruma"
   },
   "badges": {
-    "first-lesson": { "label": "Intangiriro", "description": "Maranira isomo rya mbere" },
-    "streak-3": { "label": "Iminsi 3 Yombi", "description": "Iga iminsi 3 ikurikirana" },
-    "streak-7": { "label": "Intwari y'Icyumweru", "description": "Iga iminsi 7 ikurikirana" },
-    "perfect": { "label": "Intangarugero", "description": "Maranira isomo nta makosa" },
-    "xp-500": { "label": "Umuhigi wa XP", "description": "Unguka XP 500 byose" },
-    "lessons-10": { "label": "Uwiherera", "description": "Maranira amasomo 10" }
+    "first-lesson": {
+      "label": "Intangiriro",
+      "description": "Maranira isomo rya mbere"
+    },
+    "streak-3": {
+      "label": "Iminsi 3 Yombi",
+      "description": "Iga iminsi 3 ikurikirana"
+    },
+    "streak-7": {
+      "label": "Intwari y'Icyumweru",
+      "description": "Iga iminsi 7 ikurikirana"
+    },
+    "perfect": {
+      "label": "Intangarugero",
+      "description": "Maranira isomo nta makosa"
+    },
+    "xp-500": {
+      "label": "Umuhigi wa XP",
+      "description": "Unguka XP 500 byose"
+    },
+    "lessons-10": {
+      "label": "Uwiherera",
+      "description": "Maranira amasomo 10"
+    }
   },
   "levels": {
     "Beginner": "Intangiriro",
@@ -598,6 +616,17 @@
       "back": "Subira",
       "errorTitle": "Ntibishoboka gufungura kongera kwiga",
       "errorBody": "Hari ikibazo cyabaye mu gutegura ibiganiro byo kongera kwiga."
+    },
+    "forgotPassword": {
+      "title": "Wibagiwe ijambobanga?",
+      "subtitle": "Andika imeyili yawe maze tukoherereze amabwiriza yo kurihindura.",
+      "email": "Imeyili",
+      "sendReset": "Ohereza umuyoboro",
+      "sending": "Birimo koherezwa…",
+      "backToLogin": "Subira ku kwinjira",
+      "checkInbox": "Reba mu butumwa bwawe",
+      "sentMessage": "Niba konti ya {email} ibaho, twohereje amabwiriza yo guhindura ijambobanga.",
+      "networkError": "Ikibazo cy’umurongo. Ongera ugerageze."
     }
   }
 }

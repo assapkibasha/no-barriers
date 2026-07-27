@@ -251,12 +251,30 @@
     "advanced-smell": "气味"
   },
   "badges": {
-    "first-lesson": { "label": "第一步", "description": "完成第一课" },
-    "streak-3": { "label": "3天连续", "description": "连续学习3天" },
-    "streak-7": { "label": "周战士", "description": "连续学习7天" },
-    "perfect": { "label": "完美主义者", "description": "无错误完成课程" },
-    "xp-500": { "label": "XP猎手", "description": "累计获得500 XP" },
-    "lessons-10": { "label": "专注学习者", "description": "完成10课" }
+    "first-lesson": {
+      "label": "第一步",
+      "description": "完成第一课"
+    },
+    "streak-3": {
+      "label": "3天连续",
+      "description": "连续学习3天"
+    },
+    "streak-7": {
+      "label": "周战士",
+      "description": "连续学习7天"
+    },
+    "perfect": {
+      "label": "完美主义者",
+      "description": "无错误完成课程"
+    },
+    "xp-500": {
+      "label": "XP猎手",
+      "description": "累计获得500 XP"
+    },
+    "lessons-10": {
+      "label": "专注学习者",
+      "description": "完成10课"
+    }
   },
   "levels": {
     "Beginner": "初级",
@@ -598,6 +616,17 @@
       "back": "返回",
       "errorTitle": "无法加载复习",
       "errorBody": "准备复习课程时出现问题。"
+    },
+    "forgotPassword": {
+      "title": "忘记密码？",
+      "subtitle": "输入您的邮箱，我们将发送重置说明。",
+      "email": "邮箱",
+      "sendReset": "发送重置链接",
+      "sending": "发送中…",
+      "backToLogin": "返回登录",
+      "checkInbox": "请查收邮件",
+      "sentMessage": "如果 {email} 对应的账户存在，我们已发送密码重置说明。",
+      "networkError": "网络错误，请重试。"
     }
   }
 }

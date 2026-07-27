@@ -251,12 +251,30 @@
     "advanced-smell": "Smell"
   },
   "badges": {
-    "first-lesson": { "label": "First Step", "description": "Complete your first lesson" },
-    "streak-3": { "label": "3-Day Streak", "description": "Learn 3 days in a row" },
-    "streak-7": { "label": "Week Warrior", "description": "Learn 7 days in a row" },
-    "perfect": { "label": "Perfectionist", "description": "Complete a lesson without errors" },
-    "xp-500": { "label": "XP Hunter", "description": "Earn 500 XP total" },
-    "lessons-10": { "label": "Dedicated", "description": "Complete 10 lessons" }
+    "first-lesson": {
+      "label": "First Step",
+      "description": "Complete your first lesson"
+    },
+    "streak-3": {
+      "label": "3-Day Streak",
+      "description": "Learn 3 days in a row"
+    },
+    "streak-7": {
+      "label": "Week Warrior",
+      "description": "Learn 7 days in a row"
+    },
+    "perfect": {
+      "label": "Perfectionist",
+      "description": "Complete a lesson without errors"
+    },
+    "xp-500": {
+      "label": "XP Hunter",
+      "description": "Earn 500 XP total"
+    },
+    "lessons-10": {
+      "label": "Dedicated",
+      "description": "Complete 10 lessons"
+    }
   },
   "levels": {
     "Beginner": "Beginner",
@@ -598,6 +616,17 @@
       "back": "Back",
       "errorTitle": "Unable to load review",
       "errorBody": "Something went wrong while preparing your review session."
+    },
+    "forgotPassword": {
+      "title": "Forgot your password?",
+      "subtitle": "Enter your email and we'll send you instructions to reset it.",
+      "email": "Email",
+      "sendReset": "Send reset link",
+      "sending": "Sending…",
+      "backToLogin": "Back to log in",
+      "checkInbox": "Check your inbox",
+      "sentMessage": "If an account exists for {email}, we've sent password reset instructions.",
+      "networkError": "Network error. Please try again."
     }
   }
 }

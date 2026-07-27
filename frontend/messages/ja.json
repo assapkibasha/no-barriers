@@ -251,12 +251,30 @@
     "advanced-smell": "においを嗅ぐ"
   },
   "badges": {
-    "first-lesson": { "label": "最初の一歩", "description": "最初のレッスンを完了する" },
-    "streak-3": { "label": "3日連続", "description": "3日連続で学習する" },
-    "streak-7": { "label": "週間戦士", "description": "7日連続で学習する" },
-    "perfect": { "label": "完璧主義者", "description": "エラーなしでレッスンを完了する" },
-    "xp-500": { "label": "XPハンター", "description": "合計500 XPを獲得する" },
-    "lessons-10": { "label": "熱心な学習者", "description": "10レッスンを完了する" }
+    "first-lesson": {
+      "label": "最初の一歩",
+      "description": "最初のレッスンを完了する"
+    },
+    "streak-3": {
+      "label": "3日連続",
+      "description": "3日連続で学習する"
+    },
+    "streak-7": {
+      "label": "週間戦士",
+      "description": "7日連続で学習する"
+    },
+    "perfect": {
+      "label": "完璧主義者",
+      "description": "エラーなしでレッスンを完了する"
+    },
+    "xp-500": {
+      "label": "XPハンター",
+      "description": "合計500 XPを獲得する"
+    },
+    "lessons-10": {
+      "label": "熱心な学習者",
+      "description": "10レッスンを完了する"
+    }
   },
   "levels": {
     "Beginner": "初級",
@@ -598,6 +616,17 @@
       "back": "戻る",
       "errorTitle": "復習を読み込めません",
       "errorBody": "復習セッションの準備中に問題が発生しました。"
+    },
+    "forgotPassword": {
+      "title": "パスワードをお忘れですか？",
+      "subtitle": "メールアドレスを入力すると、再設定の手順をお送りします。",
+      "email": "メールアドレス",
+      "sendReset": "リセットリンクを送信",
+      "sending": "送信中…",
+      "backToLogin": "ログインに戻る",
+      "checkInbox": "受信トレイをご確認ください",
+      "sentMessage": "{email} のアカウントが存在する場合、再設定の手順を送信しました。",
+      "networkError": "ネットワークエラーです。もう一度お試しください。"
     }
   }
 }

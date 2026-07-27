@@ -251,12 +251,30 @@
     "advanced-smell": "رائحة"
   },
   "badges": {
-    "first-lesson": { "label": "الخطوة الأولى", "description": "أكمل درسك الأول" },
-    "streak-3": { "label": "سلسلة 3 أيام", "description": "تعلم 3 أيام متتالية" },
-    "streak-7": { "label": "محارب الأسبوع", "description": "تعلم 7 أيام متتالية" },
-    "perfect": { "label": "مثالي", "description": "أكمل درساً دون أخطاء" },
-    "xp-500": { "label": "صائد XP", "description": "اكسب 500 XP في المجموع" },
-    "lessons-10": { "label": "مجتهد", "description": "أكمل 10 دروس" }
+    "first-lesson": {
+      "label": "الخطوة الأولى",
+      "description": "أكمل درسك الأول"
+    },
+    "streak-3": {
+      "label": "سلسلة 3 أيام",
+      "description": "تعلم 3 أيام متتالية"
+    },
+    "streak-7": {
+      "label": "محارب الأسبوع",
+      "description": "تعلم 7 أيام متتالية"
+    },
+    "perfect": {
+      "label": "مثالي",
+      "description": "أكمل درساً دون أخطاء"
+    },
+    "xp-500": {
+      "label": "صائد XP",
+      "description": "اكسب 500 XP في المجموع"
+    },
+    "lessons-10": {
+      "label": "مجتهد",
+      "description": "أكمل 10 دروس"
+    }
   },
   "levels": {
     "Beginner": "مبتدئ",
@@ -598,6 +616,17 @@
       "back": "رجوع",
       "errorTitle": "تعذر تحميل المراجعة",
       "errorBody": "حدث خطأ أثناء تحضير جلسة المراجعة."
+    },
+    "forgotPassword": {
+      "title": "هل نسيت كلمة المرور؟",
+      "subtitle": "أدخل بريدك الإلكتروني وسنرسل لك تعليمات إعادة التعيين.",
+      "email": "البريد الإلكتروني",
+      "sendReset": "إرسال رابط إعادة التعيين",
+      "sending": "جارٍ الإرسال…",
+      "backToLogin": "العودة إلى تسجيل الدخول",
+      "checkInbox": "تحقق من بريدك الوارد",
+      "sentMessage": "إذا كان هناك حساب لـ {email}، فقد أرسلنا تعليمات إعادة تعيين كلمة المرور.",
+      "networkError": "خطأ في الشبكة. حاول مرة أخرى."
     }
   }
 }

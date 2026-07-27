@@ -251,12 +251,30 @@
     "advanced-smell": "Odore"
   },
   "badges": {
-    "first-lesson": { "label": "Primo Passo", "description": "Completa la tua prima lezione" },
-    "streak-3": { "label": "Serie di 3 Giorni", "description": "Studia 3 giorni di fila" },
-    "streak-7": { "label": "Guerriero della Settimana", "description": "Studia 7 giorni di fila" },
-    "perfect": { "label": "Perfezionista", "description": "Completa una lezione senza errori" },
-    "xp-500": { "label": "Cacciatore di XP", "description": "Guadagna 500 XP in totale" },
-    "lessons-10": { "label": "Dedicato", "description": "Completa 10 lezioni" }
+    "first-lesson": {
+      "label": "Primo Passo",
+      "description": "Completa la tua prima lezione"
+    },
+    "streak-3": {
+      "label": "Serie di 3 Giorni",
+      "description": "Studia 3 giorni di fila"
+    },
+    "streak-7": {
+      "label": "Guerriero della Settimana",
+      "description": "Studia 7 giorni di fila"
+    },
+    "perfect": {
+      "label": "Perfezionista",
+      "description": "Completa una lezione senza errori"
+    },
+    "xp-500": {
+      "label": "Cacciatore di XP",
+      "description": "Guadagna 500 XP in totale"
+    },
+    "lessons-10": {
+      "label": "Dedicato",
+      "description": "Completa 10 lezioni"
+    }
   },
   "levels": {
     "Beginner": "Principiante",
@@ -598,6 +616,17 @@
       "back": "Indietro",
       "errorTitle": "Impossibile caricare il ripasso",
       "errorBody": "Qualcosa è andato storto durante la preparazione della tua sessione di ripasso."
+    },
+    "forgotPassword": {
+      "title": "Password dimenticata?",
+      "subtitle": "Inserisci la tua email e ti invieremo le istruzioni per reimpostarla.",
+      "email": "Email",
+      "sendReset": "Invia link",
+      "sending": "Invio…",
+      "backToLogin": "Torna all'accesso",
+      "checkInbox": "Controlla la tua casella",
+      "sentMessage": "Se esiste un account per {email}, abbiamo inviato le istruzioni per reimpostare la password.",
+      "networkError": "Errore di rete. Riprova."
     }
   }
 }
