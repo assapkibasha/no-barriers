@@ -114,12 +114,12 @@ export default function ProfilePage() {
           <div className="rounded-2xl border border-line bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/80">
             <h2 className="mb-4 font-display text-lg font-extrabold text-ink dark:text-gray-100">{t('progressByUnit')}</h2>
             <ResponsiveContainer width="100%" height={200}>
-              <BarChart data={chartData} barCategoryGap="34%" margin={{ top: 4, right: 4, left: -18, bottom: 0 }}>
+              <BarChart data={chartData} barCategoryGap="18%" barGap={1} margin={{ top: 4, right: 4, left: -18, bottom: 0 }}>
                 <XAxis dataKey="name" tick={{ fontSize: 10, fill: '#6B7A76' }} axisLine={{ stroke: '#E4DFD3' }} tickLine={false} />
                 <YAxis allowDecimals={false} tick={{ fontSize: 10, fill: '#6B7A76' }} axisLine={{ stroke: '#E4DFD3' }} tickLine={false} />
                 <Tooltip formatter={(val: number, name: string) => [val, name === 'done' ? t('completed') : t('total')]} contentStyle={{ backgroundColor: '#122B30', borderColor: '#122B30', color: '#fff', borderRadius: '8px' }} />
-                <Bar dataKey="total" fill="#0F766E" fillOpacity={0.15} radius={[8, 8, 0, 0]} />
-                <Bar dataKey="done" fill="#0F766E" radius={[8, 8, 0, 0]} />
+                <Bar dataKey="total" fill="#0F766E" fillOpacity={0.18} radius={[3, 3, 0, 0]} />
+                <Bar dataKey="done" fill="#0F766E" radius={[3, 3, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
