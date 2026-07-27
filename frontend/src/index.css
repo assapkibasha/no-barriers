@@ -6,7 +6,10 @@
     --radius: 0.5rem;
   }
   body {
-    @apply bg-[#f5f5f5] text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors;
+    @apply bg-paper text-ink dark:bg-gray-950 dark:text-gray-100 transition-colors;
+  }
+  h1, h2, h3 {
+    @apply font-display;
   }
 }
 
