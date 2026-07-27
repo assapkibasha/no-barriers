@@ -349,6 +349,33 @@
       "privacyPolicy": "Sera ya Faragha",
       "termsOfService": "Masharti ya Huduma",
       "copyright": "© {year} NoBarriers. Haki zote zimehifadhiwa."
+    },
+    "faq": {
+      "title": "Maswali yanayoulizwa mara kwa mara",
+      "q1": {
+        "question": "Je, NoBarriers ni bure?",
+        "answer": "Ndiyo — kozi zote, masomo na huduma zote ni bure kabisa. Unahitaji akaunti tu."
+      },
+      "q2": {
+        "question": "Je, nahitaji uzoefu wa lugha ya alama?",
+        "answer": "Hapana. Kozi ya Mwanzo huanza kutoka sifuri na salamu, alfabeti na namba, na kila sehemu hufunguka ukimaliza iliyotangulia."
+      },
+      "q3": {
+        "question": "Masomo hufanyaje kazi?",
+        "answer": "Kila somo lina sehemu mbili: hali ya kusoma hukuonyesha kila alama kwanza, kisha jaribio fupi huhakiki unachokumbuka. Mengi huchukua dakika chache tu."
+      },
+      "q4": {
+        "question": "Mioyo, XP na mfululizo ni nini?",
+        "answer": "Unapata XP kwa kila jibu sahihi, unadumisha mfululizo kwa kujifunza kila siku, na mioyo ni nafasi zako kwenye jaribio — kosa moja hugharimu moyo mmoja."
+      },
+      "q5": {
+        "question": "Naweza kutumia NoBarriers kwenye simu?",
+        "answer": "Ndiyo. NoBarriers hufanya kazi kwenye kivinjari chochote cha kisasa kwenye simu, kompyuta kibao au kompyuta — hakuna cha kusakinisha."
+      },
+      "q6": {
+        "question": "NoBarriers ni ya nani?",
+        "answer": "Ya kila mtu: familia na marafiki wa viziwi, wanafunzi, walimu, na yeyote anayetaka kuwasiliana bila vizuizi."
+      }
     }
   },
   "learn": {

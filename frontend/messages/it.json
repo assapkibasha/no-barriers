@@ -349,6 +349,33 @@
       "privacyPolicy": "Informativa sulla Privacy",
       "termsOfService": "Termini di Servizio",
       "copyright": "© {year} NoBarriers. Tutti i diritti riservati."
+    },
+    "faq": {
+      "title": "Domande frequenti",
+      "q1": {
+        "question": "NoBarriers è gratuito?",
+        "answer": "Sì — tutti i corsi, le lezioni e le funzioni sono completamente gratuiti. Ti serve solo un account."
+      },
+      "q2": {
+        "question": "Serve esperienza con la lingua dei segni?",
+        "answer": "No. Il corso Principiante parte da zero con saluti, alfabeto e numeri, e ogni unità si sblocca completando la precedente."
+      },
+      "q3": {
+        "question": "Come funzionano le lezioni?",
+        "answer": "Ogni lezione ha due parti: la modalità studio ti mostra prima ogni segno, poi un breve quiz verifica cosa ricordi. La maggior parte dura pochi minuti."
+      },
+      "q4": {
+        "question": "Cosa sono cuori, XP e serie?",
+        "answer": "Guadagni XP per ogni risposta corretta, mantieni la serie imparando ogni giorno, e i cuori sono le tue possibilità nel quiz: un errore ne costa uno."
+      },
+      "q5": {
+        "question": "Posso usare NoBarriers sul telefono?",
+        "answer": "Sì. NoBarriers funziona in qualsiasi browser moderno su telefono, tablet o computer — niente da installare."
+      },
+      "q6": {
+        "question": "Per chi è NoBarriers?",
+        "answer": "Per tutti: famiglie e amici di persone sorde, studenti, insegnanti e chiunque voglia comunicare senza barriere."
+      }
     }
   },
   "learn": {

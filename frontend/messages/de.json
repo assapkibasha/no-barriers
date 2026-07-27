@@ -349,6 +349,33 @@
       "privacyPolicy": "Datenschutzrichtlinie",
       "termsOfService": "Nutzungsbedingungen",
       "copyright": "© {year} NoBarriers. Alle Rechte vorbehalten."
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "q1": {
+        "question": "Ist NoBarriers kostenlos?",
+        "answer": "Ja — alle Kurse, Lektionen und Funktionen sind komplett kostenlos. Du brauchst nur ein Konto."
+      },
+      "q2": {
+        "question": "Brauche ich Vorkenntnisse in Gebärdensprache?",
+        "answer": "Nein. Der Anfängerkurs beginnt bei null mit Begrüßungen, Alphabet und Zahlen, und jede Einheit wird freigeschaltet, sobald du die vorherige abschließt."
+      },
+      "q3": {
+        "question": "Wie funktionieren die Lektionen?",
+        "answer": "Jede Lektion hat zwei Teile: Der Lernmodus zeigt dir zuerst jede Gebärde, dann prüft ein kurzes Quiz, was du behalten hast. Die meisten Lektionen dauern nur wenige Minuten."
+      },
+      "q4": {
+        "question": "Was sind Herzen, XP und Serien?",
+        "answer": "Du bekommst XP für jede richtige Antwort, hältst deine Serie durch tägliches Lernen, und Herzen sind deine Chancen im Quiz — ein Fehler kostet eines."
+      },
+      "q5": {
+        "question": "Kann ich NoBarriers auf dem Handy nutzen?",
+        "answer": "Ja. NoBarriers läuft in jedem modernen Browser auf Handy, Tablet oder Computer — ohne Installation."
+      },
+      "q6": {
+        "question": "Für wen ist NoBarriers?",
+        "answer": "Für alle: Familien und Freunde gehörloser Menschen, Schüler, Lehrkräfte und alle, die ohne Barrieren kommunizieren möchten."
+      }
     }
   },
   "learn": {

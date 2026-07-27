@@ -349,6 +349,33 @@
       "privacyPolicy": "Politiki y'Ibanga",
       "termsOfService": "Amategeko y'Ikoreshwa",
       "copyright": "© {year} NoBarriers. Uburenganzira bwose burabikwa."
+    },
+    "faq": {
+      "title": "Ibibazo bikunze kubazwa",
+      "q1": {
+        "question": "Ese NoBarriers ni ubuntu?",
+        "answer": "Yego — amasomo yose, ibice byose n’ibikorwa byose ni ubuntu rwose. Icyo ukeneye ni konti gusa."
+      },
+      "q2": {
+        "question": "Ese nkeneye kuba nzi ururimi rw’amarenga?",
+        "answer": "Oya. Isomo ry’abatangiye ritangirira ku busa n’indamukanyo, inyuguti n’imibare, kandi buri gice gifunguka umaze kurangiza ikibanziriza."
+      },
+      "q3": {
+        "question": "Amasomo akora ate?",
+        "answer": "Buri somo rigizwe n’ibice bibiri: uburyo bwo kwiga bukwereka buri karenga mbere, hanyuma akabazo gato kakagenzura ibyo wibuka. Menshi amara iminota mike gusa."
+      },
+      "q4": {
+        "question": "Imitima, XP n’iminsi ikurikirana ni iki?",
+        "answer": "Ubona XP kuri buri gisubizo cyiza, ukomeza iminsi ikurikirana wiga buri munsi, kandi imitima ni amahirwe yawe mu kabazo — ikosa rimwe ritwara umutima umwe."
+      },
+      "q5": {
+        "question": "Nshobora gukoresha NoBarriers kuri telefoni?",
+        "answer": "Yego. NoBarriers ikora muri mushakisha iyo ari yo yose igezweho kuri telefoni, tableti cyangwa mudasobwa — nta kintu gishyirwamo."
+      },
+      "q6": {
+        "question": "NoBarriers yagenewe nde?",
+        "answer": "Bose: imiryango n’inshuti z’ibipfamatwi, abanyeshuri, abarimu, n’umuntu wese ushaka kuvugana nta nzitizi."
+      }
     }
   },
   "learn": {

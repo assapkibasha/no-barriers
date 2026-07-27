@@ -6,17 +6,17 @@ import { useTranslations } from 'next-intl'
 export default function CtaSection() {
   const t = useTranslations('landing.cta')
   return (
-    <section className="bg-gradient-to-br from-teal-700 via-teal-800 to-blue-900 py-20">
-      <div className="max-w-4xl mx-auto px-4 text-center space-y-8">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+    <section className="bg-ink py-20">
+      <div className="mx-auto max-w-4xl space-y-8 px-4 text-center">
+        <h2 className="font-accent text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl">
           {t('headline')}
         </h2>
-        <p className="text-teal-50/85 text-lg max-w-2xl mx-auto">
+        <p className="mx-auto max-w-2xl text-lg text-white/75">
           {t('subtitle')}
         </p>
         <Link
           href="/get-started"
-          className="inline-block px-12 py-5 bg-white text-teal-700 text-xl font-extrabold rounded-2xl hover:bg-teal-50 shadow-2xl shadow-teal-950/30 transition-all transform hover:scale-105 uppercase tracking-wide"
+          className="inline-block rounded-full bg-white px-12 py-5 text-xl font-extrabold uppercase tracking-wide text-ink shadow-lg transition-all hover:bg-brand-aqua"
         >
           {t('button')}
         </Link>

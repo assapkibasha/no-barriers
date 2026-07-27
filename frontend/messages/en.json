@@ -349,6 +349,33 @@
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
       "copyright": "© {year} NoBarriers. All rights reserved."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": {
+        "question": "Is NoBarriers free?",
+        "answer": "Yes — every course, lesson and feature is completely free. All you need is an account."
+      },
+      "q2": {
+        "question": "Do I need any experience with sign language?",
+        "answer": "No. The Beginner course starts from zero with greetings, the alphabet and numbers, and each unit unlocks as you finish the one before it."
+      },
+      "q3": {
+        "question": "How do lessons work?",
+        "answer": "Each lesson has two parts: study mode shows you every sign first, then a short quiz checks what you remember. Most lessons take just a few minutes."
+      },
+      "q4": {
+        "question": "What are hearts, XP and streaks?",
+        "answer": "You earn XP for every correct answer, keep a streak by learning every day, and hearts are your chances in a quiz — a wrong answer costs one."
+      },
+      "q5": {
+        "question": "Can I use NoBarriers on my phone?",
+        "answer": "Yes. NoBarriers runs in any modern browser on your phone, tablet or computer — nothing to install."
+      },
+      "q6": {
+        "question": "Who is NoBarriers for?",
+        "answer": "Everyone: deaf learners' families and friends, students, teachers, and anyone who wants to communicate without barriers."
+      }
     }
   },
   "learn": {
