@@ -40,25 +40,39 @@ export default function App() {
 
   return (
     <main className="launch-page">
-      <div className="launch-glow launch-glow-one" aria-hidden="true" />
-      <div className="launch-glow launch-glow-two" aria-hidden="true" />
-      <div className="launch-grid" aria-hidden="true" />
-
       <header className="launch-header">
         <a className="brand-lockup" href="/" aria-label="NoBarriers home">
-          <img src="/images/logo.png" alt="" className="brand-mark" />
+          <span className="brand-badge"><img src="/images/logo.png" alt="" className="brand-mark" /></span>
           <span>NoBarriers</span>
         </a>
-        <span className="header-status"><i aria-hidden="true" /> New chapter loading</span>
+        <span className="header-note">A new chapter is taking shape</span>
       </header>
 
-      <section className="launch-content" aria-labelledby="launch-title">
-        <p className="launch-eyebrow">We are making room for what is next</p>
-        <h1 id="launch-title">Good things take time to <em>grow.</em></h1>
-        <p className="launch-message">
-          We are taking a short pause to make NoBarriers even better. We will be back soon with something worth the wait.
-        </p>
+      <section className="launch-hero" aria-labelledby="launch-title">
+        <div className="launch-copy">
+          <p className="launch-eyebrow">Coming into focus / 2026</p>
+          <h1 id="launch-title">Good things take time to <em>grow.</em></h1>
+          <p className="launch-message">
+            We are making room for a better way to learn. NoBarriers returns soon with a new experience for everyone.
+          </p>
+          <p className="launch-date">Opening <strong>15 October 2026</strong></p>
+        </div>
 
+        <div className="launch-image-wrap">
+          <img
+            className="launch-image"
+            src="/images/hero.jpg"
+            alt="Three people learning together around a table"
+          />
+          <span className="image-caption">Learning is better together.</span>
+        </div>
+      </section>
+
+      <section className="countdown-panel" aria-label="Countdown to launch">
+        <div className="countdown-intro">
+          <span className="countdown-kicker">The wait is part of the story</span>
+          <span className="countdown-arrow" aria-hidden="true">↘</span>
+        </div>
         <div className="countdown" role="timer" aria-live="polite" aria-label="Time remaining until launch">
           {countdownItems.map((item) => (
             <div className="countdown-unit" key={item.label}>
@@ -67,14 +81,11 @@ export default function App() {
             </div>
           ))}
         </div>
-
-        <p className="launch-date">We launch <span>15 October 2026</span></p>
       </section>
 
       <footer className="launch-footer">
         <span>Keep learning. Keep becoming.</span>
-        <span className="footer-rule" aria-hidden="true" />
-        <span>See you on the other side.</span>
+        <span>See you soon.</span>
       </footer>
     </main>
   )
