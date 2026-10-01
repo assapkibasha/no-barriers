@@ -1,42 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base {
-  :root {
-    --radius: 0.5rem;
-  }
-  body {
-    @apply bg-paper text-ink dark:bg-gray-950 dark:text-gray-100 transition-colors;
-  }
-  h1, h2, h3 {
-    @apply font-display;
-  }
+
+:root { --launch-ink: #122b30; --launch-paper: #faf8f3; --launch-teal: #2dd4bf; --launch-line: rgba(250, 248, 243, 0.16); }
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { background: var(--launch-ink); color: var(--launch-paper); }
+
+.launch-page { position: relative; isolation: isolate; display: flex; min-height: 100dvh; flex-direction: column; overflow: hidden; background: radial-gradient(circle at 50% 45%, rgba(45, 212, 191, 0.08), transparent 30rem), var(--launch-ink); padding: 2rem clamp(1.25rem, 5vw, 5.5rem) 1.5rem; }
+.launch-grid { position: absolute; z-index: -1; inset: 0; opacity: 0.28; background-image: linear-gradient(var(--launch-line) 1px, transparent 1px), linear-gradient(90deg, var(--launch-line) 1px, transparent 1px); background-size: 5rem 5rem; mask-image: linear-gradient(to bottom, transparent, black 15%, black 75%, transparent); }
+.launch-glow { position: absolute; z-index: -1; width: 24rem; height: 24rem; border: 1px solid rgba(45, 212, 191, 0.16); border-radius: 999px; pointer-events: none; }
+.launch-glow-one { top: 16%; left: -13rem; box-shadow: 0 0 0 3rem rgba(45, 212, 191, 0.03), 0 0 0 6rem rgba(45, 212, 191, 0.02); }
+.launch-glow-two { right: -14rem; bottom: 8%; opacity: 0.62; transform: scale(1.35); }
+.launch-header, .launch-footer { display: flex; align-items: center; justify-content: space-between; color: rgba(250, 248, 243, 0.72); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.brand-lockup { display: inline-flex; align-items: center; gap: 0.65rem; color: var(--launch-paper); font-family: ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif; font-size: 1.05rem; font-weight: 800; letter-spacing: -0.03em; text-decoration: none; text-transform: none; }
+.brand-mark { width: 1.8rem; height: 1.8rem; object-fit: contain; }
+.header-status { display: inline-flex; align-items: center; gap: 0.55rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.65rem; letter-spacing: 0.12em; }
+.header-status i { display: block; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--launch-teal); box-shadow: 0 0 0 0.3rem rgba(45, 212, 191, 0.12); }
+.launch-content { width: min(100%, 70rem); margin: auto; padding: 5rem 0 4rem; text-align: center; }
+.launch-eyebrow, .countdown-label, .launch-date { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.14em; text-transform: uppercase; }
+.launch-eyebrow { margin: 0 0 1.4rem; color: var(--launch-teal); font-size: 0.68rem; font-weight: 700; }
+.launch-content h1 { max-width: 12ch; margin: 0 auto; color: var(--launch-paper); font-family: ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif; font-size: clamp(3.25rem, 8vw, 7.5rem); font-weight: 900; letter-spacing: -0.075em; line-height: 0.92; text-wrap: balance; }
+.launch-content h1 em { color: var(--launch-teal); font-style: normal; }
+.launch-message { max-width: 35rem; margin: 1.8rem auto 0; color: rgba(250, 248, 243, 0.7); font-size: clamp(1rem, 1.8vw, 1.18rem); line-height: 1.65; }
+.countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: min(100%, 48rem); margin: 3.5rem auto 0; border-top: 1px solid var(--launch-line); border-bottom: 1px solid var(--launch-line); }
+.countdown-unit { position: relative; padding: 1.35rem 0.75rem 1.25rem; }
+.countdown-unit + .countdown-unit::before { position: absolute; top: 1.25rem; bottom: 1.25rem; left: 0; width: 1px; background: var(--launch-line); content: ''; }
+.countdown-value { display: block; color: var(--launch-paper); font-family: ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif; font-size: clamp(2.7rem, 6vw, 5.7rem); font-variant-numeric: tabular-nums; font-weight: 800; letter-spacing: -0.06em; line-height: 0.95; }
+.countdown-label { display: block; margin-top: 0.7rem; color: rgba(250, 248, 243, 0.47); font-size: 0.62rem; font-weight: 700; }
+.launch-date { margin: 1.4rem 0 0; color: rgba(250, 248, 243, 0.48); font-size: 0.62rem; }
+.launch-date span { color: var(--launch-paper); }
+.launch-footer { gap: 1rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.62rem; letter-spacing: 0.08em; }
+.footer-rule { flex: 1; height: 1px; max-width: 12rem; background: var(--launch-line); }
+
+@media (max-width: 640px) {
+  .launch-page { padding: 1.4rem 1.1rem 1.2rem; }
+  .launch-header, .launch-footer { font-size: 0.58rem; }
+  .header-status { font-size: 0.55rem; }
+  .launch-content { padding: 4rem 0 3rem; }
+  .launch-content h1 { max-width: 9ch; font-size: clamp(3.4rem, 16vw, 5.2rem); }
+  .launch-message { max-width: 25rem; font-size: 0.95rem; }
+  .countdown { margin-top: 2.7rem; }
+  .countdown-unit { padding: 1.1rem 0.2rem 1rem; }
+  .countdown-value { font-size: clamp(2rem, 10vw, 3.25rem); }
+  .countdown-label { font-size: 0.48rem; letter-spacing: 0.08em; }
+  .launch-footer span:first-child { display: none; }
+  .launch-footer .footer-rule { max-width: none; }
 }
 
-@layer utilities {
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  /* Hand-drawn decorations for .font-accent headlines (see DESIGN.md §4).
-     Highlighter swipe in reward amber: */
-  .marker-highlight {
-    padding: 0 0.25em;
-    border-radius: 0.35em 0.5em 0.4em 0.55em;
-    background: linear-gradient(100deg, transparent 0%, rgba(245, 166, 35, 0.45) 3%, rgba(245, 166, 35, 0.45) 97%, transparent 100%);
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-  }
-  /* Hand-drawn underline stroke in unit blue: */
-  .marker-underline {
-    padding-bottom: 0.12em;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M3 9 Q 60 2 117 7' fill='none' stroke='%231D4ED8' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: 0 100%;
-    background-size: 100% 0.22em;
-  }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }

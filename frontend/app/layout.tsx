@@ -1,24 +1,5 @@
 import type { Metadata } from 'next'
-import { Nunito, Nunito_Sans, Caveat } from 'next/font/google'
 import '../src/index.css'
-
-const nunito = Nunito({
-  subsets: ['latin'],
-  weight: ['700', '800', '900'],
-  variable: '--font-display',
-})
-
-const nunitoSans = Nunito_Sans({
-  subsets: ['latin'],
-  weight: ['400', '600', '700', '800'],
-  variable: '--font-sans',
-})
-
-const caveat = Caveat({
-  subsets: ['latin'],
-  weight: ['600', '700'],
-  variable: '--font-accent',
-})
 import { ProgressProvider } from '../src/store/progress-context'
 import { ThemeProvider } from '../src/components/theme-provider'
 import { ErrorBoundary } from '../src/components/ErrorBoundary'
@@ -47,7 +28,7 @@ export default async function RootLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning className={`${nunito.variable} ${nunitoSans.variable} ${caveat.variable}`}>
+    <html lang={locale} suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
