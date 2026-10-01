@@ -50,27 +50,26 @@ export default function App() {
 
       <section className="launch-hero" aria-labelledby="launch-title">
         <div className="launch-copy">
-          <p className="launch-eyebrow">Coming into focus / 2026</p>
+          <p className="launch-eyebrow">A more accessible way to learn</p>
           <h1 id="launch-title">Good things take time to <em>grow.</em></h1>
           <p className="launch-message">
-            We are making room for a better way to learn. NoBarriers returns soon with a new experience for everyone.
+            We are rebuilding NoBarriers to make learning more accessible for everyone.
           </p>
-          <p className="launch-date">Opening <strong>15 October 2026</strong></p>
+          <p className="launch-date">Returning <strong>15 October 2026</strong></p>
         </div>
 
         <div className="launch-image-wrap">
           <img
             className="launch-image"
-            src="/images/jesus.jpg"
+            src="/images/jesus-cutout.png"
             alt="Black and white hands forming a sign language gesture"
           />
-          <span className="image-caption">Learning is better together.</span>
         </div>
       </section>
 
       <section className="countdown-panel" aria-label="Countdown to launch">
         <div className="countdown-intro">
-          <span className="countdown-kicker">The wait is part of the story</span>
+          <span className="countdown-kicker">Until we return</span>
           <span className="countdown-arrow" aria-hidden="true">↘</span>
         </div>
         <div className="countdown" role="timer" aria-live="polite" aria-label="Time remaining until launch">
