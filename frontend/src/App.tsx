@@ -61,8 +61,8 @@ export default function App() {
         <div className="launch-image-wrap">
           <img
             className="launch-image"
-            src="/images/hero.jpg"
-            alt="Three people learning together around a table"
+            src="/images/jesus.jpg"
+            alt="Black and white hands forming a sign language gesture"
           />
           <span className="image-caption">Learning is better together.</span>
         </div>
