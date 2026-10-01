@@ -7,7 +7,7 @@
 html, body { margin: 0; min-height: 100%; }
 body { background: var(--paper); color: var(--ink); }
 
-.launch-page { position: relative; isolation: isolate; display: flex; min-height: 100dvh; flex-direction: column; overflow: hidden; background: var(--paper); padding: 1.5rem clamp(1.25rem, 5vw, 5.75rem) 1.25rem; }
+.launch-page { position: relative; isolation: isolate; display: flex; height: 100dvh; min-height: 100dvh; flex-direction: column; overflow: hidden; background: var(--paper); padding: 1rem clamp(1.25rem, 5vw, 5.75rem) 0.8rem; }
 .launch-page::before { position: absolute; z-index: -1; top: 0; right: 0; width: 36vw; height: 100%; background: rgba(15, 118, 110, 0.055); clip-path: polygon(29% 0, 100% 0, 100% 100%, 0 100%); content: ''; }
 .launch-page::after { position: absolute; z-index: -1; top: 46%; left: -10rem; width: 28rem; height: 28rem; border: 1px solid rgba(15, 118, 110, 0.15); border-radius: 50%; content: ''; }
 
@@ -17,7 +17,7 @@ body { background: var(--paper); color: var(--ink); }
 .brand-mark { width: 1.28rem; height: 1.28rem; object-fit: contain; }
 .header-note { max-width: 18rem; text-align: right; }
 
-.launch-hero { display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(18rem, 1.08fr); align-items: center; gap: clamp(2.5rem, 8vw, 9rem); width: min(100%, 88rem); margin: auto; padding: clamp(3rem, 7vh, 6rem) 0 clamp(2.5rem, 6vh, 5.5rem); }
+.launch-hero { display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(18rem, 1.08fr); align-items: center; gap: clamp(2.5rem, 8vw, 9rem); flex: 1; min-height: 0; width: min(100%, 88rem); margin: auto; padding: clamp(1.5rem, 4vh, 3.5rem) 0 clamp(1.25rem, 3vh, 2.5rem); }
 .launch-copy { position: relative; z-index: 1; max-width: 38rem; }
 .launch-eyebrow, .countdown-kicker, .launch-date, .countdown-label { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.13em; text-transform: uppercase; }
 .launch-eyebrow { margin: 0 0 1.6rem; color: var(--teal); font-size: 0.67rem; font-weight: 800; }
@@ -27,7 +27,7 @@ body { background: var(--paper); color: var(--ink); }
 .launch-date { margin: 2rem 0 0; color: rgba(18, 43, 48, 0.55); font-size: 0.63rem; }
 .launch-date strong { color: var(--ink); font-weight: 800; }
 
-.launch-image-wrap { position: relative; min-height: clamp(20rem, 54vh, 36rem); overflow: hidden; background: var(--teal); clip-path: polygon(8% 0, 100% 7%, 92% 100%, 0 92%); }
+.launch-image-wrap { position: relative; height: min(43vh, 36rem); min-height: 0; overflow: hidden; background: var(--teal); clip-path: polygon(8% 0, 100% 7%, 92% 100%, 0 92%); }
 .launch-image { display: block; width: 100%; height: 100%; min-height: inherit; object-fit: cover; filter: saturate(0.82) contrast(0.95); mix-blend-mode: multiply; }
 .launch-image-wrap::after { position: absolute; inset: 0; background: linear-gradient(155deg, rgba(45, 212, 191, 0.22), transparent 45%, rgba(18, 43, 48, 0.18)); content: ''; pointer-events: none; }
 .image-caption { position: absolute; right: 1rem; bottom: 1rem; z-index: 1; max-width: 8rem; color: var(--paper); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; line-height: 1.5; text-align: right; text-transform: uppercase; }
@@ -45,19 +45,29 @@ body { background: var(--paper); color: var(--ink); }
 .launch-footer span:last-child { color: var(--teal); }
 
 @media (max-width: 760px) {
-  .launch-page { padding: 1.2rem 1rem 1rem; }
-  .header-note { max-width: 11rem; font-size: 0.55rem; }
-  .launch-hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 0 2.3rem; }
-  .launch-copy { max-width: 31rem; }
-  .launch-copy h1 { max-width: 8ch; font-size: clamp(3.65rem, 15vw, 6rem); }
-  .launch-message { max-width: 26rem; margin-top: 1.5rem; }
-  .launch-image-wrap { min-height: 16rem; max-height: 24rem; clip-path: polygon(4% 0, 100% 5%, 96% 100%, 0 95%); }
-  .countdown-panel { grid-template-columns: 1fr; gap: 1.2rem; clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%); padding: 1.8rem 1rem 1.1rem; }
-  .countdown-intro { justify-content: space-between; padding: 0; }
+  .launch-page { height: 100dvh; min-height: 100dvh; padding: 0.85rem 0.9rem 0.7rem; }
+  .launch-header, .launch-footer { font-size: 0.48rem; }
+  .brand-lockup { gap: 0.45rem; font-size: 0.9rem; }
+  .brand-badge { width: 1.7rem; height: 1.7rem; }
+  .brand-mark { width: 1rem; height: 1rem; }
+  .header-note { max-width: 11rem; font-size: 0.47rem; }
+  .launch-hero { grid-template-columns: minmax(0, 1.15fr) minmax(8rem, 0.85fr); gap: 0.75rem; flex: 1; min-height: 0; padding: 1.35rem 0 0.8rem; }
+  .launch-copy { max-width: 21rem; }
+  .launch-eyebrow { margin-bottom: 0.8rem; font-size: 0.52rem; }
+  .launch-copy h1 { max-width: 8ch; font-size: clamp(2.35rem, 10vw, 4.4rem); line-height: 0.84; }
+  .launch-message { max-width: 18rem; margin-top: 0.85rem; font-size: 0.72rem; line-height: 1.4; }
+  .launch-date { margin-top: 0.65rem; font-size: 0.5rem; }
+  .launch-image-wrap { align-self: center; min-height: 0; height: min(31vh, 13rem); max-height: none; clip-path: polygon(5% 0, 100% 5%, 95% 100%, 0 95%); }
+  .image-caption { right: 0.55rem; bottom: 0.55rem; max-width: 5rem; font-size: 0.43rem; }
+  .countdown-panel { grid-template-columns: minmax(6.5rem, 0.7fr) minmax(0, 1.3fr); gap: 0.55rem; flex: 0 0 auto; clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%); padding: 1.05rem 0.7rem 0.65rem; }
+  .countdown-intro { justify-content: space-between; gap: 0.35rem; padding: 0; }
+  .countdown-kicker { max-width: 6.5rem; font-size: 0.48rem; }
+  .countdown-arrow { font-size: 1.45rem; }
   .countdown { border-left: 0; }
-  .countdown-value { font-size: clamp(2.2rem, 12vw, 3.6rem); }
-  .countdown-label { font-size: 0.48rem; letter-spacing: 0.08em; }
-  .launch-footer { font-size: 0.55rem; }
+  .countdown-unit { padding: 0.15rem 0.3rem; }
+  .countdown-value { font-size: clamp(1.65rem, 8vw, 2.8rem); }
+  .countdown-label { margin-top: 0.4rem; font-size: 0.4rem; letter-spacing: 0.06em; }
+  .launch-footer { padding-top: 0.65rem; }
   .launch-footer span:first-child { display: none; }
 }
 
