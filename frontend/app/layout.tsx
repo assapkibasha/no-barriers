@@ -7,6 +7,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 import { DM_Mono, DM_Sans } from 'next/font/google'
 import { siteUrl } from '../src/lib/seo'
+import InteractionFeedback from '../src/components/InteractionFeedback'
 
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'], display: 'swap', variable: '--font-dm-sans' })
 const dmMono = DM_Mono({ subsets: ['latin'], weight: ['400', '500'], display: 'swap', variable: '--font-dm-mono' })
@@ -42,6 +43,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <ProgressProvider>
+              <InteractionFeedback />
               <ErrorBoundary>
                 {children}
               </ErrorBoundary>

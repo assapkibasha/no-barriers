@@ -1,7 +1,6 @@
 'use client'
 
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
-import { useState } from 'react'
 import { BookOpenCheck, Flame, Gem } from 'lucide-react'
 import { ThemeToggle } from '../../src/components/ThemeToggle'
 import { LocaleSwitcher } from '../../src/components/LocaleSwitcher'
@@ -11,19 +10,14 @@ import { useProgress, getLevel, BADGES } from '../../src/store/progress-context'
 import { lessons } from '../../src/data/lessons'
 import { units } from '../../src/data/units'
 import { useTranslations } from 'next-intl'
+import { useLogout } from '../../src/components/useLogout'
 
 export default function ProfilePage() {
   const t = useTranslations('pages.profile')
   const tLevels = useTranslations('levels')
   const tBadges = useTranslations('badges')
   const { progress, loading } = useProgress()
-  const [loggingOut, setLoggingOut] = useState(false)
-
-  const handleLogout = async () => {
-    setLoggingOut(true)
-    await fetch('/api/auth/logout', { method: 'POST' })
-    window.location.href = '/login'
-  }
+  const { loggingOut, logoutError, handleLogout } = useLogout()
 
   if (loading) return (
     <div className="flex min-h-screen items-center justify-center">
@@ -141,6 +135,7 @@ export default function ProfilePage() {
             >
               🚪 {loggingOut ? t('loggingOut') : t('logOut')}
             </button>
+            {logoutError && <p role="alert" className="text-sm font-semibold text-heart">{logoutError}</p>}
           </div>
         </div>
       </main>

@@ -675,5 +675,15 @@
       "sentMessage": "Niba konti ya {email} ibaho, twohereje amabwiriza yo guhindura ijambobanga.",
       "networkError": "Ikibazo cy’umurongo. Ongera ugerageze."
     }
+  },
+  "feedback": {
+    "loading": "Birimo gufunguka…",
+    "opening": "Urupapuro rurimo gufunguka…",
+    "takingLonger": "Birimo gufata igihe kirenze icyari giteganyijwe.",
+    "loadingProgress": "Turimo gufungura aho ugeze mu kwiga…",
+    "saving": "Turimo kubika aho ugeze mu kwiga…",
+    "loadFailed": "Ntitwashoboye gufungura aho ugeze mu kwiga.",
+    "saveFailed": "Aho ugeze mu kwiga ntihashoboye kubikwa.",
+    "retry": "Ongera ugerageze"
   }
 }

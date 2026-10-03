@@ -675,5 +675,15 @@
       "sentMessage": "Se existir uma conta para {email}, enviamos instruções de redefinição.",
       "networkError": "Erro de rede. Tente novamente."
     }
+  },
+  "feedback": {
+    "loading": "Carregando…",
+    "opening": "Abrindo página…",
+    "takingLonger": "Isso está demorando mais que o esperado.",
+    "loadingProgress": "Carregando seu progresso…",
+    "saving": "Salvando progresso…",
+    "loadFailed": "Não foi possível carregar seu progresso.",
+    "saveFailed": "Não foi possível salvar seu progresso.",
+    "retry": "Tentar novamente"
   }
 }

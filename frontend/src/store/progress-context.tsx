@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from 'react'
+import { createContext, useContext, useEffect, useState, useCallback, useRef, type ReactNode } from 'react'
 
 export interface User {
   id: number
@@ -76,6 +76,10 @@ interface ProgressCtx {
   user: User | null
   progress: ProgressState
   loading: boolean
+  saving: boolean
+  saveError: boolean
+  loadError: boolean
+  retrySave: () => Promise<void>
   saveProgress: (state: ProgressState) => Promise<void>
   addXP: (amount: number) => Promise<ProgressState>
   loseHeart: () => Promise<ProgressState>
@@ -90,12 +94,20 @@ const Ctx = createContext<ProgressCtx | null>(null)
 export function ProgressProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [progress, setProgress] = useState<ProgressState>(defaultState())
+  const progressRef = useRef(progress)
   const [loading, setLoading] = useState(true)
+  const [pendingSaves, setPendingSaves] = useState(0)
+  const [saveError, setSaveError] = useState(false)
+  const [loadError, setLoadError] = useState(false)
+  const saveQueue = useRef<Promise<void>>(Promise.resolve())
+  const latestSave = useRef<ProgressState | null>(null)
 
   const fetchProgress = useCallback(async () => {
+    setLoading(true)
+    setLoadError(false)
     try {
-      const res = await fetch('/api/progress')
-      if (!res.ok) { setLoading(false); return }
+      const res = await fetch('/api/progress', { signal: AbortSignal.timeout(15000) })
+      if (!res.ok) { if (res.status !== 401) setLoadError(true); return }
       const data = await res.json()
       setUser(data.user ?? null)
       let state = fromAPI(data)
@@ -104,9 +116,10 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
         state = { ...state, hearts: MAX_HEARTS, lastHeartsRefill: today() }
         await persistProgress(state)
       }
+      progressRef.current = state
       setProgress(state)
     } catch {
-      // not logged in or network error — use defaults
+      setLoadError(true)
     } finally {
       setLoading(false)
     }
@@ -115,17 +128,29 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   useEffect(() => { fetchProgress() }, [fetchProgress])
 
   const persistProgress = async (state: ProgressState) => {
+    progressRef.current = state
     setProgress(state)
-    try {
-      await fetch('/api/progress', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(toAPI(state)),
-      })
-    } catch { /* ignore */ }
+    latestSave.current = state
+    setPendingSaves((count) => count + 1)
+    const operation = saveQueue.current.then(async () => {
+      try {
+        const response = await fetch('/api/progress', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(toAPI(state)),
+          signal: AbortSignal.timeout(15000),
+        })
+        if (!response.ok) throw new Error('Progress save failed')
+        setSaveError(false)
+      } catch { setSaveError(true) }
+      finally { setPendingSaves((count) => count - 1) }
+    })
+    saveQueue.current = operation
+    await operation
   }
 
-  const addXP = async (amount: number): Promise<ProgressState> => {
+  const addXP = async (amount: number, persist = true): Promise<ProgressState> => {
+    const progress = progressRef.current
     const t = today()
     const yesterday = new Date()
     yesterday.setDate(yesterday.getDate() - 1)
@@ -142,18 +167,19 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
         : progress.streak,
       lastActivityDate: t,
     }
-    await persistProgress(next)
+    if (persist) await persistProgress(next)
     return next
   }
 
   const loseHeart = async (): Promise<ProgressState> => {
+    const progress = progressRef.current
     const next = { ...progress, hearts: Math.max(0, progress.hearts - 1) }
     await persistProgress(next)
     return next
   }
 
   const completeLesson = async (lessonId: string, perfect: boolean, xpEarned: number): Promise<ProgressState> => {
-    const afterXP = await addXP(xpEarned)
+    const afterXP = await addXP(xpEarned, false)
     const next: ProgressState = {
       ...afterXP,
       completedLessons: afterXP.completedLessons.includes(lessonId)
@@ -168,19 +194,22 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   }
 
   const recordWeak = async (signId: string) => {
+    const progress = progressRef.current
     if (progress.weakSigns.includes(signId)) return
     const next = { ...progress, weakSigns: [...progress.weakSigns, signId] }
     await persistProgress(next)
   }
 
   const clearWeak = async (signId: string) => {
+    const progress = progressRef.current
     const next = { ...progress, weakSigns: progress.weakSigns.filter((s) => s !== signId) }
     await persistProgress(next)
   }
 
   return (
     <Ctx.Provider value={{
-      user, progress, loading,
+      user, progress, loading, saving: pendingSaves > 0, saveError, loadError,
+      retrySave: async () => { if (latestSave.current && pendingSaves === 0) await persistProgress(latestSave.current) },
       saveProgress: persistProgress,
       addXP, loseHeart, completeLesson,
       recordWeak, clearWeak,

@@ -675,5 +675,15 @@
       "sentMessage": "Si un compte existe pour {email}, nous avons envoyé les instructions de réinitialisation.",
       "networkError": "Erreur réseau. Veuillez réessayer."
     }
+  },
+  "feedback": {
+    "loading": "Chargement…",
+    "opening": "Ouverture de la page…",
+    "takingLonger": "Cela prend plus de temps que prévu.",
+    "loadingProgress": "Chargement de votre progression…",
+    "saving": "Enregistrement…",
+    "loadFailed": "Impossible de charger votre progression.",
+    "saveFailed": "Votre progression n’a pas pu être enregistrée.",
+    "retry": "Réessayer"
   }
 }

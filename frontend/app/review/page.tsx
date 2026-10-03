@@ -47,7 +47,7 @@ function ReviewPageContent() {
   const t = useTranslations('pages.review')
   const tSigns = useTranslations('signs')
   const router = useRouter()
-  const { progress, clearWeak } = useProgress()
+  const { progress, saving, clearWeak } = useProgress()
   const [exercises, setExercises] = useState<ReviewExercise[]>([])
   const [current, setCurrent] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
@@ -88,6 +88,7 @@ function ReviewPageContent() {
   }
 
   const handleNext = () => {
+    if (saving) return
     if (current + 1 >= exercises.length) {
       setDone(true)
       if (cleared === exercises.length) {
@@ -214,7 +215,7 @@ function ReviewPageContent() {
         <div className="flex-1" />
 
         {answered && (
-          <button onClick={handleNext} className="mt-6 w-full rounded-full bg-brand py-4 font-extrabold uppercase tracking-wide text-white shadow-lg shadow-brand/20 transition hover:bg-brand-hover">
+          <button onClick={handleNext} disabled={saving} aria-busy={saving} className="mt-6 w-full rounded-full bg-brand py-4 font-extrabold uppercase tracking-wide text-white shadow-lg shadow-brand/20 transition hover:bg-brand-hover disabled:opacity-60">
             {current + 1 >= exercises.length ? t('finishReview') : t('nextArrow')}
           </button>
         )}

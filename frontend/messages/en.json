@@ -675,5 +675,15 @@
       "sentMessage": "If an account exists for {email}, we've sent password reset instructions.",
       "networkError": "Network error. Please try again."
     }
+  },
+  "feedback": {
+    "loading": "Loading…",
+    "opening": "Opening page…",
+    "takingLonger": "This is taking longer than expected.",
+    "loadingProgress": "Loading your progress…",
+    "saving": "Saving progress…",
+    "loadFailed": "Could not load your progress.",
+    "saveFailed": "Your progress could not be saved.",
+    "retry": "Try again"
   }
 }

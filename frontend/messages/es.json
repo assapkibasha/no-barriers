@@ -675,5 +675,15 @@
       "sentMessage": "Si existe una cuenta para {email}, hemos enviado instrucciones para restablecer la contraseña.",
       "networkError": "Error de red. Inténtalo de nuevo."
     }
+  },
+  "feedback": {
+    "loading": "Cargando…",
+    "opening": "Abriendo página…",
+    "takingLonger": "Esto está tardando más de lo esperado.",
+    "loadingProgress": "Cargando tu progreso…",
+    "saving": "Guardando progreso…",
+    "loadFailed": "No se pudo cargar tu progreso.",
+    "saveFailed": "No se pudo guardar tu progreso.",
+    "retry": "Reintentar"
   }
 }

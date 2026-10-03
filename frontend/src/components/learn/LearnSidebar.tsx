@@ -2,16 +2,17 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { BookOpen, Compass, LogOut, RotateCcw, UserRound } from 'lucide-react'
 
 import { ThemeToggle } from '../ThemeToggle'
 import { LocaleSwitcher } from '../LocaleSwitcher'
+import { useLogout } from '../useLogout'
+import { Spinner } from '../LoadingIndicator'
 
 export default function LearnSidebar() {
   const path = usePathname()
-  const [loggingOut, setLoggingOut] = useState(false)
+  const { loggingOut, logoutError, handleLogout } = useLogout()
   const t = useTranslations('learn.sidebar')
 
   const navItems = [
@@ -21,11 +22,6 @@ export default function LearnSidebar() {
     { href: '/guide', labelKey: 'guide', icon: Compass },
   ]
 
-  const handleLogout = async () => {
-    setLoggingOut(true)
-    await fetch('/api/auth/logout', { method: 'POST' })
-    window.location.href = '/login'
-  }
 
   return (
     <aside className="fixed bottom-0 left-0 z-40 flex h-20 w-full flex-row items-center justify-around border-t border-line bg-white/95 px-2 shadow-[0_-8px_24px_rgba(18,43,48,0.06)] backdrop-blur transition-colors dark:border-gray-800 dark:bg-gray-950/95 md:top-0 md:h-screen md:w-64 md:flex-col md:justify-start md:border-r md:border-t-0 md:px-4 md:py-6 md:shadow-[8px_0_24px_rgba(18,43,48,0.06)]">
@@ -76,9 +72,10 @@ export default function LearnSidebar() {
         disabled={loggingOut}
         className="hidden h-12 w-full items-center gap-3 rounded-xl px-3 text-sm font-bold text-ink-soft transition-all hover:bg-heart-soft hover:text-heart disabled:opacity-50 dark:text-gray-400 dark:hover:bg-red-950/40 dark:hover:text-red-400 md:flex"
       >
-        <LogOut className="h-5 w-5 shrink-0" strokeWidth={2.25} />
+        {loggingOut ? <Spinner /> : <LogOut className="h-5 w-5 shrink-0" strokeWidth={2.25} />}
         <span className="truncate">{loggingOut ? t('loggingOut') : t('logOut')}</span>
       </button>
+      {logoutError && <p role="alert" className="hidden px-3 py-2 text-sm text-heart md:block">{logoutError}</p>}
     </aside>
   )
 }

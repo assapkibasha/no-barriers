@@ -27,3 +27,12 @@
 These checks cover production build, HTTP routes and account/progress API behavior. They do not certify every browser interaction, translation, device, lesson, accessibility requirement or deployment environment. The smoke test requested study and quiz pages but did not answer a complete lesson through the browser. No load, penetration or exhaustive visual test was performed.
 
 The database connection issue observed earlier was resolved after powering on the Aiven service. Free-service inactivity power-offs can interrupt sign-in again.
+
+## Interaction feedback follow-up
+
+- Added shared route loading, immediate internal-link navigation status, a slow-navigation retry link, and progress-loading feedback before learners interact with default progress.
+- Added visible save status, load/save errors and retry. Progress writes are serialized; follow-up updates read the latest local state. Lesson completion saves rewards and completion together in one request.
+- Login and registration show spinners and stay pending during redirect. Study-to-quiz controls show pending state. Logout failures re-enable the control and show an error. Flashcards support Enter and Space.
+- Feedback copy is present in all 12 locales. New standalone components and updated account/sidebar/profile code pass targeted ESLint checks; existing lint debt elsewhere remains.
+- Controlled React-renderer tests passed for pending saves, failed-save visibility, retry of the latest snapshot, preserved heart count, one-write lesson completion, failed-load recovery, internal-link feedback in the capture phase, clearing feedback on route change, and ignoring modified clicks.
+- Live browser verification was limited by repeated browser-control timeouts; these tests do not replace a full visual or slow-network browser pass.

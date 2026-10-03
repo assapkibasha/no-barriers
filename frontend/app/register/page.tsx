@@ -1,13 +1,12 @@
 'use client'
 
 import { useState, Suspense } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import { Spinner } from '../../src/components/LoadingIndicator'
 
 function RegisterForm() {
   const t = useTranslations('pages.register')
-  const router = useRouter()
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', password: '', confirm: '' })
@@ -23,19 +22,22 @@ function RegisterForm() {
     setError('')
     if (form.password !== form.confirm) { setError(t('passwordsNoMatch')); return }
     setLoading(true)
+    let navigating = false
     try {
       const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: form.name, email: form.email, password: form.password }),
+        signal: AbortSignal.timeout(15000),
       })
       const data = await res.json()
       if (!res.ok) { setError(data.error ?? 'Registration failed.'); return }
+      navigating = true
       window.location.href = '/learn'
     } catch {
       setError(t('networkError'))
     } finally {
-      setLoading(false)
+      if (!navigating) setLoading(false)
     }
   }
 
@@ -165,7 +167,7 @@ function RegisterForm() {
               disabled={loading}
               className="mt-2 w-full rounded-full bg-brand py-3.5 text-sm font-extrabold uppercase tracking-wide text-white transition-all hover:bg-brand-hover active:scale-[0.98] disabled:opacity-60"
             >
-              {loading ? t('creatingAccount') : t('createAccountBtn')}
+              <span className="inline-flex items-center justify-center gap-2" role={loading ? 'status' : undefined}>{loading && <Spinner />}{loading ? t('creatingAccount') : t('createAccountBtn')}</span>
             </button>
           </form>
 

@@ -675,5 +675,15 @@
       "sentMessage": "{email} 계정이 존재하는 경우 재설정 안내를 보냈습니다.",
       "networkError": "네트워크 오류입니다. 다시 시도해 주세요."
     }
+  },
+  "feedback": {
+    "loading": "불러오는 중…",
+    "opening": "페이지를 여는 중…",
+    "takingLonger": "예상보다 시간이 오래 걸리고 있습니다.",
+    "loadingProgress": "학습 진행 상황을 불러오는 중…",
+    "saving": "학습 진행 상황을 저장하는 중…",
+    "loadFailed": "학습 진행 상황을 불러오지 못했습니다.",
+    "saveFailed": "학습 진행 상황을 저장하지 못했습니다.",
+    "retry": "다시 시도"
   }
 }

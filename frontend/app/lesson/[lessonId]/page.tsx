@@ -66,7 +66,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
   const tSigns = useTranslations('signs')
   const router = useRouter()
   const lesson = getLessonById(params.lessonId)
-  const { progress, loseHeart, completeLesson, recordWeak } = useProgress()
+  const { progress, saving, loseHeart, completeLesson, recordWeak } = useProgress()
 
   const [exercises, setExercises] = useState<Exercise[]>([])
   const [current, setCurrent] = useState(0)
@@ -137,7 +137,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
   )
 
   const handleNext = useCallback(async () => {
-    if (!answered || advancingRef.current) return
+    if (!answered || saving || advancingRef.current) return
     advancingRef.current = true
     if (current + 1 >= exercises.length) {
       if (completingRef.current) return
@@ -163,7 +163,7 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
       setTyped('')
       setCorrect(false)
     }
-  }, [answered, current, exercises.length, mistakes, lesson, completeLesson])
+  }, [answered, saving, current, exercises.length, mistakes, lesson, completeLesson])
 
   if (!mounted) {
     return (
@@ -368,6 +368,8 @@ function LessonPageContent({ params }: { params: { lessonId: string } }) {
             </div>
             <button
               onClick={handleNext}
+              disabled={saving}
+              aria-busy={saving}
               className={`rounded-full px-6 py-2.5 text-sm font-extrabold uppercase text-white transition ${correct ? 'bg-brand hover:bg-brand-hover' : 'bg-heart hover:brightness-110'}`}
             >
               {current + 1 >= exercises.length ? t('finish') : t('nextArrow')}

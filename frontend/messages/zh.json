@@ -675,5 +675,15 @@
       "sentMessage": "如果 {email} 对应的账户存在，我们已发送密码重置说明。",
       "networkError": "网络错误，请重试。"
     }
+  },
+  "feedback": {
+    "loading": "正在加载…",
+    "opening": "正在打开页面…",
+    "takingLonger": "这比预期花费的时间更长。",
+    "loadingProgress": "正在加载学习进度…",
+    "saving": "正在保存进度…",
+    "loadFailed": "无法加载学习进度。",
+    "saveFailed": "无法保存学习进度。",
+    "retry": "重试"
   }
 }

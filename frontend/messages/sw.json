@@ -675,5 +675,15 @@
       "sentMessage": "Ikiwa akaunti ya {email} ipo, tumetuma maelekezo ya kuweka upya nenosiri.",
       "networkError": "Hitilafu ya mtandao. Jaribu tena."
     }
+  },
+  "feedback": {
+    "loading": "Inapakia…",
+    "opening": "Inafungua ukurasa…",
+    "takingLonger": "Hii inachukua muda mrefu kuliko ilivyotarajiwa.",
+    "loadingProgress": "Inapakia maendeleo yako…",
+    "saving": "Inahifadhi maendeleo…",
+    "loadFailed": "Imeshindwa kupakia maendeleo yako.",
+    "saveFailed": "Maendeleo yako hayakuweza kuhifadhiwa.",
+    "retry": "Jaribu tena"
   }
 }

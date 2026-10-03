@@ -675,5 +675,15 @@
       "sentMessage": "Se esiste un account per {email}, abbiamo inviato le istruzioni per reimpostare la password.",
       "networkError": "Errore di rete. Riprova."
     }
+  },
+  "feedback": {
+    "loading": "Caricamento…",
+    "opening": "Apertura della pagina…",
+    "takingLonger": "Sta richiedendo più tempo del previsto.",
+    "loadingProgress": "Caricamento dei tuoi progressi…",
+    "saving": "Salvataggio dei progressi…",
+    "loadFailed": "Impossibile caricare i tuoi progressi.",
+    "saveFailed": "Impossibile salvare i tuoi progressi.",
+    "retry": "Riprova"
   }
 }

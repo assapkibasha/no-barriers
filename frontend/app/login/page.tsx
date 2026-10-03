@@ -4,6 +4,7 @@ import { useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import { Spinner } from '../../src/components/LoadingIndicator'
 
 function LoginForm() {
   const t = useTranslations('pages.login')
@@ -22,21 +23,24 @@ function LoginForm() {
     e.preventDefault()
     setError('')
     setLoading(true)
+    let navigating = false
     try {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: form.email, password: form.password }),
+        signal: AbortSignal.timeout(15000),
       })
       const data = await res.json()
       if (!res.ok) { setError(data.error ?? 'Login failed.'); return }
       const requestedFrom = searchParams.get('from')
       const from = requestedFrom?.startsWith('/') && !requestedFrom.startsWith('//') && !requestedFrom.includes('\\') ? requestedFrom : '/learn'
+      navigating = true
       window.location.href = from
     } catch {
       setError(t('networkError'))
     } finally {
-      setLoading(false)
+      if (!navigating) setLoading(false)
     }
   }
 
@@ -137,7 +141,7 @@ function LoginForm() {
               disabled={loading}
               className="w-full rounded-full bg-brand py-3.5 text-sm font-extrabold uppercase tracking-wide text-white transition-all hover:bg-brand-hover active:scale-[0.98] disabled:opacity-60"
             >
-              {loading ? t('loggingIn') : t('logIn')}
+              <span className="inline-flex items-center justify-center gap-2" role={loading ? 'status' : undefined}>{loading && <Spinner />}{loading ? t('loggingIn') : t('logIn')}</span>
             </button>
           </form>
 

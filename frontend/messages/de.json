@@ -675,5 +675,15 @@
       "sentMessage": "Falls ein Konto für {email} existiert, haben wir Anweisungen zum Zurücksetzen gesendet.",
       "networkError": "Netzwerkfehler. Bitte erneut versuchen."
     }
+  },
+  "feedback": {
+    "loading": "Wird geladen…",
+    "opening": "Seite wird geöffnet…",
+    "takingLonger": "Das dauert länger als erwartet.",
+    "loadingProgress": "Dein Fortschritt wird geladen…",
+    "saving": "Fortschritt wird gespeichert…",
+    "loadFailed": "Dein Fortschritt konnte nicht geladen werden.",
+    "saveFailed": "Dein Fortschritt konnte nicht gespeichert werden.",
+    "retry": "Erneut versuchen"
   }
 }

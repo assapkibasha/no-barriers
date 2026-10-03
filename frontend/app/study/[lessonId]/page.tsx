@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { getLessonById } from '../../../src/data/lessons'
@@ -9,11 +9,14 @@ import { signs, type Sign } from '../../../src/data/signs'
 import { ErrorBoundary } from '../../../src/components/ErrorBoundary'
 import { Suspense } from 'react'
 import { useTranslations } from 'next-intl'
+import LoadingIndicator, { Spinner } from '../../../src/components/LoadingIndicator'
 
 function StudyPageContent({ params }: { params: { lessonId: string } }) {
   const t = useTranslations('pages.study')
   const tSigns = useTranslations('signs')
   const router = useRouter()
+  const [openingQuiz, startTransition] = useTransition()
+  const feedback = useTranslations('feedback')
   const lesson = getLessonById(params.lessonId)
   const [lessonSigns, setLessonSigns] = useState<Sign[]>([])
   const [current, setCurrent] = useState(0)
@@ -47,15 +50,16 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
     )
   }
 
-  if (lessonSigns.length === 0) return null
+  if (lessonSigns.length === 0) return <LoadingIndicator />
 
   const sign = lessonSigns[current]
   const isLast = current === lessonSigns.length - 1
   const pct = Math.round(((current + 1) / lessonSigns.length) * 100)
 
   const goNext = () => {
+    if (openingQuiz) return
     if (isLast) {
-      router.push(`/lesson/${lesson.id}`)
+      startTransition(() => router.push(`/lesson/${lesson.id}`))
     } else {
       setCurrent((c) => c + 1)
       setRevealed(false)
@@ -101,6 +105,11 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
         <div
           className="relative w-full cursor-pointer select-none rounded-3xl bg-white shadow-lg border border-line overflow-hidden transition-all hover:shadow-xl"
           onClick={() => setRevealed(true)}
+          role="button"
+          tabIndex={0}
+          aria-label={t('tapToReveal')}
+          aria-expanded={revealed}
+          onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setRevealed(true) } }}
         >
           {/* Sign image */}
           <div className="flex items-center justify-center bg-paper p-8 min-h-[260px]">
@@ -137,17 +146,20 @@ function StudyPageContent({ params }: { params: { lessonId: string } }) {
 
           <button
             onClick={goNext}
+            disabled={openingQuiz}
+            aria-busy={openingQuiz}
             className={`flex-2 flex-[2] rounded-full py-3.5 font-extrabold uppercase tracking-wide text-white transition-all hover:brightness-110 active:scale-[0.98] shadow-md ${
               isLast ? 'bg-reward' : 'bg-brand'
             }`}
           >
-            {isLast ? t('startQuiz') : t('next')}
+            <span className="inline-flex items-center gap-2">{openingQuiz && <Spinner />}{openingQuiz ? feedback('opening') : isLast ? t('startQuiz') : t('next')}</span>
           </button>
         </div>
 
         {/* Skip to quiz */}
         <button
-          onClick={() => router.push(`/lesson/${lesson.id}`)}
+          onClick={() => startTransition(() => router.push(`/lesson/${lesson.id}`))}
+          disabled={openingQuiz}
           className="mt-5 text-sm text-ink-soft underline underline-offset-2 hover:text-ink"
         >
           {t('skipToQuiz')}
