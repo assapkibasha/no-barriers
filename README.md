@@ -9,6 +9,8 @@ billing are **not yet implemented** (see [Roadmap](#roadmap)).
 
 **Live:** https://nobarriers.co.rw
 
+Search setup and the owner's indexing/content checklist: [SEO-GUIDE.md](SEO-GUIDE.md).
+
 Lessons are short and interactive: study mode introduces each sign, then a quiz
 checks what stuck. Progress, streaks, XP and badges carry across sessions, and the
 whole interface is available in 12 languages including Kinyarwanda and Kiswahili.

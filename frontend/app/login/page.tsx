@@ -1,13 +1,12 @@
 'use client'
 
 import { useState, Suspense } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
 function LoginForm() {
   const t = useTranslations('pages.login')
-  const router = useRouter()
   const searchParams = useSearchParams()
   const [showPassword, setShowPassword] = useState(false)
   const [form, setForm] = useState({ email: '', password: '', remember: false })
@@ -31,7 +30,8 @@ function LoginForm() {
       })
       const data = await res.json()
       if (!res.ok) { setError(data.error ?? 'Login failed.'); return }
-      const from = searchParams.get('from') ?? '/learn'
+      const requestedFrom = searchParams.get('from')
+      const from = requestedFrom?.startsWith('/') && !requestedFrom.startsWith('//') && !requestedFrom.includes('\\') ? requestedFrom : '/learn'
       window.location.href = from
     } catch {
       setError(t('networkError'))
@@ -70,6 +70,7 @@ function LoginForm() {
                 id="email"
                 name="email"
                 type="email"
+                autoComplete="username"
                 required
                 placeholder="jane@example.com"
                 value={form.email}
@@ -88,6 +89,7 @@ function LoginForm() {
                   id="password"
                   name="password"
                   type={showPassword ? 'text' : 'password'}
+                  autoComplete="current-password"
                   required
                   placeholder="••••••••"
                   value={form.password}
@@ -127,7 +129,7 @@ function LoginForm() {
             </div>
 
             {error && (
-              <p className="rounded-xl border border-heart/25 bg-heart-soft px-4 py-2.5 text-sm font-semibold text-heart">{error}</p>
+              <p role="alert" className="rounded-xl border border-heart/25 bg-heart-soft px-4 py-2.5 text-sm font-semibold text-heart">{error}</p>
             )}
 
             <button

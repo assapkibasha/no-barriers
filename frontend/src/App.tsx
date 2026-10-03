@@ -39,7 +39,7 @@ export default function App() {
   ]
 
   return (
-    <main className="launch-page">
+    <main className="launch-page" lang="en">
       <header className="launch-header">
         <a className="brand-lockup" href="/" aria-label="NoBarriers home">
           <span className="brand-badge"><img src="/images/logo.png" alt="" className="brand-mark" /></span>
@@ -48,12 +48,17 @@ export default function App() {
         <span className="header-note">A new chapter is taking shape</span>
       </header>
 
+      <a className="launch-old-site-cta" href="/old-website">
+        Continue To Our Old Website
+        <span aria-hidden="true">↗</span>
+      </a>
+
       <section className="launch-hero" aria-labelledby="launch-title">
         <div className="launch-copy">
           <p className="launch-eyebrow">A more accessible way to learn</p>
           <h1 id="launch-title">Good things take time to <em>grow.</em></h1>
           <p className="launch-message">
-            We are rebuilding NoBarriers to make learning more accessible for everyone.
+            We are rebuilding NoBarriers to make learning Rwandan Sign Language more accessible for everyone.
           </p>
           <p className="launch-date">Returning <strong>15 October 2026</strong></p>
         </div>
@@ -83,7 +88,7 @@ export default function App() {
       </section>
 
       <footer className="launch-footer">
-        <span>Keep learning. Keep becoming.</span>
+        <a className="launch-guide-link" href="/rwandan-sign-language">Explore Rwandan Sign Language</a>
         <span>See you soon.</span>
       </footer>
     </main>

@@ -24,12 +24,12 @@ export default function HeroSection() {
               >
                 {t('getStarted')}
               </Link>
-              <Link
+              <a
                 href="/login"
                 className="rounded-full border-2 border-ink bg-transparent px-10 py-4 text-center text-lg font-extrabold uppercase tracking-wide text-ink transition-all hover:bg-ink hover:text-white"
               >
                 {t('alreadyHaveAccount')}
-              </Link>
+              </a>
             </div>
           </div>
           <div className="relative flex flex-1 justify-center" aria-hidden="false">

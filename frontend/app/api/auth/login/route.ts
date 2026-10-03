@@ -5,15 +5,16 @@ import { signToken } from '@/lib/auth'
 
 export async function POST(req: Request) {
   try {
-    await initDB()
     const { email, password } = await req.json()
 
-    if (!email || !password)
+    if (typeof email !== 'string' || typeof password !== 'string' || !email.trim() || !password)
       return NextResponse.json({ error: 'Email and password are required.' }, { status: 400 })
+
+    await initDB()
 
     const [rows]: any = await pool.execute(
       'SELECT id, name, email, password_hash FROM users WHERE email = ?',
-      [email]
+      [email.trim()]
     )
     const user = rows[0]
 
@@ -32,6 +33,11 @@ export async function POST(req: Request) {
     return res
   } catch (err: any) {
     console.error('[login]', err)
-    return NextResponse.json({ error: err.message || 'Server error.' }, { status: 500 })
+    const unavailable = ['ENOTFOUND', 'EAI_AGAIN', 'ECONNREFUSED', 'ETIMEDOUT', 'ECONNRESET', 'PROTOCOL_CONNECTION_LOST'].includes(err?.code)
+    return NextResponse.json({
+      error: unavailable
+        ? 'Sign-in is temporarily unavailable because we cannot connect to the database. Please try again later.'
+        : 'Unable to sign in right now. Please try again later.',
+    }, { status: unavailable ? 503 : 500 })
   }
 }

@@ -10,9 +10,10 @@ type HeaderVariant = 'teal' | 'dark'
 
 interface HeaderProps {
   variant?: HeaderVariant
+  homeHref?: string
 }
 
-export default function Header({ variant = 'teal' }: HeaderProps) {
+export default function Header({ variant = 'teal', homeHref = '/' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const t = useTranslations('landing.header')
 
@@ -68,7 +69,7 @@ export default function Header({ variant = 'teal' }: HeaderProps) {
     <>
       <header className="sticky top-0 z-50 px-2 pt-2 sm:px-4 lg:px-6">
         <div className={`mx-auto flex h-14 w-full max-w-7xl items-center justify-between rounded-2xl border px-3 shadow-[0_20px_45px_rgba(3,34,24,0.45)] backdrop-blur md:px-4 ${bar}`}>
-          <Link href="/" className="flex items-center gap-3">
+          <Link href={homeHref} className="flex items-center gap-3">
             <img
               src="/images/logo.png"
               alt="No Barriers logo"
@@ -81,13 +82,13 @@ export default function Header({ variant = 'teal' }: HeaderProps) {
           </Link>
 
           <nav className="hidden items-center gap-5 md:flex">
-            <Link href="/#features" className={`text-lg font-medium transition-colors ${navLink}`}>
+            <Link href={`${homeHref}#features`} className={`text-lg font-medium transition-colors ${navLink}`}>
               {t('features')}
             </Link>
-            <Link href="/#languages" className={`text-lg font-medium transition-colors ${navLink}`}>
+            <Link href={`${homeHref}#languages`} className={`text-lg font-medium transition-colors ${navLink}`}>
               {t('languages')}
             </Link>
-            <Link href="/#about" className={`text-lg font-medium transition-colors ${navLink}`}>
+            <Link href={`${homeHref}#about`} className={`text-lg font-medium transition-colors ${navLink}`}>
               {t('about')}
             </Link>
           </nav>
@@ -104,9 +105,9 @@ export default function Header({ variant = 'teal' }: HeaderProps) {
               </div>
             </div>
             <LocaleSwitcher />
-            <Link href="/login" className={`rounded-xl px-4 py-2 font-semibold transition-colors ${loginBtn}`}>
+            <a href="/login" className={`rounded-xl px-4 py-2 font-semibold transition-colors ${loginBtn}`}>
               {t('logIn')}
-            </Link>
+            </a>
             <Link
               href="/get-started"
               className={`rounded-2xl border px-5 py-2 font-semibold transition-all ${ctaBtn}`}
@@ -141,7 +142,7 @@ export default function Header({ variant = 'teal' }: HeaderProps) {
       >
         {/* Sidebar header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
-          <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+          <Link href={homeHref} className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
             <img
               src="/images/logo.png"
               alt="No Barriers logo"
@@ -162,21 +163,21 @@ export default function Header({ variant = 'teal' }: HeaderProps) {
         {/* Nav links */}
         <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-1">
           <Link
-            href="/#features"
+            href={`${homeHref}#features`}
             onClick={() => setMobileMenuOpen(false)}
             className={`flex items-center rounded-xl px-4 py-3 text-base font-semibold transition-colors ${sidebarNavLink}`}
           >
             {t('features')}
           </Link>
           <Link
-            href="/#languages"
+            href={`${homeHref}#languages`}
             onClick={() => setMobileMenuOpen(false)}
             className={`flex items-center rounded-xl px-4 py-3 text-base font-semibold transition-colors ${sidebarNavLink}`}
           >
             {t('languages')}
           </Link>
           <Link
-            href="/#about"
+            href={`${homeHref}#about`}
             onClick={() => setMobileMenuOpen(false)}
             className={`flex items-center rounded-xl px-4 py-3 text-base font-semibold transition-colors ${sidebarNavLink}`}
           >
@@ -200,13 +201,13 @@ export default function Header({ variant = 'teal' }: HeaderProps) {
             <span className="text-xs font-bold uppercase tracking-widest text-white/40">Language</span>
             <LocaleSwitcher />
           </div>
-          <Link
+          <a
             href="/login"
             onClick={() => setMobileMenuOpen(false)}
             className={`block w-full rounded-xl border py-2.5 text-center font-semibold transition-colors ${mobileLoginBtn}`}
           >
             {t('logIn')}
-          </Link>
+          </a>
           <Link
             href="/get-started"
             onClick={() => setMobileMenuOpen(false)}
