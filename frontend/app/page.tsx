@@ -1,9 +1,9 @@
-import App from '../src/App'
+import PublicWebsite from './PublicWebsite'
 import { absoluteUrl, organization, publicMetadata, serializeJsonLd } from '../src/lib/seo'
 
 export const metadata = publicMetadata(
   'Learn Rwandan Sign Language',
-  'Learn Rwandan Sign Language with NoBarriers. Explore our learning approach and course topics while we prepare our new sign language learning experience.',
+  'Learn Rwandan Sign Language with No Barriers. Explore video lessons, practice, and a clear learning path to more inclusive communication.',
   '/',
 )
 
@@ -15,6 +15,6 @@ export default function Page() {
         url: absoluteUrl('/'), inLanguage: 'en', publisher: { '@id': organization['@id'] },
       }],
     }) }} />
-    <App />
+    <PublicWebsite />
   </>
 }
