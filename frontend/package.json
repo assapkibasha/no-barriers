@@ -11,6 +11,7 @@
     "verify:seo": "node scripts/verify-seo.mjs"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.49.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/canvas-confetti": "^1.9.0",
     "@types/jsonwebtoken": "^9.0.10",
