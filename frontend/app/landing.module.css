@@ -1,3 +1,16 @@
+.launchBanner { background: var(--navy); color: #fff; }
+.launchInner { width: min(1216px, calc(100% - 64px)); margin: auto; display: flex; align-items: center; gap: 32px; padding: 16px 0; }
+.launchCopy { flex: 1; }
+.launchCopy strong,.launchCopy span { display: block; }
+.launchCopy strong { font-size: 16px; line-height: 1.4; font-weight: 650; }
+.launchCopy span { margin-top: 3px; color: #b4c4db; font-size: 13px; }
+.launchTimer { display: flex; gap: 20px; }
+.launchTimer div { text-align: center; min-width: 42px; }
+.launchTimer strong { display: block; font-size: 24px; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.launchTimer span { display: block; color: #b4c4db; font-size: 10px; margin-top: 4px; }
+.page .launchClose { flex: 0 0 44px; height: 44px; display: grid; place-items: center; border: 0; background: transparent; color: #fff; border-radius: 8px; cursor: pointer; }
+.launchClose:hover { background: #ffffff18; }
+@media(max-width:767px) { .launchInner { width: calc(100% - 40px); position: relative; flex-wrap: wrap; gap: 12px; padding: 14px 0; }.launchCopy { flex-basis: 100%; padding-right: 40px; }.launchCopy strong { font-size: 14px; }.launchCopy span { font-size: 12px; }.launchTimer { gap: 18px; }.launchTimer strong { font-size: 22px; }.page .launchClose { position: absolute; top: 8px; right: -8px; width: 44px; } }
 .page {
   --brand-accent: #007f80;
   --brand-accent-hover: #006769;

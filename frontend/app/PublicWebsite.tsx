@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import LaunchCountdown from "./LaunchCountdown";
 import { FormEvent, useRef, useState } from "react";
 import { IconArrowUpRight, IconAward, IconBook, IconChartBar, IconChevronDown, IconChevronRight, IconHandStop, IconMenu2, IconPlayerPlay, IconRoute, IconSearch, IconX } from "@tabler/icons-react";
 import styles from "./landing.module.css";
@@ -38,6 +39,7 @@ export default function LandingPage() {
   const openProgram = (title: string, body: string) => showDetail({ title, body, learning: true });
 
   return <div className={styles.page}>
+    <LaunchCountdown />
     <a className={styles.skipLink} href="#main-content">Skip to content</a>
     <header className={styles.header}>
       <nav className={styles.nav} aria-label="Main navigation">
